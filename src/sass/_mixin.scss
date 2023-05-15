@@ -1,0 +1,26 @@
+@mixin clean() {
+  padding: 0;
+  margin: 0;
+}
+
+
+@mixin fontFace ($fontFamilyName, $fontFileName, $fontStyle, $fontWeight) {
+  font-family: $fontFamilyName;
+  src: local($fontFileName + "-" + $fontStyle),
+      url("../fonts/" + $fontFileName + "-" + $fontStyle + ".woff2") format("woff2"),
+      url("../fonts/" + $fontFileName + "-" + $fontStyle + ".woff") format("woff");
+  font-weight: $fontWeight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin gridTemplate($column, $gap) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  gap: $gap;
+}
+
+@mixin background-decor() {
+  border-radius: 10px;
+  background-color: $background-secondary-color;
+}

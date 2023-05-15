@@ -1,0 +1,100 @@
+$font-stack: "OpenSans", sans-serif;
+
+$main-color: #A65CF0;
+$main-color-light: #C998FB;
+$main-color-dark: #7033AC;
+$focus-decor-color: #EBD1FF;
+$secondary-main-color: #FF862F;
+$secondary-color-light: #FFBD59;
+$secondary-color-dark: #BB370E;
+$secondary-color-dop: #FFF5D1;
+$decor-color: #999999;
+$text-color: #333333;
+$text-color-light: #ffffff;
+$text-color-grey: #666666;
+$background-main-color: #ffffff;
+$background-secondary-color: #F6F6F6;
+$background-light-color: #EAEAEA;
+$background-dark-color: $text-color;
+$background-focus-form: #F8EFFF;
+$decor-banner-color: #D5B986;
+$disable-color: #EAEAEA;
+$form-active-color: #B8EC64;
+$error-color: #FF6972;
+
+
+
+$grid-gap: 32px;
+$grid-gap-mobile: 16px;
+$container-padding: 36px;
+$container-padding-768: 9.3%;
+$container-padding-320: 5%;
+
+
+$internal-padding: 30px;
+$internal-padding-mobile: 16px;
+
+$section-margin: 70px;
+
+$header-row-height1: 50px;
+$header-row-height2: 91px;
+$header-row-height3: 60px;
+
+$header-row-height1-1024: 58px;
+$header-row-height2-1024: 50px;
+$header-row-height3-1024: 92px;
+$header-row-height4-1024: 60px;
+
+$header-row-height1-768: 50px;
+$header-row-height2-768: 58px;
+$header-row-height3-768: 60px;
+
+$header-row-height1-320: 50px;
+$header-row-height2-320: 93px;
+$header-row-height3-320: 50px;
+$header-row-height4-320: 152px;
+
+
+$category-selector-width: 300px;
+
+$count_grid-column: 12;
+$count_grid-column-1024: 9;
+$count_grid-column-768: 6;
+$count_grid-column-320: 2;
+
+$hero-height: 400px;
+$hero-height-320: 302px;
+$hero-img-height-320: 210px;
+
+$hero-btn-width: 187px;
+$hero-btn-width-760: 150px;
+$hero-btn-height-320: 60px;
+
+$top-btn-width: 296px;
+
+
+$special-picture-height: 252px;
+$special-picture-height-moble: 210px;
+$special-card-width: 296px;
+
+$catalog-padding: $internal-padding;
+$catalog-padding-mobile: $internal-padding-mobile;
+
+$catalog-picture-height: 161px; //125px;
+$catalog-picture-height-mobile: 78px;
+
+$banner-heght: 600px;
+$banner-btn-width: 187px;
+$banner-heght-320: 302px;
+$banner-heght-img-320: 210px;
+$banner-padding-left-768: 36px;
+$banner-padding-320: 12px;
+
+//$category-card-height: 511px;
+$category-margin-bottom: 36px;
+
+$useful-padding: $internal-padding;
+//$useful-content-height: 190px;
+
+$feedback-padding: $internal-padding;
+$feedback-btn-width: 159px;
