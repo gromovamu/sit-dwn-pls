@@ -1307,7 +1307,7 @@ body {
 }
 
 .social-item {
-  margin-right: 20px;
+  margin-right: 14px;
 }
 
 .social-item:last-child {
@@ -1319,6 +1319,8 @@ body {
   margin-left: -3px;
   padding: 3px;
   color: $decor-color;
+  font-size: 0;
+  line-height: 0;
 }
 
 .footer__nav {
