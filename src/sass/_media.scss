@@ -713,34 +713,57 @@
    }
 
   .category__item {
+    padding: $internal-padding-mobile 0;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0;
-    align-items: stretch;
+    align-items:flex-end;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin-bottom: $internal-padding-mobile;
+  }
+
+  .category__item:nth-child(1) {
+    grid-column: span 6;
+    .category__name {
+      margin-bottom: 0;
+    }
+    .category__picture {
+      margin-bottom: 0;
+      margin-top: 13px;
+    }
   }
 
   .param-list {
     padding: 0 ($catalog-padding-mobile - 8px);
     margin-bottom: 4px;
+    width: 100%;
   }
 
   .category__name {
     padding: 0 5px 0 $catalog-padding-mobile;
-    margin-bottom: $catalog-padding-mobile;
+    margin-bottom: 0;//$catalog-padding-mobile;
     max-width: 65%;
   }
 
   .category__picture {
     order: 1;
-
-    margin-top: auto;
+    margin-top: $catalog-padding-mobile;
     margin-bottom: 0;
+    width: 100%;
+  }
+
+  .category__img {
+    padding-right: 0;
+    width: 100%;
   }
 
   .category__link {
     padding: 0;
     margin-top: 0;
-    margin-bottom: $catalog-padding-mobile;
+    margin-bottom:0;// $catalog-padding-mobile;
+    font-size: inherit;
+    padding-bottom: 0.2em;
   }
 
   .category__link-text {
@@ -749,9 +772,19 @@
     font-size: 0;
   }
 
-  .category__link-icon {
-    //align-self: center;
-  }
+  .category__item:first-child {
+    padding: $internal-padding 0 $catalog-padding-mobile;
+
+    .param-list {
+      padding: 0 ($catalog-padding - 4px); //8px + 4px
+      margin-left: 0;
+      margin-bottom: 14px;
+    }
+
+    .category__name {
+      padding: 0 5px 0 $catalog-padding;
+    }
+   }
 
   /* --- feedback ---*/
   .feedback__title {
@@ -912,18 +945,22 @@
   }
 
    /* --- category --- */
-   .param-list {
-    font-size: 10px;
-    line-height: 100%;
+
+   .category__item:not(:first-child) {
+    .param-item {
+      .nav-link-decor {
+          font-size: 10px;
+          line-height: 100%;
+        }
+    }
+
+      .category__name {
+        font-size: 16px;
+        line-height: 22px;
+       }
+
+       .category__link {
+        padding-bottom: 0;
+      }
    }
-
-   .category__name {
-    font-size: 16px;
-    line-height: 22px;
-   }
-
-   .category__link {
-
-   }
-
 }
