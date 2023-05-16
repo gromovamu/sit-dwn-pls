@@ -494,6 +494,7 @@
 
   /* --- useful ---*/
   .useful__container {
+    padding-top: 8px;
     padding-bottom: 32px + $internal-padding-mobile;
   }
 
@@ -513,7 +514,7 @@
 
   .footer__nav-list {
     flex-wrap: wrap;
-    gap: $internal-padding-mobile - 8px;
+    gap: 3px; //иначе не попадаю в pixelperfect
   }
 
   .footer__nav-item {
@@ -646,7 +647,6 @@
   }
 
   /*--- catalog ---*/
-
   .catalog {
     gap: $catalog-padding-mobile;
 
@@ -692,11 +692,11 @@
     line-height: 130%;
   }
 
-   /* --- banner --- */
-   .banner {
-    width: 100%;
-    height: $banner-heght-320;
-   }
+  /* --- banner --- */
+  .banner {
+  width: 100%;
+  height: $banner-heght-320;
+  }
 
    .banner__title {
     font-size: 36px;
@@ -709,7 +709,8 @@
 
   /* --- category --- */
   .category__list {
-    gap: $grid-gap-mobile
+    column-gap: $grid-gap-mobile;
+    row-gap: $grid-gap;
    }
 
   .category__item {
@@ -720,17 +721,31 @@
     align-items:flex-end;
     justify-content: flex-start;
     align-content: flex-start;
-    margin-bottom: $internal-padding-mobile;
   }
 
-  .category__item:nth-child(1) {
+  .category__item:first-child {
     grid-column: span 6;
+    padding: $internal-padding 0 $catalog-padding-mobile;
+
     .category__name {
       margin-bottom: 0;
+      padding: 0 5px 0 $catalog-padding;
+
     }
     .category__picture {
       margin-bottom: 0;
-      margin-top: 13px;
+      margin-top: 11px;
+    }
+
+    .param-list {
+      margin-left: 0;
+      margin-bottom: 14px;
+      padding: 0 ($catalog-padding - 8px);
+      width: 100%;
+    }
+
+    .param-item {
+      margin-right: 0;
     }
   }
 
@@ -772,20 +787,6 @@
     font-size: 0;
   }
 
-  .category__item:first-child {
-    padding: $internal-padding 0 $catalog-padding-mobile;
-
-    .param-list {
-      padding: 0 ($catalog-padding - 4px); //8px + 4px
-      margin-left: 0;
-      margin-bottom: 14px;
-    }
-
-    .category__name {
-      padding: 0 5px 0 $catalog-padding;
-    }
-   }
-
   /* --- feedback ---*/
   .feedback__title {
     font-size: 24px;
@@ -794,7 +795,7 @@
 
   .feedback__descr {
     font-size: 14px;
-    line-height: 19px;
+    line-height: 134%; //чтобы попасть в макет pixelperfect
   }
 
   .agreement {
@@ -810,6 +811,7 @@
   .footer__info {
     flex-direction: column;
     justify-content: center;
+    padding: 24px 0 21px 0;
   }
 
   .footer__logo {
@@ -947,20 +949,36 @@
    /* --- category --- */
 
    .category__item:not(:first-child) {
-    .param-item {
-      .nav-link-decor {
-          font-size: 10px;
-          line-height: 100%;
-        }
-    }
-
+      .param-item {
+        margin-bottom: 0;
+        .nav-link-decor {
+            font-size: 10px;
+            line-height: 100%;
+          }
+      }
       .category__name {
         font-size: 16px;
-        line-height: 22px;
+        line-height: 104%;
+        min-height: 20px;
        }
 
        .category__link {
         padding-bottom: 0;
       }
    }
+
+   .category__item:first-child {
+    .param-list {
+      justify-content: space-between;
+     }
+   }
+
+   .feedback-btn {
+    padding: 19px 35px;
+    width: initial;
+  }
+
+  .footer__links-title {
+    margin-bottom: 9px;
+  }
 }
