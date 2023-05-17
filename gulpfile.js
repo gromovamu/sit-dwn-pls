@@ -29,7 +29,7 @@ const clean = () => {
 /* подключаем общие модули, используемые в нескольких местах и svg спрайт/
    В данной работе не буду минифицировать html просто скопирую*/
 const htmlInclude = () => {
-    return src('src/index.html')
+    return src('src/*.html')
     .pipe(fileInclude({
         prefix: '@',
         basepath: '@file'
