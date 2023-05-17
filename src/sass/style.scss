@@ -102,7 +102,6 @@
 }
 
 /* внутри swiper border-box: content-box!!!*/
-
 .special__item {
   position: relative;
   display: flex;
@@ -110,7 +109,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: $internal-padding 0;
-  max-width: $special-card-width; // - $internal-padding * 2;
+  max-width: $special-card-width;
   @include background-decor();
 }
 

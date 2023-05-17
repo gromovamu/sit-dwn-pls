@@ -151,6 +151,12 @@
     background-image: url('../img/main/768/hero-img-768-3.jpg');
   }
 
+  /*--- special ---*/
+  .special__item {
+    max-width: initial;
+    width: 100%;
+  }
+
   /*--- catalog ---*/
   .catalog {
     grid-template-columns: repeat($count_grid-column-768, 1fr);
@@ -226,11 +232,6 @@
     bottom: 0;
     right: calc(50% - 38.5px);
     font-size: 0;
-  }
-
-  .special__item {
-    max-width: initial;
-    width: 100%;
   }
 
   .special__item {
