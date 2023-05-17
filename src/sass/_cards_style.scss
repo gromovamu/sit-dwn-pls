@@ -1,0 +1,68 @@
+/* стили карточек товара */
+.catalog__item {
+  position: relative;
+  visibility: visible;
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: $catalog-padding 0;
+  @include background-decor();
+}
+
+.catalog__item--hidden {
+  position: absolute;
+  visibility: hidden;
+}
+
+.estimation {
+  position: absolute;
+  top: $catalog-padding;
+  left: $catalog-padding;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 21px;
+  color: $secondary-main-color;
+}
+
+.star {
+  margin-right: 6.5px;
+}
+
+.catalog__picture {
+  align-self: center;
+  margin-bottom: 16px;
+  padding: 0 10px;
+  height: $catalog-picture-height;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.catalog__descr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-grow: 1;
+  padding: 0 $catalog-padding;
+}
+
+.catalog__name {
+  @include clean();
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  color: $text-color;
+}
+
+.catalog__price {
+  @include clean();
+  margin-top: auto;
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 21px
+}

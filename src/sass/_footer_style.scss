@@ -1,0 +1,86 @@
+/* -- footer ---*/
+.footer {
+  background-color: $background-light-color;
+}
+
+.footer__container {
+  @include gridTemplate(12, $grid-gap);
+  padding: 24px $container-padding;
+}
+
+.footer__info {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer__logo {
+  width: 187px;
+  height: 27px;
+}
+
+.social-list {
+  display: flex;
+}
+
+.social-item {
+  margin-right: 14px;
+}
+
+.social-item:last-child {
+  margin-right: 0;
+}
+
+.social-link {
+  display: flex;
+  margin-left: -3px;
+  padding: 3px;
+  color: $decor-color;
+  font-size: 0;
+  line-height: 0;
+}
+
+.footer__nav {
+  grid-column: span 8;
+}
+
+.footer__nav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%
+}
+
+.footer__links-title {
+  @include clean();
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.footer__links-list {
+  display: flex;
+  flex-direction: column;
+  margin-left: -8px;
+}
+
+.footer__links-item {
+  margin-bottom: 6px;
+  font-size: 0;
+}
+
+.footer__links-item:last-child {
+  margin-bottom: 0;
+}
+
+.footer__copy {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  font-size: 14px;
+  line-height: 19px;
+  color:$decor-color;
+  background-color: $background-secondary-color;
+}
+
+@import '_footer_effects.scss';

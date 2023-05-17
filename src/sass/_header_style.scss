@@ -1,0 +1,503 @@
+/* Стили для заголовка сайта*/
+.header {
+  padding-bottom: 32px;
+  font-size: 16px;
+  line-height: 22px;
+  color: $text-color;
+  background: linear-gradient(to bottom, $background-secondary-color $header-row-height1, $background-main-color 0%);
+}
+
+.header__grid-container {
+  display: grid;
+  grid-template-columns: repeat($count_grid-column, 1fr);
+  grid-template-rows: $header-row-height1 $header-row-height2 $header-row-height3;
+  row-gap: 0;
+  column-gap: $grid-gap;
+  align-items: center;
+}
+
+.header__form-container {
+  grid-column: 1/span 5;
+  display: flex;
+}
+
+.region-form {
+  display:flex;
+  margin-right: 30px;
+}
+
+.region-label {
+  margin-right: 4px;
+}
+
+/* custom select*/
+.region-selector {
+  color: $main-color;
+  border: none;
+  background-color: transparent;
+}
+
+.region-form {
+  display: flex;
+  align-items: center;
+
+  /* choices кастомный селект*/
+  .choices {
+    margin-top: 2px;
+    color: $main-color;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .choices__inner {
+    position:relative;
+    margin-right: 4px;
+    padding: 0;
+    border: none;
+    min-height: initial;
+    color: inherit;
+    background-color: transparent;
+    transition: background-color 0.4s ease-in-out;
+  }
+
+  .choices[data-type*=select-one] .choices__inner {
+    padding-bottom: 0;
+  }
+
+  .choices__list--single {
+    padding: 0 16px 3px 2px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: inherit;
+  }
+
+  .choices[data-type*=select-one]::after {
+    content: "";
+    position: absolute;
+    top: initial;
+    bottom: calc(0.5em + 2px);
+    right:4px;
+    margin-top: 0;
+    width: 8px;
+    height: 8px;
+
+    border: 1px solid currentColor;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .choices[data-type*=select-one]:focus-visible  .choices__inner {
+    background-color: $focus-decor-color;
+  }
+
+  .choices[data-type*=select-one]:hover {
+    color: $main-color-light;
+  }
+
+  .choices[data-type*=select-one]:active {
+    color: $main-color-dark;
+  }
+
+  /* в раскрытом состоянии */
+  .choices[data-type*=select-one]:focus-visible.is-open  .choices__inner {
+    background-color: transparent;
+  }
+
+  .choices[data-type*=select-one]:hover.is-open {
+    color: $main-color;
+  }
+
+  .choices[data-type*=select-one]:active.is-open {
+    color: $main-color;
+  }
+
+  .choices__list--dropdown .choices__item,
+  .choices__list[aria-expanded] .choices__item {
+    padding: 2px;
+    margin-bottom: 8px;
+  }
+
+  .choices__list--dropdown .choices__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .choices__list--dropdown,
+  .choices__list[aria-expanded] {
+    top: 100%;
+    margin-top: 0px;
+    padding: 16px;
+    min-width: 110px;
+    background-color: $background-main-color;
+    border: 2px solid $background-secondary-color;
+    transform: scaleY(0);
+    transform-origin: right top;
+    transition: transform 0.2s ease-out, visibility 0.2s ease-out;
+    //word-break: normal;
+  }
+  /*пока не понимаю, что делать с шириной чтобы соответсвовала макету,
+  и при этом была адаптивной, т.е. расширялась при добавлении более длинного слова*/
+
+  .is-open .choices__list--dropdown,
+  .is-open .choices__list[aria-expanded] {
+   transform: scaleY(1);
+   color: $text-color;
+  }
+
+  .choices[data-type*=select-one].is-open::after {
+    content: "";
+    position: absolute;
+    top: initial;
+    bottom: calc(0.5em + 2px);
+    right: 4px;
+    margin-top: 0;
+    width: 8px;
+    height: 8px;
+    border-color: currentColor;
+    transform: translateY(4px) rotate(135deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+    /* выделение элементов списка при фокусе и наведении*/
+  .choices__list--dropdown .choices__item--selectable.is-highlighted,
+  .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: $focus-decor-color;
+    color: var(--highlight-color);
+  }
+
+  /*скрываем выбранный эдемент*/
+  .choices__list--dropdown .choices__item--selectable.is-selected,
+  .choices__list[aria-expanded] .choices__item--selectable.is-selected {
+    visibility: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+}
+/* ------ */
+
+.tel {
+  display:flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 100%;
+  color: $secondary-main-color;
+}
+
+.header__top-nav {
+  position: relative;
+  grid-column: span 7;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__top-nav-list {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  max-width: 710px; /*!вернуться и еще подумать*/
+  margin-left: -8px;
+}
+
+.header__logo {
+  grid-column: span 3;
+}
+
+.header__bottom-nav {
+  grid-column: span 9;
+}
+
+.header__bottom-nav-list {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -7px;
+}
+
+.nav-link-decor2 {
+  padding: 0 7px;
+}
+
+.search-form {
+  grid-column: span 10;
+  display:flex;
+  height: 100%;
+}
+
+.search {
+  position: relative;
+  height: 100%;
+  flex-grow: 1;
+  color: $decor-color;
+}
+
+.search__icon {
+  position: absolute;
+  top: calc(100% / 2 - 10px);
+  left: 32px;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.search__input {
+  padding: 0 74px 0 59px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px 0px 0px 10px;
+  color: $text-color;
+  background-color: $background-secondary-color;
+}
+
+.search__btn {
+  position: absolute;
+  top: calc(100% / 2 - 16px);
+  right: 32px;
+}
+
+.category-selector {
+  flex-grow: 0;
+  min-width: 300px;
+  padding: 0 32px;
+  border: 2px solid $background-secondary-color;
+  border-radius: 0px 10px 10px 0px;
+  color: $main-color;
+}
+
+/* choises for category-selector */
+.search-form  {
+  /* choices кастомный селект*/
+  .choices {
+    position: relative;
+    flex-grow: 0;
+    min-width: $category-selector-width;
+    z-index: 50;
+    background-color: $background-main-color;
+  }
+
+  .choices__inner {
+    position:relative;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 100%;
+    border: 2px solid $background-secondary-color;
+    border-radius: 0 10px 10px 0;
+    background-color: transparent;
+    overflow: visible; /* без этого не получается отрисовать красиво*/
+    transition: border-color 0.4s ease, background-color 0.3s ease;
+  }
+
+  .choices[data-type*=select-one] .choices__inner {
+    padding-bottom: 0;
+  }
+
+  .choices__placeholder {
+    opacity: 1;
+  }
+
+  .choices__list--single {
+    padding: 0 $internal-padding;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: $main-color;
+  }
+
+  .choices[data-type*=select-one]::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 4px);
+    right: $internal-padding;
+    margin-top: 0;
+    width: 8px;
+    height: 8px;
+
+    border: 1px solid $main-color;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease-in-out, border-color 0.4s ease;
+  }
+
+  .choices__inner::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: 52;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border: 2px solid $background-secondary-color;
+    border-radius: 0 10px 10px 0;
+    background-color: transparent;
+    transition: border-color 0.4s ease;
+  }
+
+  /* hover-эффекты*/
+  .choices[data-type*=select-one]:focus-visible .choices__inner {
+    background-color: $background-focus-form;
+  }
+
+  .choices[data-type*=select-one]:focus-visible .choices__inner::after {
+    border-color: $main-color;
+  }
+
+  .choices[data-type*=select-one]:hover .choices__inner::after {
+    border-color: $main-color;
+  }
+
+  .choices[data-type*=select-one]:active .choices__inner::after {
+    border-color: $main-color-dark;
+  }
+
+  /* в раскрытом состоянии */
+  .is-open .choices__inner {
+    border-radius: 0 10px 0 0;
+    border-bottom-color: transparent;
+  }
+
+  .is-open .choices__inner::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: 52;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border: 2px solid $background-secondary-color;
+    border-radius: 0 10px 10px 0;
+    background-color: transparent;
+  }
+
+  .choices[data-type*=select-one]:focus-visible.is-open  .choices__inner {
+    background-color: transparent;
+  }
+
+  .choices[data-type*=select-one]:focus-visible.is-open .choices__inner::after {
+    border-color: $background-secondary-color;
+  }
+
+  .choices[data-type*=select-one]:hover.is-open .choices__inner::after {
+    border-color: $background-secondary-color;
+  }
+
+  .choices[data-type*=select-one]:active.is-open .choices__inner::after {
+    border-color: $background-secondary-color;
+  }
+
+  .choices__list--dropdown .choices__item,
+  .choices__list[aria-expanded] .choices__item {
+    padding: 2px;
+    margin-bottom: 8px;
+  }
+
+  .choices__list--dropdown .choices__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .choices__list--dropdown,
+  .choices__list[aria-expanded] {
+    top: 100%;
+    z-index: 51;
+    margin-top: 0;
+    padding: 22px $internal-padding;
+    background-color: $background-main-color;
+    border: 2px solid $background-secondary-color;
+    border-radius: 0 0 10px 10px;
+    border-top: none;
+    transform: scaleY(0);
+    transform-origin: right top;
+    transition: transform 0.2s ease-out;
+  }
+
+  .is-open .choices__list--dropdown,
+  .is-open .choices__list[aria-expanded] {
+   transform: scaleY(1);
+  }
+
+  .choices__list--dropdown .choices__list,
+  .choices__list[aria-expanded] .choices__list {
+    column-count: 2;
+    column-width: 60px;
+    column-gap: 30px;
+  }
+
+  .choices[data-type*=select-one].is-open::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 4px);
+    right: $internal-padding;
+    margin-top: 0;
+    width: 8px;
+    height: 8px;
+    border-color: $main-color;
+    transform: translateY(4px) rotate(135deg);
+  }
+
+   /* выделение элементов списка при фокусе и наведении*/
+  .choices__list--dropdown .choices__item--selectable.is-highlighted,
+  .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: $focus-decor-color;
+    color: var(--highlight-color);
+  }
+
+  /*скрываем выбранный эдемент*/
+  .choices__list--dropdown .choices__item--selectable.is-selected,
+  .choices__list[aria-expanded] .choices__item--selectable.is-selected {
+    visibility: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+}
+/*-------*/
+
+.header__btn-container {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap:32px;
+}
+
+.header__btn {
+  color: $main-color;
+  margin-right: -4px;
+  padding: 4px;
+}
+
+.basket-btn {
+  position: relative;
+  padding: 4px 4px 4px 16px;
+}
+
+.basket-btn__count {
+  position: absolute;
+  top: 9px;
+  right: 31px;
+  padding: 2px 4px 3px 4px;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 100%;
+  color: $text-color-light;
+  background-color: $secondary-main-color;
+  border-radius: 20px;
+}
+
+.burger {
+  position: absolute;
+  visibility: hidden;
+  justify-self: start;
+  padding: 4px;
+  margin-left: -1px;
+  color: $main-color;
+}
+
+.burger__close-icon {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@import '_header_effects.scss';

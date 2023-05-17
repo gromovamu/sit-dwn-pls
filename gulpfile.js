@@ -20,15 +20,16 @@ const clean = () => {
     return del(['dist']);
 }
 
-/* В данной работе не буду минифицировать html просто скопирую */
-const html = () => {
+/*  переписывает основные файлы=> пока не надо*/
+/*const html = () => {
     return src('src/*.*')
     .pipe(dest('dist'))
-}
+}*/
 
-/* svg спрайт будем вствалять в файл уже переложенный в dist*/
+/* подключаем общие модули, используемые в нескольких местах и svg спрайт/
+   В данной работе не буду минифицировать html просто скопирую*/
 const htmlInclude = () => {
-    return src('dist/index.html')
+    return src('src/index.html')
     .pipe(fileInclude({
         prefix: '@',
         basepath: '@file'
@@ -44,7 +45,7 @@ const fonts = () => {
 }
 
 const stylesSass = () => {
-    return   src('src/sass/**/*.scss')
+    return  src('src/sass/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', notify.onError()))
     .pipe(sourcemaps.write())
@@ -58,13 +59,13 @@ const stylesSassBuild = () => {
 }
 
 const stylesBuild = () => {
-  return src('src/css/*.css')
-  .pipe(concat('style.min.css'))
-  .pipe(dest('dist/css'))
+    return src(['src/css/lib/normalize.min.css','src/css/lib/*.css','src/css/style.css'])
+    .pipe(concat('style.min.css'))
+    .pipe(dest('dist/css'))
 }
 
 const stylesDebug = () => {
-    return src(['src/css/normalize.min.css','src/css/lib/*.css','src/css/style.css'])
+    return src(['src/css/lib/normalize.min.css','src/css/lib/*.css','src/css/style.css'])
     .pipe(concat('style.min.css'))
     .pipe(dest('dist/css'))
     //.pipe(browserSync.stream());
@@ -137,6 +138,11 @@ const images = () => {
     //.pipe(browserSync.stream());
 }
 
+const favicon = () => {
+   return src('src/*.ico')
+  .pipe(dest('dist'));
+}
+
 const watchFiles = () => {
     browserSync.init({
         server: {
@@ -145,14 +151,14 @@ const watchFiles = () => {
     });
 }
 
-let htmlSeries = series(html,svgSprites,htmlInclude);
+let htmlSeries = series(favicon, svgSprites, htmlInclude);
 
 watch('src/sass/**/*.scss', stylesSass);
 watch('src/css/**/*.css', stylesDebug);
 watch('src/img/svg/**/*.svg', htmlSeries);
 
 watch('src/js/**/*.js', scriptsDebug);
-watch('src/*.*', series(html,htmlInclude));
+watch('src/*.*', series(favicon, htmlInclude));
 
 watch('src/img/*.*', images);
 watch('src/img/320/*.*', images);
