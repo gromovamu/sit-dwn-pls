@@ -1,5 +1,5 @@
 <!-- основной код блока каталог, содержит код с карточками
- по умолчанию их будет 8, как для основной страницы сайта, однако кол-во на странице,
+ по умолчанию их будет 9, как для основной страницы каталога, однако кол-во на странице,
  а также скрытые/раскрытые будут регулироваться скриптом-->
 
 <ul class="list catalog">
@@ -213,7 +213,7 @@
       </svg>
 
       <span class="estimation-descr">
-        5,0
+        4,7
       </span>
     </div>
 
@@ -234,4 +234,34 @@
       <a class="btn btn-decor2">Купить</a>
     </div>
   </li>
+
+  <li class="catalog__item catalog__item--hidden">
+    <div class="estimation">
+    <svg class="star" viewBox="0 0 16 15">
+      <use xlink:href="#star"></use>
+    </svg>
+
+    <span class="estimation-descr">
+      4,7
+    </span>
+  </div>
+
+  <picture class="catalog__picture">
+    <source srcset="./img/catalog/sofas/320/catalog-img-320-9.png" media="(max-width: 520px)">
+    <img class="catalog__img" src="./img/catalog/sofas/basic/catalog-img-9.png" alt="Изображение товара">
+  </picture>
+
+  <div class="catalog__descr-container">
+    <h3 class="catalog__name">
+      Диван из кожзама “F&#8209;85”
+    </h3>
+
+    <p class="catalog__price">
+      26 990 руб
+    </p>
+
+    <a class="btn btn-decor2">Купить</a>
+  </div>
+</li>
+
 </ul>

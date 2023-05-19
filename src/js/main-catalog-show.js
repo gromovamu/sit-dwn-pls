@@ -3,7 +3,7 @@ let clientWidth =  window.innerWidth;
 //document.documentElement.clientWidth;
 let initCountCardsShow = getCountCatalogCards(clientWidth);
 let currentCountCardsShow = initCountCardsShow;
-let currentCountCardsLoad = 8; //изначально на странице 8 карточек
+let currentCountCardsLoad = 9; //изначально на странице 9 карточек (для совместимости с кодом каталога)
 let maxCountCard = 18; // максимальное кол-во карточек подгружаемых на страницу
 
 function getCountCatalogCardLine(windowWidth) {
