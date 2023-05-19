@@ -159,6 +159,7 @@ watch('src/img/svg/**/*.svg', htmlSeries);
 
 watch('src/js/**/*.js', scriptsDebug);
 watch('src/*.*', series(favicon, htmlInclude));
+watch('src/**/*.html', htmlInclude);
 
 watch('src/img/*.*', images);
 watch('src/img/320/*.*', images);

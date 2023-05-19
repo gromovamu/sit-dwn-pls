@@ -112,6 +112,12 @@ text-align: center;
 background-color: $main-color;
 }
 
+.btn-decor1--disabled {
+  color: $decor-color;
+  background-color: $disable-color;
+  cursor: initial;
+}
+
 .btn-decor2 {
 padding: 17px 33px;
 border-radius: 10px;
