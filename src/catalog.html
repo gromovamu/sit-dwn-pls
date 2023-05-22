@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог - SitDownPls</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style_lib.min.css">
+  <link rel="stylesheet" href="css/style_catalog.css"> <!-- тут переименоват как разберусь с gulp-->
 </head>
 
 <body>
@@ -17,11 +18,11 @@
 
   <header class="header">
     @include('./html/_header.html')
-      <div class="breadcrumbs">
-        <a class="breadcrumbs__link" href="index.html">Главная</a>/
-        <a class="breadcrumbs__link" href="#">Каталог</a>/
-        <a class="breadcrumbs__link" href="#">Диваны</a>/
-        <a class="breadcrumbs__link breadcrumbs__link-last" href="#">Прямые диваны</a>
+      <div class="container breadcrumbs">
+        <a class="breadcrumbs__link nav-link-decor" href="index.html">Главная</a>&nbsp;/&nbsp;
+        <a class="breadcrumbs__link nav-link-decor" href="#">Каталог</a>&nbsp;/&nbsp;
+        <a class="breadcrumbs__link nav-link-decor" href="#">Диваны</a>&nbsp;/&nbsp;
+        <a class="breadcrumbs__link nav-link-decor breadcrumbs__link-last" href="#">Прямые диваны</a>
     </div>
   </header>
 
@@ -29,10 +30,6 @@
     <h1 class="disable">Магазин мебели SitDownPls - каталог</h1>
 
     <section class="section catalog-section">
-      <h2 class=" actalog-section__title">
-        Каталог
-      </h2>
-
       <div class="container catalog-container">
         <form class="filter">
           <h2 class="filter__title">
@@ -142,23 +139,29 @@
             </legend>
 
             <ul class="list filter__checkbox-list">
-              <label class="filter__checkbox-label" for="sale1">
-                <input class="filter__checkbox__input" id="sale1" type="checkbox">
-                Более 5&nbsp;000
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="sale1">
+                  <input class="filter__checkbox__input" id="sale1" type="checkbox">
+                  Более 5&nbsp;000
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="sale2">
-                <input class="filter__checkbox__input" id="sale3" type="checkbox">
-                Менее 5	&nbsp;000
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="sale2">
+                  <input class="filter__checkbox__input" id="sale3" type="checkbox">
+                  Менее 5	&nbsp;000
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="sale3">
-                <input class="filter__checkbox__input" id="sale3" type="checkbox" checked>
-                Не важно
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="sale3">
+                  <input class="filter__checkbox__input" id="sale3" type="checkbox" checked>
+                  Не важно
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
             </ul>
           </fieldset>
 
@@ -168,62 +171,84 @@
             </legend>
 
             <ul class="list filter__checkbox-list">
-              <label class="filter__checkbox-label" for="color1">
-                <input class="filter__checkbox__input" id="color1" type="checkbox">
-                  Коричневый
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="color1">
+                  <input class="filter__checkbox__input" id="color1" type="checkbox">
+                    Коричневый
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="color2">
-                <input class="filter__checkbox__input" id="color2" type="checkbox">
-                  Черный
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="color2">
+                  <input class="filter__checkbox__input" id="color2" type="checkbox">
+                    Черный
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="color3">
-                <input class="filter__checkbox__input" id="color3" type="checkbox">
-                  Бежевый
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="color3">
+                  <input class="filter__checkbox__input" id="color3" type="checkbox">
+                    Бежевый
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="color4">
-                <input class="filter__checkbox__input" id="color4" type="checkbox">
-                  Серый
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="color4">
+                  <input class="filter__checkbox__input" id="color4" type="checkbox">
+                    Серый
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="color5">
-                <input class="filter__checkbox__input" id="color5" type="checkbox">
-                  Белый
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="color5">
+                  <input class="filter__checkbox__input" id="color5" type="checkbox">
+                    Белый
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="color6">
-                <input class="filter__checkbox__input" id="color6" type="checkbox">
-                  Синий
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="color6">
+                  <input class="filter__checkbox__input" id="color6" type="checkbox">
+                    Синий
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="color7">
-                <input class="filter__checkbox__input" id="color7" type="checkbox">
-                  Оранжевый
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="color7">
+                  <input class="filter__checkbox__input" id="color7" type="checkbox">
+                    Оранжевый
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="color8">
-                <input class="filter__checkbox__input" id="color8" type="checkbox">
-                  Желтый
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="color8">
+                  <input class="filter__checkbox__input" id="color8" type="checkbox">
+                    Желтый
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
 
-              <label class="filter__checkbox-label" for="color9">
-                <input class="filter__checkbox__input" id="color9" type="checkbox">
-                  Зеленый
-                <span class="filter__checkbox-check"></span>
-              </label>
+              <li class="filter__checkbox-item">
+                <label class="filter__checkbox-label" for="color9">
+                  <input class="filter__checkbox__input" id="color9" type="checkbox">
+                    Зеленый
+                  <span class="filter__checkbox-check"></span>
+                </label>
+              </li>
             </ul>
           </fieldset>
         </form>
+
+        <h2 class="catalog-section__title">
+          Каталог
+        </h2>
 
         @include('./html/_catalog.html')
 
@@ -242,25 +267,27 @@
         </div>
 
         <div class="banner">
-          <div class="container banner__container">
-              <h2 class="banner__title">
-                Оксфорд 1950
-              </h2>
+          <div class="banner__decor"></div>
 
-              <p class="banner__descr">
-                Новая коллекция изысканных кресел
-              </p>
+          <div class="banner__content">
+            <h2 class="banner__title">
+              Оксфорд 1950
+            </h2>
 
-              <a class="link banner__link arrow-btn-decor" href="#">
-                <span class="category__link-text">
-                  В каталог
-                </span>
+            <p class="banner__descr">
+              Новая коллекция изысканных кресел
+            </p>
 
-                <svg class="arrow-icon banner__link-icon" viewBox="0 0 22 22">
-                  <use xlink:href="#small-arrow"></use>
-                </svg>
-              </a>
-           </div>
+            <a class="link banner__link arrow-btn-decor" href="#">
+              <span class="banner__link-text arrow-btn-text">
+                В каталог
+              </span>
+
+              <svg class="arrow-icon banner__link-icon" viewBox="0 0 22 22">
+                <use xlink:href="#small-arrow"></use>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>

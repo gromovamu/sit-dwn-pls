@@ -1,23 +1,6 @@
 @import '_main_effects.scss';
 
 /* hover-эффекты для основной страницы сайта*/
-.category__link-text::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.arrow-btn-decor:focus-visible .category__link-text::before,
-.arrow-btn-decor:hover .category__link-text::before {
-  opacity: 1;
-}
-
 .feedback__input {
   outline: none;
   transition: background-color 0.3s ease-in-out;

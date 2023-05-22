@@ -1,0 +1,173 @@
+/* variables */
+@import 'variables.scss';
+@import 'mixin.scss';
+
+@import '_main_style.scss';
+
+@import '_header_style.scss';
+
+/* --- breadcrumbs  ---*/
+.breadcrumbs {
+  padding-top: 23px;
+  font-size: 14px;
+  line-height: 16px;
+  color: $decor-color;
+}
+
+.breadcrumbs__link-last {
+  color: $main-color;
+}
+
+/* --- catalog-container ---*/
+.catalog-container {
+  @include gridTemplate($count_grid-column, $grid-gap);
+}
+
+.catalog-section__title {
+  @include clean();
+  grid-column: span 9;
+  grid-row: 1/ span 1;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+  color: $text-color;
+}
+
+/* filter */
+
+.filter {
+  grid-column: 1/span 3;
+  grid-row: 1/3;
+}
+
+.filter__title {
+  position: relative;
+  @include clean();
+  margin-bottom: 20px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: $text-color;
+}
+
+.filter__title-adaptive {
+  visibility: hidden;
+  position: absolute;
+}
+
+.filter__fieldset {
+  @include clean();
+  margin-bottom: 26px;
+  border: none;
+}
+
+.filter__subtitle {
+  @include clean();
+  margin-bottom: 9px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  color: $text-color-grey;
+}
+
+.filter__checkbox-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__checkbox-item {
+  margin-bottom: 10px;
+}
+
+.filter__checkbox-item:last-child {
+  margin-bottom: 0;
+}
+
+.filter__checkbox-label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: $text-color-grey;
+}
+
+.filter__input {
+  width: 86px;
+}
+
+/* catalog */
+
+.catalog {
+  grid-column: span 9;
+  grid-row: 2 / 4;
+  @include gridTemplate( $count_grid-column-1024, $grid-gap);
+  margin-top: -8px;
+}
+
+@import '_cards_style.scss';
+
+.catalog-btn-container {
+  grid-column: 4/span 9;
+  grid-row: 4/ span 1;
+  justify-self: center;
+}
+
+/* banner */
+.banner {
+  grid-column: 1/span 3;
+  grid-row: 3/ span 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: $background-dark-color;
+}
+
+.banner__decor {
+  height: 190px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-image: url('../img/catalog/catalog-banner-img.jpg');
+}
+
+.banner__content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.banner__title {
+  @include clean();
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 32px;
+  color: $secondary-color-light;
+}
+
+.banner__descr {
+  @include clean();
+  margin-bottom: 12px;
+  width: 70%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $decor-color;
+}
+
+.banner__link  {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+@import '_footer_style.scss';
+
+@import 'svg.scss';
+@import 'effects.scss';
+@import 'media.scss';
+

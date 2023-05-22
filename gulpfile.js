@@ -16,7 +16,7 @@ const browserSync = require('browser-sync').create();
 
 
 const clean = () => {
-    del(['src/css/style.css'])
+    del(['src/css/**.css']);
     return del(['dist']);
 }
 
@@ -65,8 +65,10 @@ const stylesBuild = () => {
 }
 
 const stylesDebug = () => {
-    return src(['src/css/lib/normalize.min.css','src/css/lib/*.css','src/css/style.css'])
-    .pipe(concat('style.min.css'))
+    src(['src/css/lib/normalize.min.css','src/css/lib/*.css'])
+    .pipe(concat('style_lib.min.css'))
+    .pipe(dest('dist/css'));
+    return src('src/css/*.css')
     .pipe(dest('dist/css'))
     //.pipe(browserSync.stream());
 }

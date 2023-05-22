@@ -149,7 +149,7 @@
    let htmlTextCards='';
 
    loadBlock.forEach(function (card) {
-    htmlTextCards = htmlTextCards + loadCard(card);
+    htmlTextCards += loadCard(card);
    });
 
    //console.log(htmlTextCards);

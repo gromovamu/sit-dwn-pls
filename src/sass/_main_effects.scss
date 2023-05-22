@@ -84,3 +84,20 @@
   stroke: $decor-color;
   fill: transparent;
 }
+
+.arrow-btn-text::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.arrow-btn-decor:focus-visible .category__link-text::before,
+.arrow-btn-decor:hover .category__link-text::before {
+  opacity: 1;
+}

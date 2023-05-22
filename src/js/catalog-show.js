@@ -94,7 +94,7 @@ window.addEventListener('resize', function() {
 
   if ( currentCountCardsPage != newCountCardsPage ) {
     let temp = maxCountCard/newCountCardsPage;
-    if(currentPage >temp) {
+    if( currentPage > temp) {
       currentPage = currentPage - 1;
 
       document.querySelectorAll('.catalog__btn').forEach(function (btn,item) {

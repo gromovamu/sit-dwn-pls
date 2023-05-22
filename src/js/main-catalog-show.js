@@ -36,7 +36,7 @@ document.querySelector('.top__btn').addEventListener('click',
   function () {
     if (currentCountCardsShow < maxCountCard) {
       //console.log('last currentCountCardsShow:' + currentCountCardsShow);
-      currentCountCardsShow = currentCountCardsShow + getCountCatalogCardLine(window.innerWidth);
+      currentCountCardsShow += getCountCatalogCardLine(window.innerWidth);
       //console.log('getCountCatalogCardLine:' + getCountCatalogCardLine(window.innerWidth));
       //console.log('new currentCountCardsShow:' + currentCountCardsShow);
       //console.log('currentCountCardLoad:' + currentCountCardsLoad);
@@ -44,7 +44,7 @@ document.querySelector('.top__btn').addEventListener('click',
       // догрузи еще, если надо
       if (currentCountCardsShow > currentCountCardsLoad) {
         loadCards(currentCountCardsLoad, currentCountCardsShow);
-        currentCountCardsLoad = currentCountCardsLoad + (currentCountCardsShow - currentCountCardsLoad);
+        currentCountCardsLoad += currentCountCardsShow - currentCountCardsLoad;
         //console.log('new currentCountCardsLoad:' + currentCountCardsLoad);
       }
 

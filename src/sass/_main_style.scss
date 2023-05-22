@@ -4,7 +4,7 @@
 }
 
 @font-face {
-@include fontFace ("OpenSans", "OpenSans", "SemiBold", 600);
+  @include fontFace ("OpenSans", "OpenSans", "SemiBold", 600);
 }
 
 
@@ -36,7 +36,7 @@ img {
 }
 
 picture {
-max-width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -50,66 +50,66 @@ body {
 }
 
 .disable {
-display: none;
+  display: none;
 }
 
 /* --- general --- */
 .container {
-margin: 0 auto; //auto;
-padding: 0 $container-padding;
-max-width: 1280px + $container-padding*2;
+  margin: 0 auto; //auto;
+  padding: 0 $container-padding;
+  max-width: 1280px + $container-padding*2;
 }
 
 .section {
-margin-bottom: $section-margin;
+  margin-bottom: $section-margin;
 }
 
 .section-title {
-@include clean();
-margin-bottom: 26px;
-font-weight: 400;
-font-size: 32px;
-line-height: 100%;
+  @include clean();
+  margin-bottom: 26px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
 }
 
 .btn {
-@include clean();
-border: none;
-background-color: transparent;
-cursor: pointer;
+  @include clean();
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .link {
-@include clean();
-cursor: pointer;
+  @include clean();
+  cursor: pointer;
 }
 
 .list {
-@include clean();
-list-style: none;
+  @include clean();
+  list-style: none;
 }
 
 .btn:focus-visible {
-outline: none;
+  outline: none;
 }
 
 .link:focus-visible {
-outline: none;
+  outline: none;
 }
 
 .grid-container {
-@include gridTemplate(12, $grid-gap);
+  @include gridTemplate(12, $grid-gap);
 }
 
 .btn-decor1 {
-padding: 22px 0;
-border-radius: 10px;
-font-weight: 700;
-font-size: 16px;
-line-height: 100%;
-color: $text-color-light;
-text-align: center;
-background-color: $main-color;
+  padding: 22px 0;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  color: $text-color-light;
+  text-align: center;
+  background-color: $main-color;
 }
 
 .btn-decor1--disabled {
@@ -119,27 +119,27 @@ background-color: $main-color;
 }
 
 .btn-decor2 {
-padding: 17px 33px;
-border-radius: 10px;
-border: 2px solid $main-color;
-font-weight: 600;
-font-size: 16px;
-line-height: 100%;
-color: $main-color;
-background-color: transparent;
+  padding: 17px 33px;
+  border-radius: 10px;
+  border: 2px solid $main-color;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: $main-color;
+  background-color: transparent;
 }
 
 .nav-link-decor {
-padding: 0 8px;
-font-weight: 400;
-font-size: 14px;
-line-height: 16px;
-color: $decor-color;
+  padding: 0 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $decor-color;
 }
 
 .arrow-btn-decor {
-font-size: 0;
-color: $main-color; /*задает цвет окружности*/ /*задает цвет стрелки*/
-fill: transparent;  /* если использовать none то нет задержки*/
-stroke: $main-color;  /*задает цвет стрелки*/ /*задает цвет окружности*/
+  font-size: 0;
+  color: $main-color; /*задает цвет окружности*/ /*задает цвет стрелки*/
+  fill: transparent;  /* если использовать none то нет задержки*/
+  stroke: $main-color;  /*задает цвет стрелки*/ /*задает цвет окружности*/
 }
