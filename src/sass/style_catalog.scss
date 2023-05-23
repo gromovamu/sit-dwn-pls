@@ -282,10 +282,10 @@
   background-color: $main-color;
 }
 
-@import '_footer_style.scss';
+@import 'footer_style.scss';
 
-@import '_main_effects.scss';
+@import 'main_effects.scss';
 
 //@import 'effects.scss';
 @import 'media.scss';
-
+@import 'catalog_media.scss';

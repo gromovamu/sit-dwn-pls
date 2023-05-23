@@ -10,7 +10,7 @@ let currentPage = 1;
 
 // количество карточек на странице
 function getCountCatalogCardsPage(windowWidth) {
-  if ( windowWidth <= 1200 ) return 6;
+  if ( windowWidth <= 900 ) return 6;
   return 9;
 }
 
