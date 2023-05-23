@@ -29,7 +29,7 @@
 
 .btn-decor2:focus-visible {
   color: $text-color-light;
-  background-color: $main-color;
+  background-color: $main-color-light;
 }
 
 .btn-decor2:hover {
@@ -85,6 +85,8 @@
   fill: transparent;
 }
 
+// ссылка на какталог со стрелкой
+// эффект подчеркивания
 .arrow-btn-text::before {
   content: '';
   position: absolute;
@@ -97,7 +99,37 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-.arrow-btn-decor:focus-visible .category__link-text::before,
-.arrow-btn-decor:hover .category__link-text::before {
+.arrow-btn-decor:focus-visible .arrow-btn-text::before,
+.arrow-btn-decor:hover .arrow-btn-text::before {
   opacity: 1;
 }
+
+// все круглые стрелки
+/* цвета задаются через родительскую кнопки или ссылку arrow-btn-decor
+color -  задает цвет окружности
+fill - если использовать none то нет задержки
+stroke: - задает цвет стрелки */
+.arrow-btn-decor {
+  transition: color 0.4s ease-in-out;
+}
+
+.arrow-icon {
+  transition: fill 0.3s ease-in, stroke 0.4s ease-in-out;
+}
+
+.arrow-btn-decor:focus-visible {
+  stroke: $text-color-light;
+  fill: $main-color-light;
+}
+
+.arrow-btn-decor:hover {
+  stroke: $text-color-light;
+  fill: $main-color;
+}
+
+.arrow-btn-decor:active {
+  color: $main-color-dark;
+  fill: $main-color-dark;
+  stroke: $text-color-light;
+}
+

@@ -32,30 +32,6 @@
   color: $secondary-color-dark;
 }
 
-.arrow-btn-decor {
-  transition: color 0.4s ease-in-out;
-}
-
-.arrow-icon {
-  transition: fill 0.3s ease-in, stroke 0.4s ease-in-out;
-}
-
-.arrow-btn-decor:focus-visible {
-  stroke: $text-color-light;
-  fill: $main-color-light;
-}
-
-.arrow-btn-decor:hover {
-  stroke: $text-color-light;
-  fill: $main-color;
-}
-
-.arrow-btn-decor:active {
-  color: $main-color-dark;
-  fill: $main-color-dark;
-  stroke: $text-color-light;
-}
-
 .search__input {
   transition: background-color 0.4s ease-in-out;
 }

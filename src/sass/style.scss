@@ -352,11 +352,6 @@
   color: $main-color;
 }
 
-.category__link-text {
-  position: relative;
-  margin-right: 5px;
-}
-
 /* --- useful ---*/
 .useful__container {
   position: relative;
@@ -567,6 +562,7 @@
 @import '_footer_style.scss';
 
 @import 'svg.scss';
+@import 'main_effects.scss';
 @import 'effects.scss';
 @import 'media.scss';
 

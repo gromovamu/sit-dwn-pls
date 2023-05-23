@@ -139,7 +139,12 @@ body {
 
 .arrow-btn-decor {
   font-size: 0;
-  color: $main-color; /*задает цвет окружности*/ /*задает цвет стрелки*/
+  color: $main-color; /*задает цвет окружности*/
   fill: transparent;  /* если использовать none то нет задержки*/
-  stroke: $main-color;  /*задает цвет стрелки*/ /*задает цвет окружности*/
+  stroke: $main-color;  /*задает цвет стрелки*/
+}
+
+.arrow-btn-text {
+  position: relative;
+  margin-right: 5px;
 }

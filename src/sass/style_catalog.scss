@@ -2,9 +2,11 @@
 @import 'variables.scss';
 @import 'mixin.scss';
 
-@import '_main_style.scss';
+@import 'main_style.scss';
 
-@import '_header_style.scss';
+@import 'header_style.scss';
+@import 'svg.scss';
+
 
 /* --- breadcrumbs  ---*/
 .breadcrumbs {
@@ -21,12 +23,14 @@
 /* --- catalog-container ---*/
 .catalog-container {
   @include gridTemplate($count_grid-column, $grid-gap);
+  row-gap: 0;
 }
 
 .catalog-section__title {
   @include clean();
   grid-column: span 9;
   grid-row: 1/ span 1;
+  margin-bottom: 24px;
   font-weight: 400;
   font-size: 24px;
   line-height: 130%;
@@ -85,15 +89,89 @@
   margin-bottom: 0;
 }
 
-.filter__checkbox-label {
+.filter__label {
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;
   color: $text-color-grey;
 }
 
+.filter__checkbox-label {
+  position: relative;
+  padding-left: 32px;
+  cursor: pointer;
+}
+
+.filter__price-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .filter__input {
+  padding: 3px 12px 4px 12px;
   width: 86px;
+  border: 1px solid $decor-color;
+  border-radius: 2px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.filter__checkbox__input {
+  position: absolute;
+  opacity: 0;
+}
+
+.filter__checkbox-check {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $decor-color;
+  border-radius: 2px;
+  color: $text-color-light;
+}
+
+.filter__checkbox__input:checked + .filter__checkbox-check  {
+  background-color: $main-color;
+  border-color: $main-color;
+}
+
+.filter__checkbox-check::after {
+  position: absolute;
+  content: '';
+  top: 22%;
+  left: 15%;
+  width: 12px;
+  height: 6px;
+  border: 2px solid $text-color-light;
+  border-top: none;
+  border-right: none;
+  transform: rotate(315deg);
+  opacity: 0;
+}
+
+.filter__checkbox__input:checked + .filter__checkbox-check::after   {
+  opacity: 1;
+}
+
+/*filter__checkbox effect*/
+.filter__checkbox-check  {
+  transition: border-color 0.4s ease-in-out;
+}
+
+.filter__checkbox__input:focus-visible + .filter__checkbox-check  {
+  border-color: $main-color;
+  background-color: $main-color-light;
+}
+
+.filter__checkbox__input:hover + .filter__checkbox-check  {
+  border-color: $main-color;
+}
+
+.filter__checkbox__input:active + .filter__checkbox-check  {
+  border-color: $main-color-dark;
 }
 
 /* catalog */
@@ -102,7 +180,6 @@
   grid-column: span 9;
   grid-row: 2 / 4;
   @include gridTemplate( $count_grid-column-1024, $grid-gap);
-  margin-top: -8px;
 }
 
 @import '_cards_style.scss';
@@ -158,16 +235,57 @@
 }
 
 .banner__link  {
-  position: relative;
   display: flex;
   align-items: center;
+}
+
+.banner__link-text {
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.banner__link-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* catalog-btn-container*/
+.catalog-btn-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: $grid-gap;
+}
+
+.catalog__btn {
+  visibility: visible;
+  padding: 8px 11px;
+  border-radius: 10px;
+  border: 2px solid $main-color;
+  font-weight: 600;
   font-size: 16px;
   line-height: 100%;
+  color: $main-color;
+  background-color: transparent;
+}
+
+.catalog__btn--active {
+  color: $text-color-light;
+  background-color: $main-color;
+}
+
+.catalog__btn--hidden {
+  position: absolute;
+  visibility: hidden;
+  color: $text-color-light;
+  background-color: $main-color;
 }
 
 @import '_footer_style.scss';
 
-@import 'svg.scss';
-@import 'effects.scss';
+@import '_main_effects.scss';
+
+//@import 'effects.scss';
 @import 'media.scss';
 
