@@ -311,14 +311,7 @@
     top: calc(50% - 4px);
     right: $internal-padding;
     margin-top: 0;
-    width: 8px;
-    height: 8px;
-
-    border: 1px solid $main-color;
-    border-top: none;
-    border-right: none;
-    transform: rotate(-45deg);
-    transition: transform 0.3s ease-in-out, border-color 0.4s ease;
+    @include arrow-drop-down();
   }
 
   .choices__inner::after {

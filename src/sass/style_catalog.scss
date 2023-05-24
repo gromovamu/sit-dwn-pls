@@ -61,6 +61,7 @@
 }
 
 .filter__fieldset {
+  position: relative;
   @include clean();
   margin-bottom: 26px;
   border: none;
@@ -69,12 +70,25 @@
 .filter__subtitle {
   @include clean();
   margin-bottom: 9px;
-
   font-weight: 600;
   font-size: 16px;
   line-height: 130%;
   color: $text-color-grey;
 }
+
+.filter__btn {
+  visibility: hidden;
+  position: absolute;
+  font-weight: 400;
+}
+
+.filter__btn,
+.filter__subtitle {
+  font-size: 16px;
+  line-height: 130%;
+  color: $text-color-grey;
+}
+
 
 .filter__checkbox-list {
   display: flex;
@@ -109,6 +123,7 @@
 }
 
 .filter__input {
+  margin-left: 9px;
   padding: 3px 12px 4px 12px;
   width: 86px;
   border: 1px solid $decor-color;

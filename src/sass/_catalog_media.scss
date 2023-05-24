@@ -33,6 +33,8 @@
 
   .filter__title {
     grid-column: span 1;
+    align-self: center;
+    margin-bottom: $grid-gap;
   }
 
   .filter__fieldset {
@@ -52,16 +54,82 @@
   .filter__fieldset {
     position: relative;
     flex-grow: 1;
+    margin-bottom: $grid-gap;
   }
 
-  .filter__checkbox-list {
+  .filter__container {
     position: absolute;
     visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 56;
+    padding: (40px + $internal-padding-mobile) $internal-padding-mobile $internal-padding-mobile $internal-padding-mobile;
+    width: 100%;
+    outline: 2px solid $background-secondary-color;
+    outline-offset: -2px;
+    border-radius: 10px;
+    background-color: $background-main-color;
+  }
+
+  .filter__container--active {
+    visibility: visible;
   }
 
   .filter__price-container {
-    position: absolute;
-    visibility: hidden;
+    flex-direction: column;
+    gap: $internal-padding-mobile;
   }
+
+  .filter__label {
+    display: flex;
+  }
+
+  .filter__subtitle {
+    display: none;
+  }
+
+  .filter__btn {
+    visibility: visible;
+    position: relative;
+    z-index: 57;
+    display: flex;
+    margin-bottom: 0;
+    padding: 9px 16px 9px 16px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $background-secondary-color;
+  }
+
+  .filter__btn::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 6px);
+    right: 16px;
+    @include arrow-drop-down();
+    transform-origin: center;
+  }
+
+  .filter__checkbox-list {
+
+  }
+
+  .filter__btn {
+    transition: background-color 0.4s ease-in-out;
+  }
+
+  .filter__btn:focus-visible {
+    outline: 2px solid transparent;
+    outline-color: $main-color;
+    background-color: $focus-decor-color;
+  }
+
+  .filter__btn:hover {
+    background-color: $main-color-light;
+  }
+
+  .filter__btn--active::after {
+    transform: translateY(2px) rotate(135deg);
+  }
+
 
 }
