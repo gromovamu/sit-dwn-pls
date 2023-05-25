@@ -1,0 +1,29 @@
+@media (max-width: 900px) {
+  .container{
+    padding: 0 $container-padding-768;
+  }
+}
+//------------------------------------------------------------
+@media (max-width: 760px) {
+  .container{
+    padding: 0 $container-padding-320;
+  }
+}
+//-----------------------------------------------------------------------------------------------
+@media (max-width: 520px) {
+  .btn-decor1 {
+    padding: 22px 0;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  .container {
+    padding: 0 $container-padding-320;
+  }
+}
+/* --------------------------------------------------------------------------------------------------*/
+@media (max-width: 410px) {
+  .btn-decor1 {
+    width: 100%;
+  }
+}

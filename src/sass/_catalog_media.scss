@@ -160,14 +160,15 @@
   .filter__fieldset {
     margin-bottom: $internal-padding-mobile;
   }
-
-
-
 }
 
 @media (max-width: 760px) {
   .filter {
     grid-column: span $count_grid-column-768;
+  }
+
+  .catalog {
+    grid-template-columns: repeat($count_grid-column-768, 1fr);
   }
 
 }
