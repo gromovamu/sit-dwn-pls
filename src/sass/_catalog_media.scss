@@ -5,7 +5,7 @@
 
   .catalog-section__title {
     grid-column: 1/ span $count_grid-column-1024;
-    margin-bottom: 16px;
+    margin-bottom: 27px;
   }
 
   .filter {
@@ -27,7 +27,7 @@
   }
 
   .catalog-btn-container {
-    grid-column: span 9;
+    grid-column: span $count_grid-column-1024;
     grid-row: initial;
   }
 
@@ -109,10 +109,6 @@
     transform-origin: center;
   }
 
-  .filter__checkbox-list {
-
-  }
-
   .filter__btn {
     transition: background-color 0.4s ease-in-out;
   }
@@ -130,6 +126,55 @@
   .filter__btn--active::after {
     transform: translateY(2px) rotate(135deg);
   }
+}
+
+@media (max-width: 900px) {
+  .catalog-container {
+    grid-template-columns: repeat($count_grid-column-768, 1fr);
+  }
+
+  .catalog-section__title {
+    grid-column: 1/ span $count_grid-column-768;
+  }
+
+  .catalog {
+    grid-column: span $count_grid-column-768;
+  }
+
+  .catalog-btn-container {
+    grid-column: span $count_grid-column-768;
+  }
+
+  .filter {
+    grid-column: span 4;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .filter__title {
+    grid-column: span 4;
+    margin-bottom: $internal-padding-mobile;
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  .filter__fieldset {
+    margin-bottom: $internal-padding-mobile;
+  }
 
 
+
+}
+
+@media (max-width: 760px) {
+  .filter {
+    grid-column: span $count_grid-column-768;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .breadcrumbs {
+    visibility: hidden;
+    position: absolute;
+  }
 }

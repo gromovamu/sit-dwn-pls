@@ -9,11 +9,13 @@
 
 
 /* --- breadcrumbs  ---*/
-.breadcrumbs {
-  padding-top: 23px;
-  font-size: 14px;
-  line-height: 16px;
-  color: $decor-color;
+.header {
+  .breadcrumbs {
+    padding-top: 23px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $decor-color;
+  }
 }
 
 .breadcrumbs__link-last {
@@ -171,24 +173,6 @@
   opacity: 1;
 }
 
-/*filter__checkbox effect*/
-.filter__checkbox-check  {
-  transition: border-color 0.4s ease-in-out;
-}
-
-.filter__checkbox__input:focus-visible + .filter__checkbox-check  {
-  border-color: $main-color;
-  background-color: $main-color-light;
-}
-
-.filter__checkbox__input:hover + .filter__checkbox-check  {
-  border-color: $main-color;
-}
-
-.filter__checkbox__input:active + .filter__checkbox-check  {
-  border-color: $main-color-dark;
-}
-
 /* catalog */
 
 .catalog {
@@ -300,7 +284,7 @@
 @import 'footer_style.scss';
 
 @import 'main_effects.scss';
+@import 'catalog_effect.scss';
 
-//@import 'effects.scss';
 @import 'media.scss';
 @import 'catalog_media.scss';

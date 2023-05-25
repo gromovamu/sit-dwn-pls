@@ -1,0 +1,17 @@
+/*filter__checkbox effect*/
+.filter__checkbox-check  {
+  transition: border-color 0.4s ease-in-out;
+}
+
+.filter__checkbox__input:focus-visible + .filter__checkbox-check  {
+  border-color: $main-color;
+  background-color: $main-color-light;
+}
+
+.filter__checkbox__input:hover + .filter__checkbox-check  {
+  border-color: $main-color;
+}
+
+.filter__checkbox__input:active + .filter__checkbox-check  {
+  border-color: $main-color-dark;
+}
