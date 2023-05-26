@@ -8,12 +8,201 @@
 @import 'svg.scss';
 
 /* --- catalog-container ---*/
-.catalog-container {
+.product-grid-container {
   @include gridTemplate($count_grid-column, $grid-gap);
   row-gap: 0;
 }
 
+.product__img-main {
+  grid-column: span 6;
+  margin-bottom: 16px;
+}
 
+.product__img-preview-container {
+  grid-column: span 6;
+  grid-row: 2/3;
+  margin-bottom: $grid-gap;
+}
+
+.product__description {
+  grid-column: span 6;
+  grid-row: 3/4;
+}
+
+.product__img-draft {
+  grid-column: span 6;
+  grid-row: 4/5;
+  justify-self: start;
+  align-self: end;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.product__characteristic {
+  grid-column:  7/span 6;
+  grid-row: 3/5;
+}
+
+.product__img-pre-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 38px;
+  padding: 10px 25px;
+  width: 100%;
+  background-color: $background-secondary-color;
+}
+
+.product__img-preview-btn {
+  cursor: pointer;
+}
+
+.product__description-title {
+  @include clean();
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.product__description-text {
+  @include clean();
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 180%;
+}
+
+/* product__card */
+.product__card {
+  grid-column: 7/span 6;
+  grid-row: 1/3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .estimation {
+    position: relative;
+    margin-bottom: 2px;
+    top:initial;
+    left:initial;
+  }
+}
+
+ .section__title {
+  @include clean();
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+}
+
+.product__name {
+  margin-bottom: 5px
+}
+
+.product__descr {
+  @include clean();
+  margin-bottom: 21px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.product__price {
+  @include clean();
+  margin-bottom: 21px;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 130%;
+}
+
+.product__btn {
+  margin-bottom: 12px;
+  padding: 19px 35px;
+}
+
+.product__btn-add {
+  padding: 0 32px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: $main-color;
+}
+
+/* product__characteristic */
+.product__characteristic-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 180%;
+}
+
+.product__characteristic-name {
+  flex-shrink: 0;
+  margin-right: 4px;
+  color: $decor-color;
+}
+
+.product__characteristic-value {
+  flex-shrink: 0;
+}
+
+.points {
+  position: relative;
+  flex-grow: 1;
+  margin-right: 4px;
+  padding: 0 4px 0 4px;
+  overflow: hidden;
+  letter-spacing: 0.2em;
+  color: $decor-color;
+}
+
+.points::after {
+  position: relative;
+  content: '..............................................................................................................................................................';
+}
+/*
+.points {
+  position: relative;
+  flex-grow: 1;
+  margin-right: 4px;
+}
+
+.points::after {
+  position: absolute;
+  content: '';
+  bottom: 7px;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  border-bottom: 2px dotted $decor-color;
+}*/ //еще вариант организации точек
+
+/* hover - effects*/
+.product__btn-add {
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.product__btn-add:focus-visible {
+  background-color: $focus-decor-color;
+}
+
+.product__btn-add:hover {
+  color: $main-color-light;
+}
+
+.product__btn-add:active {
+  color: $main-color-dark;
+}
+
+
+@import 'cards_style.scss';
 @import 'footer_style.scss';
 @import 'main_effects.scss';
 @import 'main_media.scss';
