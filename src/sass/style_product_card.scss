@@ -1,0 +1,19 @@
+/* variables */
+@import 'variables.scss';
+@import 'mixin.scss';
+
+@import 'main_style.scss';
+
+@import 'header_style.scss';
+@import 'svg.scss';
+
+/* --- catalog-container ---*/
+.catalog-container {
+  @include gridTemplate($count_grid-column, $grid-gap);
+  row-gap: 0;
+}
+
+
+@import 'footer_style.scss';
+@import 'main_effects.scss';
+@import 'main_media.scss';

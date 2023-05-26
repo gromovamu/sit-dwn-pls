@@ -493,5 +493,19 @@
   opacity: 0;
 }
 
+/* --- breadcrumbs  ---*/
+.header {
+  .breadcrumbs {
+    padding-top: 23px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $decor-color;
+  }
+}
+
+.breadcrumbs__link-last {
+  color: $main-color;
+}
+
 @import '_header_effects.scss';
 @import '_header_media.scss';

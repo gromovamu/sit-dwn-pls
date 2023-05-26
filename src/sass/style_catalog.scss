@@ -7,21 +7,6 @@
 @import 'header_style.scss';
 @import 'svg.scss';
 
-
-/* --- breadcrumbs  ---*/
-.header {
-  .breadcrumbs {
-    padding-top: 23px;
-    font-size: 14px;
-    line-height: 16px;
-    color: $decor-color;
-  }
-}
-
-.breadcrumbs__link-last {
-  color: $main-color;
-}
-
 /* --- catalog-container ---*/
 .catalog-container {
   @include gridTemplate($count_grid-column, $grid-gap);
