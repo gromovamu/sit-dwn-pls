@@ -19,10 +19,10 @@
   <header class="header">
     @include('./html/_header.html')
       <div class="container breadcrumbs">
-        <a class="breadcrumbs__link nav-link-decor" href="index.html">Главная</a>&nbsp;/&nbsp;
-        <a class="breadcrumbs__link nav-link-decor" href="#">Каталог</a>&nbsp;/&nbsp;
-        <a class="breadcrumbs__link nav-link-decor" href="#">Диваны</a>&nbsp;/&nbsp;
-        <a class="breadcrumbs__link nav-link-decor" href="catalog.html">Прямые диваны</a>
+        <a class="breadcrumbs__link nav-link-decor" href="index.html">Главная</a>/
+        <a class="breadcrumbs__link nav-link-decor" href="#">Каталог</a>/
+        <a class="breadcrumbs__link nav-link-decor" href="#">Диваны</a>/
+        <a class="breadcrumbs__link nav-link-decor" href="catalog.html">Прямые диваны</a>/
         <a class="breadcrumbs__link nav-link-decor breadcrumbs__link-last" href="#">D-31</a>
     </div>
   </header>
@@ -33,6 +33,9 @@
     <section class="section product">
       <div class="container product-grid-container">
         <picture class="product__img-main">
+          <source srcset="./img/catalog/sofas/D-31/main-img-320.png" media="(max-width: 520px)">
+          <source srcset="./img/catalog/sofas/D-31/main-img-1024.png" media="(max-width: 760px)">
+          <source srcset="./img/catalog/sofas/D-31/main-img.png" media="(max-width: 900px)">
           <source srcset="./img/catalog/sofas/D-31/main-img-1024.png" media="(max-width: 1200px)">
           <img class="category__img" src="./img/catalog/sofas/D-31/main-img.png" alt="Изоброжение товара">
         </picture>
@@ -74,9 +77,9 @@
         </div>
 
         <div class="product__img-draft">
-          <img class="product__img-pre" src="./img/catalog/sofas/D-31/line-img-1.png" alt="Схематичное изображение">
+          <img class="product__img-draft-pre" src="./img/catalog/sofas/D-31/line-img-1.png" alt="Схематичное изображение">
 
-          <img class="product__img-pre" src="./img/catalog/sofas/D-31/line-img-2.png" alt="Схематичное изображение">
+          <img class="product__img-draft-pre" src="./img/catalog/sofas/D-31/line-img-2.png" alt="Схематичное изображение">
         </div>
 
         <div class="product__card">
@@ -330,6 +333,8 @@
   </footer>
 
   <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/choices.min.js"></script>
+  <script src="js/initChoices.js"></script>
   <script src="js/burger.js"></script>
   <script src="js/catalog.js"></script>
   <script src="js/similarCatalogCardShow.js"></script>

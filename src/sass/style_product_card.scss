@@ -37,7 +37,7 @@
 
   display: flex;
   justify-content: space-between;
-  gap: 32px;
+  gap: $grid-gap;
 }
 
 .product__characteristic {
@@ -229,3 +229,4 @@
 @import 'footer_style.scss';
 @import 'main_effects.scss';
 @import 'main_media.scss';
+@import 'product_media.scss';
