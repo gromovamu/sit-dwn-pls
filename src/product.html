@@ -295,26 +295,29 @@
       </div>
     </section>
 
-    <section class="section catalog">
-      <div class="container">
-        <h2 class="section__title catalog__title">
+    <section class="section similar">
+      <div class="container similar__container">
+        <h2 class="section__title similar__title">
           Похожие товары
         </h2>
 
-        <div class="catalog__container">
-
+        <div class="similar__container similar__swiper-container">
+          <!-- враппер -->
+          <ul class="list swiper-wrapper similar__list">
+          <!-- слайды -->
+          </ul>
         </div>
 
-        <div class="catalog__btn-container">
-          <button class="btn catalog__btn catalog__btn-prev arrow-btn-decor">
+        <div class="similar__btn-container swiper__btn-container">
+          <button class="btn swiper-button similar__btn-prev arrow-btn-decor">
             <svg class="arrow-icon" viewBox="0 0 32 32">
               <use xlink:href="#big-arrow-left"></use>
            </svg>
           </button>
 
-          <button class="btn catalog__btn catalog__btn-next arrow-btn-decor">
+          <button class="btn swiper-button similar__btn-next arrow-btn-decor">
             <svg class="arrow-icon" viewBox="0 0 32 32">
-              <use xlink:href="#big-arrow-right"></use>
+              <use xlink:href="#big-arrow"></use>
            </svg>
           </button>
         </div>
@@ -326,8 +329,9 @@
     @include('./html/_footer.html')
   </footer>
 
+  <script src="js/swiper-bundle.min.js"></script>
   <script src="js/burger.js"></script>
   <script src="js/catalog.js"></script>
- <!-- <script src="js/similar-show.js"></script>-->
+  <script src="js/similarCatalogCardShow.js"></script>
 </body>
 </html>

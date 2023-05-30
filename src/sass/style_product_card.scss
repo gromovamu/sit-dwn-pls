@@ -122,6 +122,7 @@
 .product__btn {
   margin-bottom: 12px;
   padding: 19px 35px;
+  font-weight: 600;
 }
 
 .product__btn-add {
@@ -167,7 +168,7 @@
   position: relative;
   content: '..............................................................................................................................................................';
 }
-/*
+/* еще вариант организации точек
 .points {
   position: relative;
   flex-grow: 1;
@@ -182,7 +183,29 @@
   width: 100%;
   height: 14px;
   border-bottom: 2px dotted $decor-color;
-}*/ //еще вариант организации точек
+}*/
+
+/* ---- similar --- */
+.similar__title {
+  margin-bottom: 24px;
+}
+
+.similar__container {
+  position: relative;
+}
+
+.similar__btn-container {
+  position: absolute;
+  top: 0;
+  right: $container-padding;
+  display: flex;
+  justify-content: space-between;
+  gap:13px;
+}
+
+.similar__swiper-container {
+  overflow: hidden;
+}
 
 /* hover - effects*/
 .product__btn-add {

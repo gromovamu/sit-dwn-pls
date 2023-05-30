@@ -136,12 +136,12 @@
     let cardName = card.name.replace('-', '&#8209;');
     let cardPrice = card.price.replace(' ', '&nbsp;');
 
-    let textCard = "<li class=\"catalog__item catalog__item--hidden\"> <div class=\"estimation\"> <svg class=\"star\" viewBox=\"0 0 16 15\"\> <use xlink:href=\"#star\"> </use> </svg> <span class=\"estimation-descr\"> 5,0 </span></div> <picture  class=\"catalog__picture\"> <source srcset=\"" + card.sourceUrl +"\" media=\"(max-width: 520px)\"> <img class=\"catalog__img \" src=\"" + card.imgUrl +"\" alt=\"изображение товара\"> </picture><div class=\"catalog__descr-container\"> <h3 class=\"catalog__name\">" +  cardName + " </h3> <p class=\"catalog__price\">" + cardPrice + "</p> <a class=\"btn btn-decor2\">Купить</a> </div> </li> ";
+    let textCard = "<li class=\"catalog__item\"> <div class=\"estimation\"> <svg class=\"star\" viewBox=\"0 0 16 15\"\> <use xlink:href=\"#star\"> </use> </svg> <span class=\"estimation-descr\"> 5,0 </span></div> <picture  class=\"catalog__picture\"> <source srcset=\"" + card.sourceUrl +"\" media=\"(max-width: 520px)\"> <img class=\"catalog__img \" src=\"" + card.imgUrl +"\" alt=\"изображение товара\"> </picture><div class=\"catalog__descr-container\"> <h3 class=\"catalog__name\">" +  cardName + " </h3> <p class=\"catalog__price\">" + cardPrice + "</p> <a class=\"btn btn-decor2\">Купить</a> </div> </li> ";
     return textCard;
  }
 
 // это условная фунция, здесь мог бы быть код запроса на сервер
-// функция работает изходя из условия, что карточки догружаются в конец списка( она не универсальная)
+// функция работает изходя из условия, что карточки догружаются в конец  существующего списка (она не универсальная)
 // она не проверяет индексы
  function loadCards(indexStart,indexStop) {
    let loadBlock = catalogBase.slice(indexStart, indexStop);
@@ -159,4 +159,4 @@
    lastItem.insertAdjacentHTML('afterend', htmlTextCards);
  }
 
- //я понимаю, что функция не оптимальна, здесь не было цели продумать все досканально, т.к. в реальной работе эти функии не понадобились бы, т.к были бы другие, для работы с сервером
+ //я понимаю, что функции не оптимальны, здесь у меня не было цели продумать все досканально, т.к. в реальной работе эти функии не понадобились бы, т.к были бы другие, для работы с сервером. Здесь не ставила себе цель продумать взаимодействие с ним т.к. в центре анимания была верстка

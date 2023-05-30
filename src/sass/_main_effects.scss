@@ -76,15 +76,6 @@
   color: $main-color-dark;
 }
 
-.swiper-button-disabled:focus-visible,
-.swiper-button-disabled:hover,
-.swiper-button-disabled:active {
-  overflow: auto;
-  color: $decor-color;
-  stroke: $decor-color;
-  fill: transparent;
-}
-
 // ссылка на какталог со стрелкой
 // эффект подчеркивания
 .arrow-btn-text::before {
@@ -133,3 +124,18 @@ stroke: - задает цвет стрелки */
   stroke: $text-color-light;
 }
 
+//----- стрелки в слйдерах -----
+.swiper-button-disabled {
+  color: $decor-color;
+  stroke: $decor-color;
+  cursor: default;
+}
+
+.swiper-button-disabled:focus-visible,
+.swiper-button-disabled:hover,
+.swiper-button-disabled:active {
+  overflow: auto;
+  color: $decor-color;
+  stroke: $decor-color;
+  fill: transparent;
+}
