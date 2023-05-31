@@ -149,4 +149,14 @@
   .points {
     display: none;
   }
+
+  .similar__container {
+    padding-bottom: 48px;
+  }
+
+  .similar__btn-container {
+    top: initial;
+    bottom: 0;
+    right: calc(50% - 38.5px);
+  }
 }

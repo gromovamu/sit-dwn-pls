@@ -14,8 +14,17 @@
 }
 
 .product__img-main {
+  display: flex;
   grid-column: span 6;
   margin-bottom: 16px;
+  justify-content: center;
+  align-items: center;
+  min-height: 245px;
+}
+
+.product__img {
+  height: 100%;
+  object-fit: contain;
 }
 
 .product__img-preview-container {
@@ -45,17 +54,38 @@
   grid-row: 3/5;
 }
 
+.product__img-preview-container {
+  overflow: hidden;
+}
+
 .product__img-pre-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 38px;
+  position: relative;
+ // display: flex;
+ // justify-content: space-between;
+ // gap: 38px;
   padding: 10px 25px;
-  width: 100%;
+  //width: 100%;
   background-color: $background-secondary-color;
+}
+
+.product__img-preview-item {
+  flex-shrink: 0;
+ outline: auto;
+ max-width: fit-content; //! в IE не поддерживается, но я пока не придумала, как по другому сделать чтоб swiper не растягивал, может свойство есть, но  не нашла
+  max-height: 61px;
 }
 
 .product__img-preview-btn {
   cursor: pointer;
+}
+
+.product__img-preview-item--hidden {
+  visibility: hidden;
+  position: absolute;
+}
+
+.product__img-pre {
+  max-height: 61px;
 }
 
 .product__description-title {
@@ -167,7 +197,7 @@
 .points::after {
   position: relative;
   content: '..............................................................................................................................................................';
-}
+ }
 /* еще вариант организации точек
 .points {
   position: relative;
@@ -200,11 +230,16 @@
   right: $container-padding;
   display: flex;
   justify-content: space-between;
-  gap:13px;
+  gap: 13px;
 }
 
 .similar__swiper-container {
   overflow: hidden;
+}
+
+.swiper-slide {
+ // width: initial;
+  height: initial; //! если будет 100% то не растягивается по align-item: stretch, пока не поняла почему
 }
 
 /* hover - effects*/
