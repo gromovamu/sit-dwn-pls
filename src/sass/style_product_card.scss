@@ -8,6 +8,10 @@
 @import 'svg.scss';
 
 /* --- catalog-container ---*/
+ .product {
+  margin-bottom: 81px;
+ }
+
 .product-grid-container {
   @include gridTemplate($count_grid-column, $grid-gap);
   row-gap: 0;
@@ -19,7 +23,7 @@
   margin-bottom: 16px;
   justify-content: center;
   align-items: center;
-  min-height: 245px;
+  min-height: 245px; // вот это только для того чтобы показать красиво картинки, которых пока нет
 }
 
 .product__img {
@@ -74,6 +78,11 @@
   line-height: 0;
 }
 
+.product__img-preview-item {
+  font-size: 0;
+  line-height: 0;
+}
+
 .product__img-preview-item--hidden {
   visibility: hidden;
   position: absolute;
@@ -94,7 +103,7 @@
 
 .product__description-text {
   @include clean();
-  margin-bottom: 16px;
+  margin-bottom: 6px;
   font-weight: 400;
   font-size: 14px;
   line-height: 180%;
@@ -109,6 +118,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding-top: 14px;
 
   .estimation {
     position: relative;
@@ -135,6 +145,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
+  color: $decor-color;
 }
 
 .product__price {
@@ -167,7 +178,7 @@
   width: 100%;
   font-weight: 400;
   font-size: 14px;
-  line-height: 180%;
+  line-height: 179%; //180% не попадало в макет ( в макете высота получалась 25px, а в браузере 25,188)
 }
 
 .product__characteristic-name {
@@ -178,6 +189,7 @@
 
 .product__characteristic-value {
   flex-shrink: 0;
+  flex-basis: calc((100% - $grid-gap) / 2 );
 }
 
 .points {

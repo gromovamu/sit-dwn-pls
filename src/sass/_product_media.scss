@@ -1,4 +1,8 @@
 @media (max-width: 1200px) {
+  .product {
+    margin-bottom: 70px;
+   }
+
   .product-grid-container {
     grid-template-columns: repeat($count_grid-column-1024, 1fr);
   }
@@ -27,6 +31,14 @@
     grid-column: 6/span 4;
   }
 
+  .product__img-main {
+    min-height: 202px; // вот это только для того чтобы показать красиво картинки, которых пока нет
+  }
+
+  .img-pre__swiper-container {
+    padding: 10px;
+  }
+
  .product__img-draft {
     gap: 28px;
   }
@@ -34,10 +46,17 @@
   .product__img-draft-pre {
     max-width: calc((100% - 28px) / 2);
   }
+
+  .product__characteristic-value {
+    flex-basis: calc(50% + 14px);
+  }
 }
 
 
 @media (max-width: 900px) {
+  .product {
+    margin-bottom: 32px;
+  }
   .product-grid-container {
     grid-template-columns: repeat($count_grid-column-768, 1fr);
     row-gap: $grid-gap;
@@ -47,6 +66,8 @@
     grid-column: span $count_grid-column-768;
     grid-row: initial;
     justify-self: center;
+    margin-bottom: 0;
+    min-height: 245px; // вот это только для того чтобы показать красиво картинки, которых пока нет
   }
 
   .product__img-preview-container {
@@ -67,6 +88,14 @@
     order: 1;
   }
 
+  .product__description-text {
+    width: 84%;
+  }
+
+  .product__description-text:last-of-type {
+    margin-bottom: 0;
+  }
+
   .product__characteristic {
     grid-column: span $count_grid-column-768;
     grid-row: initial;
@@ -77,12 +106,17 @@
     grid-column: span 4;
     grid-row: initial;
     align-self: center;
+    padding-top: 0;
   }
 
   .product__img-pre-list {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+  }
+
+  .product__characteristic-value {
+    flex-basis: 35%;
   }
 
   .img-pre__swiper-container {
@@ -100,6 +134,10 @@
     display: none;
   }
 
+  .product {
+    margin-bottom: 70px;
+  }
+
   .product-grid-container {
     row-gap: $grid-gap-mobile;
   }
@@ -110,10 +148,15 @@
 
   .product__card {
     grid-column: span $count_grid-column-768;
+    padding-top: 6px;
   }
 
   .product__img-pre-list {
     flex-direction: row;
+  }
+
+  .product__img-main {
+    min-height: 116px; // вот это только для того чтобы показать красиво картинки, которых пока нет
   }
 
   .img-pre__swiper-container {
@@ -128,15 +171,45 @@
   .product__descr {
     font-size: 14px;
     line-height: 100%;
+    width: 80%;
   }
 
   .product__price {
+    margin-bottom: 16px;
     font-size: 24px;
     line-height: 130%;
   }
 
   .product__btn {
+    padding: 19px 10px;
     width: 100%;
+  }
+
+  .product__btn-add {
+    align-self: center;
+    margin-bottom: $grid-gap-mobile;
+  }
+
+  .product__description {
+    margin-bottom: $grid-gap-mobile;
+  }
+
+  .product__description-text {
+    width: 100%;
+  }
+
+  .product__img-draft {
+    margin-bottom: $grid-gap-mobile;
+  }
+
+  .product__characteristic-value {
+    line-height: 136%; //19px
+  }
+
+  .similar {
+    .btn-decor2 {
+      padding: 10px 23px;
+    }
   }
 }
 

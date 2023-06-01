@@ -50,6 +50,15 @@
     margin-bottom: 0;
   }
 
+
+  .footer__nav-item:nth-child(2) {
+    min-width: initial;
+  }
+
+  .footer__nav-item:nth-child(3) {
+    min-width: inherit;
+  }
+
 }
 //-----------------------------------------------------------------------------------------------
 @media (max-width: 520px) {

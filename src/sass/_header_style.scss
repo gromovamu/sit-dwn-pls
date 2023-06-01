@@ -462,7 +462,7 @@
 
 .basket-btn {
   position: relative;
-  padding: 4px 4px 4px 16px;
+  padding: 4px 4px 4px 12px;
 }
 
 .basket-btn__count {
@@ -496,11 +496,20 @@
 /* --- breadcrumbs  ---*/
 .header {
   .breadcrumbs {
-    padding-top: 23px;
+    padding-top: 22px;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 100%;
     color: $decor-color;
   }
+}
+
+.breadcrumbs__link {
+  padding: 0 2px;
+  line-height: 100%;
+}
+
+.breadcrumbs__link-first {
+  margin-left: -2px;
 }
 
 .breadcrumbs__link-last {

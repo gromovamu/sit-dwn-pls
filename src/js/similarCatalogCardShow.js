@@ -135,6 +135,12 @@
         spaceBetween: 16,
       },
 
+      // when window width is >= 760px
+      760: {
+        slidesPerView: 2,
+        spaceBetween: 32,
+      },
+
       // when window width is >= 900px
       900: {
         slidesPerView: 3,

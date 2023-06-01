@@ -73,6 +73,21 @@
   margin-bottom: 0;
 }
 
+// я считаю что в макете ошибка, не вижу целесообразной причины длелать разные расстояния между элементами списка
+// никакой закономерности я не вижу, так что
+// для того чтобы соответсвовала pixel perfect придется внести ограничения для ширины конкретно в px
+.footer__nav-item:nth-child(2) {
+  //.footer__links-list {
+    min-width: 160px;
+  //}
+}
+
+.footer__nav-item:nth-child(3) {
+  //.footer__links-list {
+  min-width: 148px;
+  //}
+}
+
 .footer__copy {
   display: flex;
   justify-content: center;
