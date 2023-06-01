@@ -85,6 +85,11 @@
     align-items: center;
   }
 
+  .img-pre__swiper-container {
+    padding: 25px;
+    max-height: 350px;
+  }
+
   .similar__btn-container {
     right: $container-padding-768;
   }
@@ -109,6 +114,10 @@
 
   .product__img-pre-list {
     flex-direction: row;
+  }
+
+  .img-pre__swiper-container {
+    padding: 10px;
   }
 
   .product__name {

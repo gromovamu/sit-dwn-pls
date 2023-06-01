@@ -156,28 +156,33 @@
   //----------------------------------------------------------------------
   /* инициализация слайдера для секции similar  */
   const imgPreSwiper = new Swiper('.img-pre__swiper-container', {
-    slidesPerView: 4,
+    slidesPerView: 'auto',
     loop: false,
     spaceBetween: 38,
+    direction: 'horizontal',
 
-    /*breakpoints: {
+
+    breakpoints: {
       // when window width is >= 280px
       280: {
-        slidesPerView: 2,
-        spaceBetween: 16,
+        direction: 'horizontal',
+        spaceBetween: 38,
+      },
+
+      // when window width is >= 520px
+      520: {
+        direction: 'vertical',
+        spaceBetween: 18,
       },
 
       // when window width is >= 900px
       900: {
-        slidesPerView: 3,
-      },
-
-      // when window width is >= 900px
-      1200: {
-        slidesPerView: 4,
+        direction: 'horizontal',
+        spaceBetween: 38,
       },
     },
 
+    /*
     // навигация
     navigation: {
       nextEl: '.similar__btn-next',
@@ -213,7 +218,7 @@
             li.classList.add('product__img-preview-item--hidden');
 
             // обновляем слайдер!!!!
-            console.log(imgPreSwiper.update());
+            imgPreSwiper.update();
           }
         }
       }

@@ -54,29 +54,24 @@
   grid-row: 3/5;
 }
 
-.product__img-preview-container {
-  overflow: hidden;
-}
-
-.product__img-pre-list {
-  position: relative;
- // display: flex;
- // justify-content: space-between;
- // gap: 38px;
+.img-pre__swiper-container {
   padding: 10px 25px;
-  //width: 100%;
+  overflow: hidden;
+  width: 100%;
   background-color: $background-secondary-color;
 }
 
-.product__img-preview-item {
-  flex-shrink: 0;
- outline: auto;
- max-width: fit-content; //! в IE не поддерживается, но я пока не придумала, как по другому сделать чтоб swiper не растягивал, может свойство есть, но  не нашла
-  max-height: 61px;
+.product__img-pre-list {
+  .swiper-slide {
+    height: auto;
+    width: auto;
+  }
 }
 
 .product__img-preview-btn {
   cursor: pointer;
+  font-size: 0;
+  line-height: 0;
 }
 
 .product__img-preview-item--hidden {
@@ -86,6 +81,7 @@
 
 .product__img-pre {
   max-height: 61px;
+  height: 100%
 }
 
 .product__description-title {
@@ -238,7 +234,6 @@
 }
 
 .swiper-slide {
- // width: initial;
   height: initial; //! если будет 100% то не растягивается по align-item: stretch, пока не поняла почему
 }
 
