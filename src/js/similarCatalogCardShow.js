@@ -209,8 +209,8 @@
       //console.log(img);
 
       if ( img.hasAttribute('data') ) {
-        num = img.getAttribute('data');
-        if (num != NaN) {
+        num = Number(img.getAttribute('data'));
+        if (!isNaN(num)) {
           // получаем пути для замены
           source = getSource(num);
           currentNum = ReplaceProductMainImg(source, num);
@@ -227,6 +227,9 @@
             imgPreSwiper.update();
           }
         }
+        //else {
+       //   console.log('atribute \'data\' is not a number');
+       // }
       }
     });
 
