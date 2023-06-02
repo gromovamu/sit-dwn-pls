@@ -58,9 +58,6 @@
   @include clean();
   margin-bottom: 9px;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 130%;
-  color: $text-color-grey;
 }
 
 .filter__btn {
@@ -72,7 +69,7 @@
 .filter__btn,
 .filter__subtitle {
   font-size: 16px;
-  line-height: 130%;
+  line-height: 140%;
   color: $text-color-grey;
 }
 
@@ -93,7 +90,7 @@
 .filter__label {
   font-weight: 400;
   font-size: 16px;
-  line-height: 130%;
+  line-height: 135%;
   color: $text-color-grey;
 }
 
@@ -244,7 +241,7 @@
 
 .catalog__btn {
   visibility: visible;
-  padding: 8px 11px;
+  padding: 6px 9px;
   border-radius: 10px;
   border: 2px solid $main-color;
   font-weight: 600;
