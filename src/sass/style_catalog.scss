@@ -8,6 +8,22 @@
 @import 'svg.scss';
 
 /* --- catalog-container ---*/
+.modal_mode {
+  position: relative;
+  overflow: hidden;
+}
+
+.modal_mode::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $background-dark-color;
+  opacity: 0.3;
+}
+
 .catalog-container {
   @include gridTemplate($count_grid-column, $grid-gap);
   row-gap: 0;

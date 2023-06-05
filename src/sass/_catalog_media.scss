@@ -72,10 +72,15 @@
     outline-offset: -2px;
     border-radius: 10px;
     background-color: $background-main-color;
+    //box-shadow: 1px 1px 1px $focus-decor-color;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: visibility 0.8s ease-out, transform 0.3s ease-out;
   }
 
   .filter__container--active {
     visibility: visible;
+    transform: scaleY(1);
   }
 
   .filter__price-container {
