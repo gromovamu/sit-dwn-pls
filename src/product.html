@@ -44,7 +44,7 @@
 
         <div class="product__img-preview-container img-pre__swiper-container">
           <ul class="list product__img-pre-list swiper-wrapper">
-            <li class="product__img-preview-item  swiper-slide img-preview-item--hidden">
+            <li class="product__img-preview-item  swiper-slide "> <!--img-preview-item--hidden-->
               <button class="btn product__img-preview-btn">
                 <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img.png" data ="0" alt="Предварительное изображение">
               </button>
@@ -359,39 +359,56 @@
             <img class="modal__img img" src="./img/catalog/sofas/D-31/main-modal-img.png" data="0" alt="Изоброжение товара">
           </picture>
 
-          <div class="modal__img-preview-container modal__swiper-container">
-            <ul class="list modal__img-pre-list swiper-wrapper">
-              <li class="modal__img-preview-item  swiper-slide img-preview-item--hidden">
-                <button class="btn modal__img-preview-btn">
-                  <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img.png" data ="0" alt="Предварительное изображение">
-                </button>
-              </li>
+          <div class="modal__swiper-dop-container">
+            <div class="modal__img-preview-container modal__swiper-container">
+              <ul class="list modal__img-pre-list swiper-wrapper">
+                <li class="modal__img-preview-item  swiper-slide">
+                  <button class="btn modal__img-preview-btn">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img.png" data ="0" alt="Предварительное изображение">
+                  </button>
+                </li>
 
-              <li class="modal__img-preview-item swiper-slide">
-                <button class="btn modal__img-preview-btn">
-                  <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-1.png" data ="1"  alt="Предварительное изображение">
-                </button>
-              </li>
+                <li class="modal__img-preview-item swiper-slide">
+                  <button class="btn modal__img-preview-btn">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-1.png" data ="1"  alt="Предварительное изображение">
+                  </button>
+                </li>
 
-              <li class="modal__img-preview-item swiper-slide">
-                <button class="btn modal__img-preview-btn">
-                  <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-2.png" data ="2"  alt="Предварительное изображение">
-                </button>
-              </li>
+                <li class="modal__img-preview-item swiper-slide">
+                  <button class="btn modal__img-preview-btn">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-2.png" data ="2"  alt="Предварительное изображение">
+                  </button>
+                </li>
 
-              <li class="modal__img-preview-item swiper-slide">
-                <button class="btn modal__img-preview-btn">
-                  <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-3.png" data ="3"  alt="Предварительное изображение">
-                </button>
-              </li>
+                <li class="modal__img-preview-item swiper-slide">
+                  <button class="btn modal__img-preview-btn">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-3.png" data ="3"  alt="Предварительное изображение">
+                  </button>
+                </li>
 
-              <li class="modal__img-preview-item swiper-slide">
-                <button class="btn modal__img-preview-btn">
-                  <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-4.png" data ="4"  alt="Предварительное изображение">
+                <li class="modal__img-preview-item swiper-slide">
+                  <button class="btn modal__img-preview-btn">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-4.png" data ="4"  alt="Предварительное изображение">
+                  </button>
+                </li>
+              </ul>
+
+              <div class="modal__btn-container swiper__btn-container">
+                <button class="btn swiper-button modal__btn-prev arrow-btn-decor">
+                  <svg class="arrow-icon" viewBox="0 0 32 32">
+                    <use xlink:href="#big-arrow-left"></use>
+                 </svg>
                 </button>
-              </li>
-            </ul>
+
+                <button class="btn swiper-button modal__btn-next arrow-btn-decor">
+                  <svg class="arrow-icon" viewBox="0 0 32 32">
+                    <use xlink:href="#big-arrow"></use>
+                 </svg>
+                </button>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </article>

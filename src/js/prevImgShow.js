@@ -146,18 +146,6 @@ function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName,
       // получаем пути для замены
       source = getSource(num,sourceData);
       currentNum = ReplaceProductMainImg(source, num, pictureClassName);
-      //прячем текущее предварительное изображение
-      if (currentNum != null ) {
-        // у текущего главного  убираем класс для скрытия предварительного изображения
-        let temp = document.querySelector(`.${listClassName} .img-preview-item--hidden`);
-        temp.classList.remove('img-preview-item--hidden');
-
-        // новому добавляем
-        li.classList.add('img-preview-item--hidden');
-
-        // обновляем слайдер!!!!
-        imgPreSwiper.update();
-      }
     }
   }
 }
@@ -178,6 +166,7 @@ function closeModalMode () {
     loop: false,
     spaceBetween: 38,
     direction: 'horizontal',
+    initialSlide: 1,
 
 
     breakpoints: {
@@ -208,12 +197,33 @@ function closeModalMode () {
     loop: false,
     spaceBetween: 78,
     direction: 'horizontal',
-    /*
+    initialSlide: 1,
+
+    breakpoints: {
+      // when window width is >= 280px
+      280: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+
+      // when window width is >= 520px
+      520: {
+        slidesPerView: 'auto',
+        spaceBetween: 64,
+      },
+
+      // when window width is >= 760px
+      760: {
+        slidesPerView: 'auto',
+        spaceBetween: 78,
+      },
+    },
+
     // навигация
     navigation: {
-      nextEl: '.similar__btn-next',
-      prevEl: '.similar__btn-prev',
-      },*/
+      nextEl: '.modal__btn-next',
+      prevEl: '.modal__btn-prev',
+      },
   });
 
 

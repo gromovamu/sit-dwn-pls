@@ -324,14 +324,36 @@
  /// outline: 1px solid #cc1c1c;
 }
 
-.modal__swiper-container{
-  overflow: hidden;
+// без доп div не получается красиво сделать swiper на адаптиве
+.modal__swiper-dop-container {
   background-color: $background-secondary-color;
+ // padding: 0 51px;
 }
 
-.modal__img-pre-list  {
+.modal__swiper-container {
+  overflow: hidden;
   padding: 20px 51px;
+
+  .swiper-slide {
+    height: 100%;
+  }
 }
+
+.modal__btn-container {
+position: absolute;
+visibility: hidden;
+bottom: 67px;
+right: 16px;
+display: flex;
+justify-content: space-between;
+width: calc(100% - 32px);
+}
+
+.modal__img-preview-btn {
+  font-size: 0;
+  line-height: 0;
+}
+
 /*---------------------------------*/
 
 /* hover - effects*/
