@@ -65,7 +65,7 @@
     visibility: hidden;
     top: 0;
     left: 0;
-    z-index: 56;
+    z-index: 47;
     padding: (40px + $internal-padding-mobile) $internal-padding-mobile $internal-padding-mobile $internal-padding-mobile;
     width: 100%;
     outline: 2px solid $background-secondary-color;
@@ -99,7 +99,7 @@
   .filter__btn {
     visibility: visible;
     position: relative;
-    z-index: 57;
+    z-index: 48;
     display: flex;
     margin-bottom: 0;
     padding: 9px 16px 9px 16px;
@@ -116,6 +116,22 @@
     @include arrow-drop-down();
     transform-origin: center;
   }
+
+  .filter__btn--active + .filter__btn::after {
+    transform: rotate(45deg);
+  }
+
+
+  .filter__down {
+    .filter__btn {
+      z-index: 46;
+    }
+
+    .filter__container {
+      z-index: 45;
+    }
+  }
+  //------hover effect проявляются -----
 
   .filter__btn {
     transition: background-color 0.4s ease-in-out;

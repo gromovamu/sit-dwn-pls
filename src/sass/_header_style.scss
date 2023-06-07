@@ -402,7 +402,7 @@
     border-top: none;
     transform: scaleY(0);
     transform-origin: right top;
-    transition: transform 0.2s ease-out;
+    transition: visibility 0.8s ease-out, transform 0.2s ease-out; //почему-то все равно плавно не закрывается
   }
 
   .is-open .choices__list--dropdown,
