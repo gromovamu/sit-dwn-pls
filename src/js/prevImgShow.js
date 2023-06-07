@@ -159,6 +159,23 @@ function setModalMode () {
 function closeModalMode () {
   document.querySelector('.body').classList.remove('modal-mode');
 }
+
+// функция закрытия модального окна
+function closeModal() {
+  // закрываем окно просмотра
+  document.querySelector('.modal-img').classList.remove('modal--active');
+  // убираем модальный режим
+  closeModalMode();
+}
+
+function clickWithinModal(event) {
+  event._isClickWhitinFilter = true;
+}
+
+function customClick(event) {
+  if( event._isClickWhitinFilter )return;
+  closeModal();
+}
 //----------------------------------------------------------------------
   /* инициализация слайдера для блока с превью  */
   const imgPreSwiper = new Swiper('.img-pre__swiper-container', {
@@ -244,11 +261,12 @@ document.querySelectorAll('.modal__img-preview-btn').forEach(function (btn) {
 
 
 // добавим обработчик события для открытия модального окна с изображениями
-document.querySelector('.product__img-btn').addEventListener( 'click', function() {
+document.querySelector('.product__img-btn').addEventListener( 'click', function(event) {
   //console.log('modal mode active')
   setModalMode();
   // открываем окно просмотра
-  document.querySelector('.modal-img').classList.add('modal--active');
+  let modal = document.querySelector('.modal-img');
+  modal.classList.add('modal--active');
   // если открыто не первое изображение, то загружаем аналогичное тому, которое сейчас выбрано основным
   // но из изображений для модального окна
   // действия аналогичны обработчику кнопки превью, так что воспользуемя функцией для обработчика
@@ -262,12 +280,12 @@ document.querySelector('.product__img-btn').addEventListener( 'click', function(
       }
     });
   }
+  event._isClickWhitinFilter = true;
+  // добавляем обработчик события для клика на самом модальном окне
+  modal.addEventListener('click', clickWithinModal);
+  // добавляем обработчик события для клика вне модального окна
+  document.querySelector('.modal-mode').addEventListener('click', customClick);
 });
 
 //добавим обработчик события для закрытия модального окна с изображениями
-document.querySelector('.modal-close-btn').addEventListener( 'click', function() {
-  // закрываем окно просмотра
-  document.querySelector('.modal-img').classList.remove('modal--active');
-  // убираем модальный режим
-  closeModalMode();
-});
+document.querySelector('.modal-close-btn').addEventListener( 'click', closeModal);
