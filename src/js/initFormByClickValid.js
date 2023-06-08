@@ -4,15 +4,11 @@ let im = new Inputmask("+7(999) 999-99-99");
 
 im.mask(telField);
 
-let feedbackValid = new JustValidate('.feedback__form', {
+let modalFormValid = new JustValidate('.modal__form', {
   colorWrong: '#FF6972',
   rules: {
     name: {
       required: true,
-    },
-    email: {
-      required: true,
-      email: true,
     },
     tel: {
       required: true,
@@ -30,21 +26,10 @@ let feedbackValid = new JustValidate('.feedback__form', {
       required: 'Вы не ввели имя',
 
     },
-    email: {
-      required: 'Вы не ввели e-mail',
-      email: 'Вы ввели некорректный e-mail'
-    },
     tel: {
       required: 'Вы не ввели телефон',
       function: 'Вы ввели номер телефона не полностью'
     },
   }
 });
-
-/*var re = /^\w+$/;
-if (!re.test(field.value)) {
-    alert('Invalid Text');
-    return false;
-}
-return true;*/
 

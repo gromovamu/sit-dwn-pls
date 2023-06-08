@@ -1,3 +1,5 @@
+// Важно!! перед этим файлом должен быть подключен modal.js
+
 // массив содержит элементы с содержимым путей к изображениям для демонстрации товара
   // используется такой подход т.к. структура может меняться и на данный момент у меня нет необходимых изображений
   // т.к. они не предоставлены в макете были взяты изображения из картинок для модального окна
@@ -115,8 +117,6 @@ function ReplaceProductMainImg(source, num, pictureClassName) {
   else {
     console.error(`ReplaceProductMainImg: Error. Can\'t find element with class \' .${pictureClassName}  .img \'`);
   }
-
-
   return currentData;
 }
 
@@ -136,9 +136,6 @@ function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName,
   let num = 0;
   let currentNum = null;
   let source = null;
- // console.log(img);
- // console.log(btn);
- // console.log(sourceData);
 
   if ( img.hasAttribute('data') ) {
     num = Number(img.getAttribute('data'));
@@ -148,33 +145,6 @@ function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName,
       currentNum = ReplaceProductMainImg(source, num, pictureClassName);
     }
   }
-}
-
-// фунция устанавливает модальный режим путем добавления класса modal-mode к body
-function setModalMode () {
-   document.querySelector('.body').classList.add('modal-mode');
-}
-
-// фунция убирает модальный режим путем удаления класса modal-mode из body
-function closeModalMode () {
-  document.querySelector('.body').classList.remove('modal-mode');
-}
-
-// функция закрытия модального окна
-function closeModal() {
-  // закрываем окно просмотра
-  document.querySelector('.modal-img').classList.remove('modal--active');
-  // убираем модальный режим
-  closeModalMode();
-}
-
-function clickWithinModal(event) {
-  event._isClickWhitinFilter = true;
-}
-
-function customClick(event) {
-  if( event._isClickWhitinFilter )return;
-  closeModal();
 }
 //----------------------------------------------------------------------
   /* инициализация слайдера для блока с превью  */
@@ -263,10 +233,9 @@ document.querySelectorAll('.modal__img-preview-btn').forEach(function (btn) {
 // добавим обработчик события для открытия модального окна с изображениями
 document.querySelector('.product__img-btn').addEventListener( 'click', function(event) {
   //console.log('modal mode active')
-  setModalMode();
-  // открываем окно просмотра
-  let modal = document.querySelector('.modal-img');
-  modal.classList.add('modal--active');
+  // открываем окно просмотра в модальном окне
+  let modal = setModalMode('.modal-img');
+
   // если открыто не первое изображение, то загружаем аналогичное тому, которое сейчас выбрано основным
   // но из изображений для модального окна
   // действия аналогичны обработчику кнопки превью, так что воспользуемя функцией для обработчика
@@ -280,12 +249,8 @@ document.querySelector('.product__img-btn').addEventListener( 'click', function(
       }
     });
   }
-  event._isClickWhitinFilter = true;
-  // добавляем обработчик события для клика на самом модальном окне
-  modal.addEventListener('click', clickWithinModal);
-  // добавляем обработчик события для клика вне модального окна
-  document.querySelector('.modal-mode').addEventListener('click', customClick);
+
+  event._isClickWhitinFilter = true; // чтоб не закрыло при всплытии
 });
 
-//добавим обработчик события для закрытия модального окна с изображениями
-document.querySelector('.modal-close-btn').addEventListener( 'click', closeModal);
+

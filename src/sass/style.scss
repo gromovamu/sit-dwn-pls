@@ -465,7 +465,6 @@
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid $background-dark-color;
-
 }
 
 .feedback__info-icon:hover + .tooltip__popup {
@@ -474,37 +473,7 @@
 }
 
 .input-container {
-  position: relative;
-  @include clean();
-  border: none;
   margin-bottom: $feedback-padding;
-  width: 100%;
-  background-color: transparent;
-}
-
-.feedback__input {
-  @include clean();
-  border: none;
-  padding: 6px 17px;
-  width: 100%;
-  font-size: 16px;
-  line-height: 40px;
-  border: 1px solid transparent; /* добавлено чтобы при ошибке не добавлялся бордер а просто перекращивался*/
-  @include background-decor();
-  cursor: pointer;
-}
-
-.feedback__input::placeholder {
-  color: $decor-color;
-}
-
-.js-validate-error-label {
-  position: absolute;
-  top: -15px;
-  left: 18px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
 }
 
 .feedback-btn {
@@ -512,52 +481,11 @@
   margin-bottom: 12px;
 }
 
-.agreement {
-  position: relative;
-  font-size: 14px;
-  line-height: 19px;
-  cursor: pointer;
-}
-
-.agreement__input {
-  position: absolute;
-  top: 4px;
-  left: 0;
-  opacity: 0;
-}
-
-.agreement__custom-checkbox {
-  position: relative;
-  display: inline-block;
-  border-radius: 2px;
-  margin-right: 8px;
-  width: 14px;
-  height: 14px;
-  color: transparent;
-  background-color: $main-color;
-  vertical-align: middle;
-}
-
-.agreement__custom-mark {
-  position: absolute;
-  top: 3px;
-  left: 2px;
-}
-
-.agreement__input:checked + .agreement__custom-checkbox {
-    color: $text-color-light;
-}
-
-.agreement__link {
-  text-decoration-line: underline;
-  color: $main-color;
-}
-
 @import '_footer_style.scss';
 
 @import 'svg.scss';
 @import 'main_effects.scss';
-@import 'effects.scss';
+//@import 'effects.scss';
 @import 'main_media.scss';
 @import 'media.scss';
 

@@ -139,3 +139,43 @@ stroke: - задает цвет стрелки */
   stroke: $decor-color;
   fill: transparent;
 }
+
+/* hover-эффекты формы -------------------------------*/
+.feedback__input {
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.feedback__input:focus-visible {
+  outline: 1px solid $main-color
+}
+
+.feedback__input:not(:placeholder-shown):focus-visible {
+  outline: 1px solid $form-active-color;
+}
+
+.js-validate-error-field:not(:placeholder-shown):focus-visible {
+  outline: none;
+}
+
+.feedback__input:hover{
+  background-color: $background-light-color;
+}
+
+.agreement__custom-checkbox  {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.agreement__input:focus-visible+.agreement__custom-checkbox {
+  outline: 1px solid $main-color;
+  outline-offset: 1px;
+}
+
+.agreement__input:hover+.agreement__custom-checkbox {
+  background-color: $main-color-light;
+}
+
+.js-validate-error-field+.agreement__custom-checkbox {
+  outline: 1px solid $error-color;
+  outline-offset: 1px;
+}

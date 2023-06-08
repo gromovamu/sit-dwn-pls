@@ -8,6 +8,11 @@
 @import 'svg.scss';
 
 /* --- catalog-container ---*/
+.btn-decor1 {
+  padding: 19px 35px;
+  font-weight: 600;
+}
+
  .product {
   margin-bottom: 81px;
  }
@@ -163,8 +168,8 @@
 
 .product__btn {
   margin-bottom: 12px;
-  padding: 19px 35px;
-  font-weight: 600;
+ // padding: 19px 35px;  //переопеделила btn-decor1
+  //font-weight: 600;
 }
 
 .product__btn-add {
@@ -355,6 +360,59 @@
 .modal__img-preview-btn {
   font-size: 0;
   line-height: 0;
+}
+
+//---------------------modal form
+
+.modal-form__container {
+
+}
+
+.modal-form {
+  top: $modal_info_top;
+  left: calc((100% - 33.4%) / 2);
+  display: flex;
+  margin: 0 auto;
+  padding: 30px;
+  width: 33.4%;
+  border-radius: 10px;
+  background-color: $background-main-color;
+}
+
+.modal__form {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-form__title {
+  @include clean();
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+}
+
+.modal-form__descr {
+  margin-bottom: 30px;
+  width: 67%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.modal-form__fieldset {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.modal-form__btn {
+  margin-bottom: 8px;
+}
+
+.modal-form__input {
+  width: 100%;
 }
 
 /*---------------------------------*/

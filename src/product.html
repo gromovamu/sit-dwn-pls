@@ -413,6 +413,48 @@
       </div>
     </article>
 
+    <article class="modal modal-form">
+      <form class="modal__form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+        <button class="btn modal-close-btn nav-link-decor">
+          <svg class="close-btn-icon" viewBox="0 0 16 15">
+            <use xlink:href="#close"></use>
+          </svg>
+        </button>
+
+        <h2 class="modal-form__title">
+          Купить в один клик
+        </h2>
+
+        <label class="modal-form__descr" for="name">
+          Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
+        </label>
+
+        <fieldset class="modal-form__fieldset feedback__input-container">
+          <input class="modal-form__input feedback__input" id="modal-input-name" type="text" name="name" data-validate-field="name" placeholder="Как вас зовут?" >
+        </fieldset>
+
+        <fieldset class="modal-form__fieldset feedback__input-container">
+          <input class="modal-form__input feedback__input feedback__input-tel" id="modal-input-tel" type="tel" name="tel" data-validate-field="tel" placeholder="Ваш телефон" >
+        </fieldset>
+
+        <button class="btn modal-form__btn btn-decor1">
+          Отправить
+        </button>
+
+        <label class="agreement" for="agreement">
+          <input class="agreement__input" id="agreement" type="checkbox" name="agreement" data-validate-field="agreement">
+          <span class="agreement__custom-checkbox">
+            <svg class="agreement__custom-mark" viewBox="0 0 11 9">
+              <use xlink:href="#mark"></use>
+            </svg>
+          </span>
+            Принимаю
+          <a class="agreement__link" href="#">пользовательское соглашение</a>
+        </label>
+
+      </form>
+    </article>
+
   </main>
 
   <footer class="footer">
@@ -421,10 +463,17 @@
 
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/choices.min.js"></script>
+  <script src="js/inputmask.min.js"></script>
+  <script src="js/just-validate.min.js"></script>
+
+
   <script src="js/initChoices.js"></script>
   <script src="js/burger.js"></script>
   <script src="js/catalog.js"></script>
   <script src="js/similarCatalogCardShow.js"></script>
+  <script src="js/modal.js"></script>
   <script src="js/prevImgShow.js"></script>
+  <script src="js/byClick.js"></script>
+  <script src="js/initFormByClickValid.js"></script>
 </body>
 </html>
