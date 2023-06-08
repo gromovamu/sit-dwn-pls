@@ -308,8 +308,13 @@
   visibility: visible;
 }
 
-.modal__img-pre-list .swiper-slide {
-  width: auto;
+.modal__img-pre-list {
+  font-size: 0;
+  line-height: 0;
+  align-items: center;
+  .swiper-slide {
+    width: auto;
+  }
 }
 
 .modal-close-btn {
@@ -321,13 +326,11 @@
 .modal__img {
   object-fit: contain;
   min-height: 518px;
- /// outline: 1px solid #cc1c1c;
 }
 
 // без доп div не получается красиво сделать swiper на адаптиве
 .modal__swiper-dop-container {
   background-color: $background-secondary-color;
- // padding: 0 51px;
 }
 
 .modal__swiper-container {
@@ -340,13 +343,13 @@
 }
 
 .modal__btn-container {
-position: absolute;
-visibility: hidden;
-bottom: 67px;
-right: 16px;
-display: flex;
-justify-content: space-between;
-width: calc(100% - 32px);
+  position: absolute;
+  visibility: hidden;
+  bottom: calc(50% - 16px); //67px;
+  right: $internal-padding-mobile;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 32px);
 }
 
 .modal__img-preview-btn {
