@@ -4,15 +4,6 @@
   // используется такой подход т.к. структура может меняться и на данный момент у меня нет необходимых изображений
   // т.к. они не предоставлены в макете были взяты изображения из картинок для модального окна
   let sourceImgData = [ {
-    name: 'img0',
-    source1: './img/catalog/sofas/D-31/main-img-320.png',
-    source2: './img/catalog/sofas/D-31/main-img-1024.png',
-    source3: './img/catalog/sofas/D-31/main-img.png',
-    source4: './img/catalog/sofas/D-31/main-img-1024.png',
-    src: './img/catalog/sofas/D-31/main-img.png',
-  },
-  {
-    name: 'img1',
     source1: './img/catalog/sofas/D-31/pre-modal-img-1.png',
     source2: './img/catalog/sofas/D-31/pre-modal-img-1.png',
     source3: './img/catalog/sofas/D-31/pre-modal-img-1.png',
@@ -20,7 +11,6 @@
     src: './img/catalog/sofas/D-31/pre-modal-img-1.png',
   },
   {
-    name: 'img2',
     source1: './img/catalog/sofas/D-31/pre-modal-img-2.png',
     source2: './img/catalog/sofas/D-31/pre-modal-img-2.png',
     source3: './img/catalog/sofas/D-31/pre-modal-img-2.png',
@@ -28,7 +18,6 @@
     src: './img/catalog/sofas/D-31/pre-modal-img-2.png',
   },
   {
-    name: 'img2',
     source1: './img/catalog/sofas/D-31/pre-modal-img-3.png',
     source2: './img/catalog/sofas/D-31/pre-modal-img-3.png',
     source3: './img/catalog/sofas/D-31/pre-modal-img-3.png',
@@ -36,27 +25,24 @@
     src: './img/catalog/sofas/D-31/pre-modal-img-3.png',
   },
   {
-    name: 'img2',
     source1: './img/catalog/sofas/D-31/pre-modal-img-4.png',
     source2: './img/catalog/sofas/D-31/pre-modal-img-4.png',
     source3: './img/catalog/sofas/D-31/pre-modal-img-4.png',
     source4: './img/catalog/sofas/D-31/pre-modal-img-4.png',
     src: './img/catalog/sofas/D-31/pre-modal-img-4.png',
   },
+  {
+    source1: './img/catalog/sofas/D-31/main-img-320.png',
+    source2: './img/catalog/sofas/D-31/main-img-1024.png',
+    source3: './img/catalog/sofas/D-31/main-img.png',
+    source4: './img/catalog/sofas/D-31/main-img-1024.png',
+    src: './img/catalog/sofas/D-31/main-img.png',
+  },
 ]
 
 // структура аналогичная предыдущей для организации просмотра в модальном окне
 // она совпадает, т.к. нет нормальных изборажений для просмотра товара (больших картинок для видов сбоку)
 let sourceModalImgData = [ {
-  name: 'img0',
-  source1: './img/catalog/sofas/D-31/main-img-320.png',
-  source2: './img/catalog/sofas/D-31/main-img-1024.png',
-  source3: './img/catalog/sofas/D-31/main-img.png',
-  source4: './img/catalog/sofas/D-31/main-modal-img.png',
-  src: './img/catalog/sofas/D-31/main-modal-img.png',
-},
-{
-  name: 'img1',
   source1: './img/catalog/sofas/D-31/pre-modal-img-1.png',
   source2: './img/catalog/sofas/D-31/pre-modal-img-1.png',
   source3: './img/catalog/sofas/D-31/pre-modal-img-1.png',
@@ -64,7 +50,6 @@ let sourceModalImgData = [ {
   src: './img/catalog/sofas/D-31/pre-modal-img-1.png',
 },
 {
-  name: 'img2',
   source1: './img/catalog/sofas/D-31/pre-modal-img-2.png',
   source2: './img/catalog/sofas/D-31/pre-modal-img-2.png',
   source3: './img/catalog/sofas/D-31/pre-modal-img-2.png',
@@ -72,7 +57,6 @@ let sourceModalImgData = [ {
   src: './img/catalog/sofas/D-31/pre-modal-img-2.png',
 },
 {
-  name: 'img2',
   source1: './img/catalog/sofas/D-31/pre-modal-img-3.png',
   source2: './img/catalog/sofas/D-31/pre-modal-img-3.png',
   source3: './img/catalog/sofas/D-31/pre-modal-img-3.png',
@@ -80,12 +64,18 @@ let sourceModalImgData = [ {
   src: './img/catalog/sofas/D-31/pre-modal-img-3.png',
 },
 {
-  name: 'img2',
   source1: './img/catalog/sofas/D-31/pre-modal-img-4.png',
   source2: './img/catalog/sofas/D-31/pre-modal-img-4.png',
   source3: './img/catalog/sofas/D-31/pre-modal-img-4.png',
   source4: './img/catalog/sofas/D-31/pre-modal-img-4.png',
   src: './img/catalog/sofas/D-31/pre-modal-img-4.png',
+},
+{
+  source1: './img/catalog/sofas/D-31/main-img-320.png',
+  source2: './img/catalog/sofas/D-31/main-img-1024.png',
+  source3: './img/catalog/sofas/D-31/main-img.png',
+  source4: './img/catalog/sofas/D-31/main-modal-img.png',
+  src: './img/catalog/sofas/D-31/main-modal-img.png',
 },
 ]
 
@@ -108,7 +98,7 @@ function ReplaceProductMainImg(source, num, pictureClassName) {
       sources[2].setAttribute('srcset', source.source3);
       sources[3].setAttribute('srcset', source.source4);
       img.setAttribute('src', source.src);
-      img.setAttribute('data', num);
+      img.setAttribute('data', num+1);
     }
     else {
       console.error(`ReplaceProductMainImg: Error. Can\'t find element with class \' .${pictureClassName}  .img-source \'`);
@@ -126,13 +116,12 @@ function getSource(num, sourceData=sourceImgData) {
   if ( (num > 0) && (num < sourceData.length ) ) {
      return sourceData[num];
   }
-  return sourceData[0];
+  return sourceData[sourceData.length-1];
 }
 
 // обработчик кнопок просморта изображений
-function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName, listClassName) {
+function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName) {
   let img = btn.firstElementChild;
-  let li = btn.parentElement;
   let num = 0;
   let currentNum = null;
   let source = null;
@@ -141,6 +130,7 @@ function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName,
     num = Number(img.getAttribute('data'));
     if (!isNaN(num)) {
       // получаем пути для замены
+      num--;
       source = getSource(num,sourceData);
       currentNum = ReplaceProductMainImg(source, num, pictureClassName);
     }
@@ -153,8 +143,6 @@ function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName,
     loop: false,
     spaceBetween: 38,
     direction: 'horizontal',
-    initialSlide: 1,
-
 
     breakpoints: {
       // when window width is >= 280px
@@ -164,13 +152,13 @@ function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName,
       },
 
       // when window width is >= 520px
-      520: {
+      521: {
         direction: 'vertical',
-        spaceBetween: 18,
+        spaceBetween: 21,
       },
 
       // when window width is >= 900px
-      900: {
+      901: {
         direction: 'horizontal',
         spaceBetween: 38,
       },
@@ -184,7 +172,6 @@ function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName,
     loop: false,
     spaceBetween: 78,
     direction: 'horizontal',
-    initialSlide: 1,
 
     breakpoints: {
       // when window width is >= 280px

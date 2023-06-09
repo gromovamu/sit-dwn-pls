@@ -230,7 +230,19 @@
 
   .product__card {
     grid-column: span $count_grid-column-768;
-    padding-top: 6px;
+    padding-top: 3px;
+  }
+
+  .product__card .estimation {
+    margin-bottom: 6px;
+  }
+
+  .product__name {
+    margin-bottom: 8px;
+  }
+
+  .product__descr {
+    margin-bottom: $internal-padding-mobile;
   }
 
   .product__img-pre-list {
