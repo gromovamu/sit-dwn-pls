@@ -283,11 +283,15 @@
   position: absolute;
   left: 0;
   z-index: 151;
-  width: 100%;
+}
+
+.modal--active {
+  visibility: visible;
 }
 
 .modal-img {
   top: $modal_top;
+  width: 100%;
 }
 
 .modal__img-container {
@@ -307,10 +311,6 @@
   align-items: center;
   padding: 50px;
   //outline: auto;
-}
-
-.modal--active {
-  visibility: visible;
 }
 
 .modal__img-pre-list {
@@ -362,19 +362,14 @@
   line-height: 0;
 }
 
-//---------------------modal form
-
-.modal-form__container {
-
-}
-
-.modal-form {
+//--------------------- modal form ------------------------
+.modal-style {
   top: $modal_info_top;
-  left: calc((100% - 33.4%) / 2);
+  left: calc((100% - $modal_info_width) / 2);
   display: flex;
   margin: 0 auto;
-  padding: 30px;
-  width: 33.4%;
+  padding: $internal-padding;
+  width: $modal_info_width;
   border-radius: 10px;
   background-color: $background-main-color;
 }
@@ -395,7 +390,7 @@
 }
 
 .modal-form__descr {
-  margin-bottom: 30px;
+  margin-bottom: $internal-padding;
   width: 67%;
   font-weight: 400;
   font-size: 14px;
@@ -403,7 +398,7 @@
 }
 
 .modal-form__fieldset {
-  margin-bottom: 30px;
+  margin-bottom: $internal-padding;
   width: 100%;
 }
 
@@ -413,6 +408,27 @@
 
 .modal-form__input {
   width: 100%;
+}
+
+//----------- modal info ------------------------
+.modal-info {
+  height: $modal_info_height;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-info__img {
+  color: $secondary-main-color;
+  margin-bottom: $grid-gap;
+}
+
+.modal-info__descr {
+  @include clean();
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  text-align: center;
 }
 
 /*---------------------------------*/

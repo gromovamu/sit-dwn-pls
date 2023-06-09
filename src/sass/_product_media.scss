@@ -84,6 +84,10 @@
     min-height: 322px;
     object-fit: contain ;
   }
+
+  .modal-style {
+    top: $modal_info_top_1024;
+  }
 }
 
 @media (max-width: 900px) {
@@ -161,6 +165,12 @@
     right: $container-padding-768;
   }
 
+  .modal-style {
+    top: $modal_info_top_768;
+    left: $container-padding-768;
+    width: calc(100% - $container-padding-768 * 2);
+  }
+
   .modal-img {
     top: $modal_top_768;
   }
@@ -178,7 +188,30 @@
   }
 }
 
+@media (max-width: 760px) {
+  .modal-info {
+    left: 20%;
+    width: 60%;
+    height: $modal_info_height_320;
+  }
+
+  .modal-info__img {
+    margin-bottom: $grid-gap-mobile;
+    width: 73px;
+    height: 50px;
+  }
+
+  .modal-info__descr {
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+
 @media (max-width: 520px) {
+  .btn-decor1 {
+    padding: 19px 35px;
+  }
+
   .breadcrumbs {
     display: none;
   }
@@ -278,6 +311,21 @@
   .modal__img-main {
     padding: 32px 16px;
   }
+
+  .modal-style {
+    top: $modal_info_top_768;
+    left: $container-padding-320;
+    width: calc(100% - $container-padding-320 * 2);
+  }
+
+  .modal-form__descr {
+    width: 100%;
+    margin-bottom: $internal-padding-mobile;
+  }
+
+  .modal-form__fieldset {
+    margin-bottom: $internal-padding-mobile;
+  }
 }
 
 @media (max-width: 410px) {
@@ -313,7 +361,8 @@
     max-height: $modal_pre_height_mobile;
   }
 
-  .modal__btn-container {
-    //bottom: 43px;
+  .modal-form__title {
+    font-size: 24px;
+    line-height: 100%;
   }
 }
