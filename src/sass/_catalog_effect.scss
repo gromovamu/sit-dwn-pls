@@ -15,3 +15,23 @@
 .filter__checkbox__input:active + .filter__checkbox-check  {
   border-color: $main-color-dark;
 }
+
+.runner__btn:focus-visible {
+  color: $main-color-dark;
+}
+
+.runner__btn:hover {
+  color: $main-color-light;
+}
+
+.runner__btn:active{
+  color: $main-color-dark;
+}
+
+.runner__btn:focus-visible ~ .runner__line {
+  background-color: $main-color-dark;
+}
+
+.runner__btn:active ~ .runner__line {
+  background-color: $main-color-dark;
+}

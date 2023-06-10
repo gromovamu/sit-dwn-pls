@@ -119,6 +119,7 @@
 .filter__price-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
   width: 100%;
 }
 
@@ -170,6 +171,51 @@
 .filter__checkbox__input:checked + .filter__checkbox-check::after   {
   opacity: 1;
 }
+
+.runner {
+  position: relative;
+  width: 100%;
+  height: 13px;
+}
+
+.runner__line-base {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  width: 100%;
+  height: 3px;
+  border-radius: 3px;
+  background-color: $background-light-color;
+}
+
+.runner__line {
+  position: absolute;
+  top: 0;
+  left: 5.06%;
+  z-index: 41;
+  width: 62.5%;
+  height: 3px;
+  border-radius: 3px;
+  background-color: $main-color;
+}
+
+.runner__btn {
+  position: absolute;
+  top: -1px;
+  z-index: 43;
+  color: $main-color;
+  background-color: transparent;
+}
+
+.runner__btn-left {
+  left: calc(5.06% - 6px);
+}
+
+.runner__btn-right {
+  left: calc(67.56% - 7px);
+}
+
 
 /* catalog */
 
