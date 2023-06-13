@@ -54,8 +54,6 @@ document.querySelectorAll('.filter__btn').forEach(function (btn) {
   });
 });
 
-
-
 //--------- работа с фильтром цены ----------------------
 const positionClick = {
   x: 0,
@@ -71,127 +69,133 @@ const positionClick = {
   btn: '',
 };
 
-const priceState = {
-  left: 5.06,
-  right: 67.56,
-  maxPrice: 250000, //максимально возможная
-  minPrice: 0, // минимальная
-  currMaxPrice: 150000, // заданная для фильтрации максимальная цена
-  currMinPrice: 2000, // заданная для фильтрации минимальная цена
-}; //эти я задала исходя из макета, но математически они не верны
-// максимальная и минимальная цена тоже ведь могут менятся в зависимости от товаров
+const runnerState = {
+  //значения по умолчанию, я задала исходя из текущего макета, но математически они не верны
+  left: 5.06,  // положение левого конца линии бегунка в процентах
+  right: 67.56, // положение правого конца линии бегунка в процентах
+  maxLimit: 200000, //максимально возможный лимит
+  minLimit: 0, // минимально возможный лимит
+  currMaxLimit: 150000, // заданный текущий максимальный лимит
+  currMinLimit: 2000, // заданный текущий минимальный лимит
+  classRunnerContainer: 'runner',
+  classRunnerLine: 'runner__line',
+  classRunnerBtnLeft: 'runner__btn-left',
+  classRunnerBtnRight: 'runner__btn-right',
+  classRunnerInputFrom: 'filter__input-from',
+  classRunnerInputBefore: 'filter__input-before',
 
-function priceInPercent(price) {
-  return (price * 100) / (priceState.maxPrice - priceState.minPrice);
-}
+  valueInPercent(value) {
+    return (value * 100) / (this.maxLimit - this.minLimit);
+  },
 
-function percentInPrice(per) {
-  return parseInt((per * (priceState.maxPrice - priceState.minPrice)) * 0.01); // /100
-}
+  percentInValue(per) {
+    return parseInt((per * (this.maxLimit - this.minLimit)) * 0.01);
+  },
 
-function setCurrMaxPrice(max) {
-  max = max > priceState.maxPrice ? priceState.maxPrice : max;
-  max = max < priceState.currMinPrice ? currMinPrice : max;
+  setCurrMaxLimit(max) {
+    max = max > this.maxLimit ? this.maxLimit : max;
+    max = max < this.currMinLimit ? currMinLimit : max;
 
-  priceState.currMaxPrice = max;
-  priceState.right = priceInPercent(max);
-  updatePrice();
-}
+    this.currMaxLimit = max;
+    this.right = this.valueInPercent(max);
+  },
 
-function setCurrMinPrice(min) {
-  min = min < priceState.minPrice ? priceState.minPrice : min;
-  min = min > priceState.currMaxPrice ? currMaxPrice : min;
+  setCurrMinLimit(min) {
+    min = min < this.minLimit ? this.minLimit : min;
+    min = min > this.currMaxLimit ? currMaxLimit : min;
 
-  priceState.currMinPrice = min;
-  priceState.left = priceInPercent(min);
-  updatePrice();
-}
+    this.currMinLimit = min;
+    this.left = this.valueInPercent(min);
+  },
 
-function setCurrLeftPrice(left) {
-  priceState.left = left;
-  priceState.currMinPrice = percentInPrice(left);
-  updatePrice();
-}
+  setCurrLeftRunner(left) {
+    this.left = left;
+    this.currMinLimit = this.percentInValue(left);
+  },
 
-function setCurrRightPrice(right) {
-  priceState.right = right;
-  priceState.currMaxPrice = percentInPrice(right);
-  updatePrice();
-}
+  setCurrRightRunner(right) {
+    this.right = right;
+    this.currMaxLimit = this.percentInValue(right);
+  },
 
-function setCurrPosPrice(percent, btn) {
-  if ( btn === 'left') {
-    setCurrLeftPrice(percent);
+  setCurrPosRunner(percent, side) {
+    if ( side === 'left') {
+      this.setCurrLeftRunner(percent);
+    }
+    if ( side === 'right') {
+      this.setCurrRightRunner(percent);
+    }
+  },
+
+  drawRunnerLine() {
+    let line = document.querySelector(`.${this.classRunnerLine}`);
+    line.style.left = `${this.left}%`;
+    line.style.width = `${this.right - this.left}%`;
+  },
+
+  updateRunneInputBlock() {
+    document.querySelector(`.${this.classRunnerInputFrom}`).value = this.currMinLimit;
+    document.querySelector(`.${this.classRunnerInputBefore}`).value = this.currMaxLimit;
+  },
+
+  //функция приводит положение кнопок в соответвии с отрисованной линией бегунка
+  updateBtnRunner() {
+    let widthBtnLeft = document.querySelector(`.${this.classRunnerBtnLeft}`).getBoundingClientRect().width;
+    let widthBtnRight = document.querySelector(`.${this.classRunnerBtnRight}`).getBoundingClientRect().width;
+
+    document.querySelector(`.${this.classRunnerBtnLeft}`).style.left = `calc(${this.left}% - ${widthBtnLeft/2}px`;
+    document.querySelector(`.${this.classRunnerBtnRight}`).style.left = `calc(${this.right}% - ${widthBtnRight/2}px`
+  },
+
+  update() {
+    this.drawRunnerLine();
+    this.updateRunneInputBlock();
+    this.updateBtnRunner();
+  },
+
+  getMinRunnerBtnPosition(side) {
+    if (side == 'right') {
+      return this.left;
+    }
+    return 0;
+  },
+
+  getMaxRunnerBtnPosition(side) {
+    if (side == 'left') {
+      return this.right;
+    }
+    return 100;
   }
-  if ( btn === 'right') {
-    setCurrRightPrice(percent);
-  }
-}
+};
 
-function drawRunnerLine(price = priceState) {
-  let line = document.querySelector('.runner__line');
-  line.style.left = `${price.left}%`;
-  line.style.width = `${price.right - price.left}%`;
-}
-
-function updatePriceBlock(price = priceState) {
-  console.log(priceState);
-  document.querySelector('.filter__input-from').value = priceState.currMinPrice;
-  document.querySelector('.filter__input-before').value = priceState.currMaxPrice;
-}
-
-function updatePrice() {
-  drawRunnerLine();
-  updatePriceBlock();
-}
-
-function updateBtnPrice() {
-
-}
-
-//обработчики бегунка
-function getMinPosition(pointer = positionClick, price = priceState) {
-  if (pointer.btn == 'right') {
-
-    return ((price.left*pointer.containerWidth)*0.01 - (pointer.width / 2));
-  }
-  return -1 * (pointer.width / 2);
-}
-
-function getMaxPosition(pointer = positionClick, price = priceState) {
-  if (pointer.btn == 'left') {
-
-    return ((price.right*pointer.containerWidth)*0.01 - (pointer.width / 2));
-  }
-  return (pointer.containerWidth - pointer.width / 2);
-}
 
 function onMove(event) {
   event.preventDefault();
   if( positionClick.moveElem ) {
-     //console.log('onMove');
-
     // я добавила в формулу positionClick.containerLeft,
     // т.к. у нашего элемента позиционирование абсолютное, относительно родительского элемента
     let left = event.clientX - positionClick.x + positionClick.left - positionClick.containerLeft;
-    //let top = event.clientY - positionClick.y + positionClick.top - positionClick.containerTop;;
 
-    let min = getMinPosition(); //-1 * (positionClick.width / 2);
-    let max = getMaxPosition(); //positionClick.containerWidth - positionClick.width / 2;
+    let min = runnerState.getMinRunnerBtnPosition(positionClick.btn);
+    let max = runnerState.getMaxRunnerBtnPosition(positionClick.btn);
+
+    left = (left * 100)/positionClick.containerWidth;
+
+    top = positionClick.top - positionClick.containerTop;
 
     left = left < min ? min: left;
     left = left > max ? max: left;
-    top = positionClick.top - positionClick.containerTop;
 
-    positionClick.moveElem.style.left = `${left}px`;
+    positionClick.moveElem.style.left =  `calc(${left}% - ${positionClick.width/2}px`;
     positionClick.moveElem.style.top = `${top}px`
 
-    setCurrPosPrice(((left + positionClick.width /2)*100) / positionClick.containerWidth, positionClick.btn);
+    runnerState.setCurrPosRunner(left, positionClick.btn);
+    runnerState.drawRunnerLine(); //обновим линию бегунка
+    runnerState.updateRunneInputBlock(); // обновим значения в input
   }
 }
 
 function stopMove(event) {
-  //console.log('stopMove');
   document.removeEventListener('mousemove',onMove);
   document.removeEventListener('mouseup',stopMove);
 }
@@ -222,11 +226,6 @@ document.querySelectorAll('.runner__btn').forEach(function(filter) {
       positionClick.btn = 'right';
     }
 
-    //console.log(btnCoord);
-    //console.log(containerCoord);
-    //console.log(positionClick);
-    //console.log(event);
-
     document.addEventListener('mousemove',onMove);
     document.addEventListener('mouseup',stopMove);
   });
@@ -240,8 +239,9 @@ document.querySelectorAll('.runner__btn').forEach(function(filter) {
 
 // Заданная в макете величина не соотносится с линией бегунка с математической точки зрения
 // пересчитаем со значениями указанными в макете, а линию перерисуем
-setCurrMaxPrice(150000);
-setCurrMinPrice(2000);
+runnerState.setCurrMaxLimit(150000);
+runnerState.setCurrMinLimit(2000);
+runnerState.update();
 
 
 
