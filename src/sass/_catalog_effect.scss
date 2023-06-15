@@ -16,7 +16,26 @@
   border-color: $main-color-dark;
 }
 
-.runner__btn:focus-visible {
+.filter__input {
+  transition: border-color 0.4s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.filter__input:focus {
+  border-color: $main-color;
+  background-color: $focus-decor-color;
+  outline: none;
+}
+
+.filter__input:hover {
+  border-color: $main-color;
+}
+
+.filter__input:active {
+  border-color: $main-color-dark;
+  background-color: transparent;
+}
+
+.runner__btn:focus {
   color: $main-color-dark;
 }
 
@@ -28,7 +47,7 @@
   color: $main-color-dark;
 }
 
-.runner__btn:focus-visible ~ .runner__line {
+.runner__btn:focus ~ .runner__line {
   background-color: $main-color-dark;
 }
 

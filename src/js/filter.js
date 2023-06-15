@@ -19,7 +19,6 @@ function customListenerForClickWithinFilter(event) {
   event._isClickWhitinFilter = true;
 }
 
-
 document.querySelectorAll('.filter__btn').forEach(function (btn) {
   btn.addEventListener('click', function (event) {
     event.preventDefault();
@@ -42,9 +41,14 @@ document.querySelectorAll('.filter__btn').forEach(function (btn) {
       //console.log('filter is active');
       //console.log(event._isClickWhitinFilter);
     }
-
   });
 });
+
+// подвесим обработчик нажатия внутри открытых фильтров
+document.querySelectorAll('.filter__container').forEach(function (filter) {
+  filter.addEventListener('click', customListenerForClickWithinFilter);
+});
+
 
 //--------- работа с фильтром цены ----------------------
 const positionClick = {
@@ -148,8 +152,10 @@ const runnerState = {
 
   drawRunnerLine() {
     let line = document.querySelector(`.${this.classRunnerLine}`);
+    let width = this.right - this.left;
+    width = (width < 0)? 0:width;
     line.style.left = `${this.left}%`;
-    line.style.width = `${this.right - this.left}%`;
+    line.style.width = `${width}%`;
   },
 
   updateRunneInputBlock() {
@@ -231,7 +237,18 @@ const runnerState = {
       return 'right';
     }
     return null;
-  }
+  },
+
+  getState() { // нужна мне для отладки
+    return {
+      left: this.left,
+      right: this.right,
+      maxLimit: this.maxLimit,
+      minLimit: this.minLimit,
+      currMaxLimit: this.currMaxLimit,
+      currMinLimit: this.currMinLimit,
+    }
+  },
 };
 
 // функции для организации движения мышью
@@ -287,15 +304,33 @@ function runnerBtnFocus(event) {
 }
 
 function runnerBtnKeydown(event) {
-  let step = runnerState.valueInPercent(10); // вычислим веоичину шага в %
+  let step = 1;  // величина шага зависит от input
+  let limit = 0;
+  let move = false;
 
-  if ( event.key === 'ArrowRight') {
-    positionFocus.left+=step;
-    runnerState.moveRunnerBtn(positionFocus.left, positionFocus.btnName);
+  if (event.key === 'ArrowLeft') {
+      step *= -1;
+      move = true;
   }
-  if ( event.key === 'ArrowLeft') {
-    positionFocus.left-=step;
-    runnerState.moveRunnerBtn(positionFocus.left, positionFocus.btnName);
+
+  if (event.key === 'ArrowRight') {
+    //step = 10;
+    move = true;
+  }
+
+  if( move ) {
+
+    if (positionFocus.btnName === 'right') {
+      limit = runnerState.currMaxLimit + step;
+      runnerState.setCurrMaxLimit(limit);
+      runnerState.update();
+    }
+
+    if (positionFocus.btnName === 'left') {
+      limit = runnerState.currMinLimit + step;
+      runnerState.setCurrMinLimit(limit);
+      runnerState.update();
+    }
   }
 }
 
@@ -309,20 +344,35 @@ document.querySelectorAll('.runner__btn').forEach(function(btn) {
   btn.addEventListener('focus', runnerBtnFocus);
 });
 
+// повесим обработчик на кнопку  потеря фокуса
+document.querySelectorAll('.runner__btn').forEach(function(btn) {
+  btn.addEventListener('blur', runnerBtnBlur);
+});
+
 // ------------------ обработчик для ввода в поля цены
-document.querySelector('.filter__input-from').addEventListener('change', function() {
+document.querySelector('.filter__input-from').addEventListener('change', function(event) {
   let value = Number(this.value);
   value = isNaN(value) ? runnerState.currMinLimit:value;
   runnerState.setCurrMinLimit(value);
   runnerState.update();
 });
 
-document.querySelector('.filter__input-before').addEventListener('change', function() {
+document.querySelector('.filter__input-before').addEventListener('change', function(event) {
   let value = Number(this.value);
   value = isNaN(value) ? runnerState.currMaxLimit:value;
   runnerState.setCurrMaxLimit(value);
   runnerState.update();
 });
+
+
+/*document.querySelectorAll('.filter__input').forEach(function(btn) {
+  btn.addEventListener('input', function(event) {
+      // event.preventDefault();
+       console.log('input');
+
+     });
+  });*/
+
 
 //--------------------- начальная инициализация -----------------
 // Заданная в макете величина не соотносится с линией бегунка с математической точки зрения

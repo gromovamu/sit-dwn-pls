@@ -121,7 +121,6 @@
     transform: rotate(45deg);
   }
 
-
   .filter__down {
     .filter__btn {
       z-index: 46;
@@ -130,6 +129,10 @@
     .filter__container {
       z-index: 45;
     }
+  }
+
+  .runner {
+    display: none;
   }
   //------hover effect проявляются -----
 
