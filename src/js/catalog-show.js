@@ -14,13 +14,13 @@ function getCountCatalogCardsPage(windowWidth) {
   return 9;
 }
 
-// добавляет кнопке со страницей класс catalog__btn--active, у текущие убирает
+// добавляет кнопке со страницей класс catalog-btn--active, у текущие убирает
 function pageBtnActive(btn) {
-  let btnActive =  document.querySelector('.catalog__btn--active');
+  let btnActive =  document.querySelector('.catalog-btn--active');
 
   if( btnActive != btn) {
-    btnActive.classList.remove('catalog__btn--active');
-    btn.classList.add('catalog__btn--active');
+    btnActive.classList.remove('catalog-btn--active');
+    btn.classList.add('catalog-btn--active');
   }
 }
 
@@ -47,20 +47,20 @@ function showCatalogPage(num) {
 // скрывает или раскрывает нужное количество кнопок со страницами в зависимости от расширения экрана
 function showHiddenPageBtn(countPage) {
 
-  document.querySelectorAll('.catalog__btn').forEach(function (btn,item) {
+  document.querySelectorAll('.catalog-btn').forEach(function (btn,item) {
     if( item <= (countPage-1) ){
-      if (btn.classList.contains('catalog__btn--hidden')) {
-        btn.classList.remove('catalog__btn--hidden');
+      if (btn.classList.contains('catalog-btn--hidden')) {
+        btn.classList.remove('catalog-btn--hidden');
       }
     }
     else {
-      btn.classList.add('catalog__btn--hidden');
+      btn.classList.add('catalog-btn--hidden');
     }
   });
 }
 
 //вешаем обработчики на кнопки страниц
-document.querySelectorAll('.catalog__btn').forEach(function (btn) {
+document.querySelectorAll('.catalog-btn').forEach(function (btn) {
   btn.addEventListener('click', function () {
     let numPage =  Number(this.textContent);
     if ( (numPage != NaN) && ( numPage != currentPage ) ) {
@@ -79,9 +79,9 @@ document.querySelectorAll('.catalog__btn').forEach(function (btn) {
 
       showCatalogPage(numPage);
       //убираем текущее выделение страницы
-      document.querySelector('.catalog__btn--active').classList.remove('catalog__btn--active');
+      document.querySelector('.catalog-btn--active').classList.remove('catalog-btn--active');
       // выделяем новую
-      btn.classList.add('catalog__btn--active');
+      btn.classList.add('catalog-btn--active');
       currentPage = numPage;
     }
   });
@@ -97,13 +97,13 @@ window.addEventListener('resize', function() {
     if( currentPage > temp) {
       currentPage = currentPage - 1;
 
-      document.querySelectorAll('.catalog__btn').forEach(function (btn,item) {
+      document.querySelectorAll('.catalog-btn').forEach(function (btn,item) {
         if( item == (currentPage-1) ){
-          btn.classList.add('catalog__btn--active');
+          btn.classList.add('catalog-btn--active');
         }
         else {
-          if (btn.classList.contains('catalog__btn--active')) {
-            btn.classList.remove('catalog__btn--active');
+          if (btn.classList.contains('catalog-btn--active')) {
+            btn.classList.remove('catalog-btn--active');
           }
         }
       });

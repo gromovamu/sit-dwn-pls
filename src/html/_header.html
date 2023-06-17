@@ -26,6 +26,16 @@
     </a>
   </div>
 
+  <button class="btn burger" aria-label="Открыть меню">
+    <svg class="burger__icon" viewBox="0 0 24 24">
+      <use xlink:href="#burger"></use>
+    </svg>
+
+    <svg class="burger__close-icon" viewBox="0 0 12 12">
+      <use xlink:href="#close"></use>
+    </svg>
+  </button>
+
   <nav class="header__top-nav">
     <ul class="list header__top-nav-list">
       <li class="header__top-nav-item">
@@ -76,16 +86,6 @@
     </ul>
   </nav>
 
-  <button class="btn burger">
-    <svg class="burger__icon" viewBox="0 0 24 24">
-      <use xlink:href="#burger"></use>
-    </svg>
-
-    <svg class="burger__close-icon" viewBox="0 0 12 12">
-      <use xlink:href="#close"></use>
-    </svg>
-  </button>
-
   <form class="search-form" action="">
     <div class="search">
       <input class="search__input" type="text" id="search-input" placeholder="Я хочу купить...">
@@ -94,14 +94,14 @@
         <use xlink:href="#search"></use>
       </svg>
 
-      <button class="btn search__btn arrow-btn-decor">
+      <button class="btn search__btn arrow-btn-decor" aria-label="Поиск">
         <svg class="arrow-icon search__btn-icon" viewBox="0 0 32 32">
           <use xlink:href="#big-arrow"></use>
         </svg>
       </button>
     </div>
 
-    <select class="category-selector" name="category" id="category">
+    <select class="category-selector" name="category" id="category" aria-label="Выберите категорию для поиска">
       <option value="category" placeholder="">Категория</option>
       <option value="sofas">Диваны</option>
       <option value="chairs">Кресла</option>
@@ -116,13 +116,13 @@
   </form>
 
   <div class="header__btn-container">
-    <button class="btn login-btn header__btn">
+    <button class="btn login-btn header__btn" aria-label="Войти">
       <svg class="user-icon" viewBox="0 0 26 28">
         <use xlink:href="#user"></use>
      </svg>
     </button>
 
-    <button class="btn basket-btn header__btn">
+    <button class="btn basket-btn header__btn" aria-label="Корзина">
       <span class="basket-btn__count">0</span>
       <svg class="basket-icon" viewBox="0 0 30 28">
         <use xlink:href="#basket"></use>

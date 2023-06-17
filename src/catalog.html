@@ -143,13 +143,13 @@
             </div>
 
             <div class="runner">
-              <button class ="btn runner__btn runner__btn-left">
+              <button class ="btn runner__btn runner__btn-left" aria-label="Передвинуть ползунок нижней границы цены">
                 <svg class="runner-icon" viewBox="0 0 22 22">
                   <use xlink:href="#runner"></use>
                 </svg>
               </button>
 
-              <button class ="btn runner__btn runner__btn-right">
+              <button class ="btn runner__btn runner__btn-right" aria-label="Передвинуть ползунок верхней границы цены">
                 <svg class="runner-icon" viewBox="0 0 22 22">
                   <use xlink:href="#runner"></use>
                 </svg>
@@ -180,7 +180,7 @@
 
               <li class="filter__checkbox-item">
                 <label class="filter__label filter__checkbox-label" for="sale2">
-                  <input class="filter__checkbox__input" id="sale3" type="checkbox">
+                  <input class="filter__checkbox__input" id="sale2" type="checkbox">
                   Менее 5&nbsp;000
                   <span class="filter__checkbox-check"></span>
                 </label>
@@ -288,15 +288,15 @@
         @include('./html/_catalog.html')
 
         <div class="catalog-btn-container">
-          <button class="btn catalog__btn btn-decor2 catalog__btn--active">
+          <button class="btn catalog-btn btn-decor2 catalog-btn--active" aria-label="Открыть страницу каталога 1">
             1
           </button>
 
-          <button class="btn catalog__btn btn-decor2">
+          <button class="btn catalog-btn btn-decor2" aria-label="Открыть страницу каталога 2">
             2
           </button>
 
-          <button class="btn catalog__btn btn-decor2">
+          <button class="btn catalog-btn btn-decor2" aria-label="Открыть страницу каталога 3">
             3
           </button>
         </div>

@@ -90,15 +90,14 @@ function ReplaceProductMainImg(source, num, pictureClassName) {
 
   if (img !== null )
   {
-
-    currentData =  img.getAttribute('data');
+    currentData =  img.getAttribute('data-source');
     if( sources.length != 0) {
       sources[0].setAttribute('srcset', source.source1);
       sources[1].setAttribute('srcset', source.source2);
       sources[2].setAttribute('srcset', source.source3);
       sources[3].setAttribute('srcset', source.source4);
       img.setAttribute('src', source.src);
-      img.setAttribute('data', num+1);
+      img.setAttribute('data-num', num+1);
     }
     else {
       console.error(`ReplaceProductMainImg: Error. Can\'t find element with class \' .${pictureClassName}  .img-source \'`);
@@ -113,7 +112,7 @@ function ReplaceProductMainImg(source, num, pictureClassName) {
 // функция получения обекта путей
 // если номер выходит за границы массива sourceImgData, то получит значения по умолчанию
 function getSource(num, sourceData=sourceImgData) {
-  if ( (num > 0) && (num < sourceData.length ) ) {
+  if ( (num >= 0) && (num < sourceData.length ) ) {
      return sourceData[num];
   }
   return sourceData[sourceData.length-1];
@@ -123,22 +122,21 @@ function getSource(num, sourceData=sourceImgData) {
 function btnLoadPrevImgListener(btn, sourceData=sourceImgData, pictureClassName) {
   let img = btn.firstElementChild;
   let num = 0;
-  let currentNum = null;
   let source = null;
 
-  if ( img.hasAttribute('data') ) {
-    num = Number(img.getAttribute('data'));
+  if ( img.hasAttribute('data-num') ) {
+    num = Number(img.getAttribute('data-num'));
     if (!isNaN(num)) {
       // получаем пути для замены
       num--;
       source = getSource(num,sourceData);
-      currentNum = ReplaceProductMainImg(source, num, pictureClassName);
+      ReplaceProductMainImg(source, num, pictureClassName);
     }
   }
 }
 //----------------------------------------------------------------------
   /* инициализация слайдера для блока с превью  */
-  const imgPreSwiper = new Swiper('.img-pre__swiper-container', {
+  const imgPreSwiper = new Swiper('.product__img__swiper-container', {
     slidesPerView: 'auto',
     loop: false,
     spaceBetween: 38,
@@ -228,10 +226,10 @@ document.querySelector('.product__img-btn').addEventListener( 'click', function(
   // действия аналогичны обработчику кнопки превью, так что воспользуемя функцией для обработчика
   // но сначала определим номер изображения
   let img = document.querySelector('.product__img-btn .img');
-  let num = Number(img.getAttribute('data'));
+  let num = Number(img.getAttribute('data-num'));
   if( !isNaN(num) ) {
     document.querySelectorAll('.modal__img-preview-btn').forEach(function(btn) {
-      if( Number(btn.firstElementChild.getAttribute('data')) == num) {
+      if( Number(btn.firstElementChild.getAttribute('data-num')) == num) {
         btnLoadPrevImgListener(btn,sourceModalImgData,'modal__img-main','modal__img-pre-list');
       }
     });

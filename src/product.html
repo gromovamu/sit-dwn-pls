@@ -32,45 +32,45 @@
 
     <section class="section product">
       <div class="container product-grid-container">
-        <button class="btn product__img-btn">
+        <button class="btn product__img-btn" aria-label="Открыть модальное окно для просмотра изображений">
           <picture class="product__img-main">
-            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-320.png" data="source1"  media="(max-width: 520px)">
-            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-1024.png" data="source2" media="(max-width: 760px)">
-            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img.png" data="source3" media="(max-width: 900px)">
-            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-1024.png" data="source4" media="(max-width: 1200px)">
-            <img class="product__img img" src="./img/catalog/sofas/D-31/main-img.png" data="5" alt="Изоброжение товара">
+            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-320.png" data-source="source1"  media="(max-width: 520px)">
+            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-1024.png" data-source="source2" media="(max-width: 760px)">
+            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img.png" data-source="source3" media="(max-width: 900px)">
+            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-1024.png" data-source="source4" media="(max-width: 1200px)">
+            <img class="product__img img" src="./img/catalog/sofas/D-31/main-img.png" data-num="5" alt="Изоброжение товара">
           </picture>
         </button>
 
-        <div class="product__img-preview-container img-pre__swiper-container">
+        <div class="product__img-preview-container product__img__swiper-container">
           <ul class="list product__img-pre-list swiper-wrapper">
             <li class="product__img-preview-item swiper-slide">
-              <button class="btn product__img-preview-btn">
-                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img-1.png" data ="1"  alt="Предварительное изображение">
+              <button class="btn product__img-preview-btn" aria-label="Показать изображение 1">
+                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img-1.png" data-num ="1"  alt="Предварительное изображение">
               </button>
             </li>
 
             <li class="product__img-preview-item swiper-slide">
-              <button class="btn product__img-preview-btn">
-                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img-2.png" data ="2"  alt="Предварительное изображение">
+              <button class="btn product__img-preview-btn" aria-label="Показать изображение 2">
+                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img-2.png" data-num ="2"  alt="Предварительное изображение">
               </button>
             </li>
 
             <li class="product__img-preview-item swiper-slide">
-              <button class="btn product__img-preview-btn">
-                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img-3.png" data ="3"  alt="Предварительное изображение">
+              <button class="btn product__img-preview-btn" aria-label="Показать изображение 3">
+                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img-3.png" data-num ="3"  alt="Предварительное изображение">
               </button>
             </li>
 
             <li class="product__img-preview-item swiper-slide">
-              <button class="btn product__img-preview-btn">
-                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img-4.png" data ="4"  alt="Предварительное изображение">
+              <button class="btn product__img-preview-btn" aria-label="Показать изображение 4">
+                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img-4.png" data-num ="4"  alt="Предварительное изображение">
               </button>
             </li>
 
-            <li class="product__img-preview-item  swiper-slide "> <!--img-preview-item--hidden-->
-              <button class="btn product__img-preview-btn">
-                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img.png" data ="5" alt="Предварительное изображение">
+            <li class="product__img-preview-item  swiper-slide">
+              <button class="btn product__img-preview-btn" aria-label="Показать изображение 5">
+                <img class="product__img-pre" src="./img/catalog/sofas/D-31/pre-img.png" data-num ="5" alt="Предварительное изображение">
               </button>
             </li>
           </ul>
@@ -323,77 +323,76 @@
           <ul class="list swiper-wrapper similar__list">
           <!-- слайды -->
           </ul>
-        </div>
 
-        <div class="similar__btn-container swiper__btn-container">
-          <button class="btn swiper-button similar__btn-prev arrow-btn-decor">
-            <svg class="arrow-icon" viewBox="0 0 32 32">
-              <use xlink:href="#big-arrow-left"></use>
-           </svg>
-          </button>
+          <div class="similar__btn-container swiper-btn-container">
+            <button class="btn swiper-button similar__btn-prev arrow-btn-decor" aria-label="Показать предыдущий слайд">
+              <svg class="arrow-icon" viewBox="0 0 32 32">
+                <use xlink:href="#big-arrow-left"></use>
+             </svg>
+            </button>
 
-          <button class="btn swiper-button similar__btn-next arrow-btn-decor">
-            <svg class="arrow-icon" viewBox="0 0 32 32">
-              <use xlink:href="#big-arrow"></use>
-           </svg>
-          </button>
+            <button class="btn swiper-button similar__btn-next arrow-btn-decor" aria-label="Показать следующий слайд">
+              <svg class="arrow-icon" viewBox="0 0 32 32">
+                <use xlink:href="#big-arrow"></use>
+             </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
-
-    <article class="modal modal-img">
+    <div class="modal modal-img" role="dialog" aria-modal="true" aria-label="Модальное окно для просмотра изображений">
       <div class="container">
         <div class="modal__img-container">
-          <button class="btn modal-close-btn nav-link-decor">
+          <button class="btn modal-close-btn nav-link-decor" aria-label="Закрыть модальное окно">
             <svg class="close-btn-icon" viewBox="0 0 16 15">
               <use xlink:href="#close"></use>
             </svg>
           </button>
 
           <picture class="modal__img-main">
-            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-320.png" data="source1"  media="(max-width: 520px)">
-            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-1024.png" data="source2" media="(max-width: 760px)">
-            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img.png" data="source3" media="(max-width: 900px)">
-            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-modal-img.png" data="source4" media="(max-width: 1200px)">
-            <img class="modal__img img" src="./img/catalog/sofas/D-31/main-modal-img.png" data="5" alt="Изоброжение товара">
+            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-320.png" data-source="source1"  media="(max-width: 520px)">
+            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img-1024.png" data-source="source2" media="(max-width: 760px)">
+            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-img.png" data-source="source3" media="(max-width: 900px)">
+            <source class="img-source" srcset="./img/catalog/sofas/D-31/main-modal-img.png" data-source="source4" media="(max-width: 1200px)">
+            <img class="modal__img img" src="./img/catalog/sofas/D-31/main-modal-img.png" data-num="5" alt="Изоброжение товара">
           </picture>
 
-          <div class="modal__swiper-dop-container">
+          <div class="swiper modal__swiper-dop-container">
             <div class="modal__img-preview-container modal__swiper-container">
               <ul class="list modal__img-pre-list swiper-wrapper">
                 <li class="modal__img-preview-item swiper-slide">
-                  <button class="btn modal__img-preview-btn">
-                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-1.png" data ="1"  alt="Предварительное изображение">
+                  <button class="btn modal__img-preview-btn" aria-label="Открыть изображение 1">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-1.png" data-num ="1"  alt="Предварительное изображение">
                   </button>
                 </li>
 
                 <li class="modal__img-preview-item swiper-slide">
-                  <button class="btn modal__img-preview-btn">
-                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-2.png" data ="2"  alt="Предварительное изображение">
+                  <button class="btn modal__img-preview-btn" aria-label="Открыть изображение 2">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-2.png" data-num ="2" alt="Предварительное изображение">
                   </button>
                 </li>
 
                 <li class="modal__img-preview-item swiper-slide">
-                  <button class="btn modal__img-preview-btn">
-                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-3.png" data ="3"  alt="Предварительное изображение">
+                  <button class="btn modal__img-preview-btn" aria-label="Открыть изображение 3">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-3.png" data-num ="3" alt="Предварительное изображение">
                   </button>
                 </li>
 
                 <li class="modal__img-preview-item swiper-slide">
-                  <button class="btn modal__img-preview-btn">
-                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-4.png" data ="4"  alt="Предварительное изображение">
+                  <button class="btn modal__img-preview-btn" aria-label="Открыть изображение 4">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img-4.png" data-num ="4" alt="Предварительное изображение">
                   </button>
                 </li>
 
                 <li class="modal__img-preview-item  swiper-slide">
-                  <button class="btn modal__img-preview-btn">
-                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img.png" data ="5" alt="Предварительное изображение">
+                  <button class="btn modal__img-preview-btn" aria-label="Открыть изображение 5">
+                    <img class="modal__img-pre" src="./img/catalog/sofas/D-31/pre-modal-img.png" data-num ="5" alt="Предварительное изображение">
                   </button>
                 </li>
               </ul>
 
-              <div class="modal__btn-container swiper__btn-container">
+              <div class="modal__btn-container swiper-btn-container">
                 <button class="btn swiper-button modal__btn-prev arrow-btn-decor">
                   <svg class="arrow-icon" viewBox="0 0 32 32">
                     <use xlink:href="#big-arrow-left"></use>
@@ -411,11 +410,11 @@
 
         </div>
       </div>
-    </article>
+    </div>
 
-    <article class="modal modal-form modal-style">
-      <form class="modal__form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
-        <button class="btn modal-close-btn nav-link-decor">
+    <div class="modal modal-form modal-style" role="dialog" aria-modal="true" aria-label="Модальное окно формы покупки в один клик">
+      <form class="modal__form feedback" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+        <button class="btn modal-close-btn nav-link-decor" aria-label="Закрыть модальное окно">
           <svg class="close-btn-icon" viewBox="0 0 16 15">
             <use xlink:href="#close"></use>
           </svg>
@@ -425,16 +424,16 @@
           Купить в один клик
         </h2>
 
-        <label class="modal-form__descr" for="name">
+        <label class="modal-form__descr">
           Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
         </label>
 
         <fieldset class="modal-form__fieldset feedback__input-container">
-          <input class="modal-form__input feedback__input" id="modal-input-name" type="text" name="name" data-validate-field="name" placeholder="Как вас зовут?" >
+          <input class="modal-form__input feedback__input" id="modal-input-name" type="text" name="name" data-num-validate-field="name" placeholder="Как вас зовут?" >
         </fieldset>
 
         <fieldset class="modal-form__fieldset feedback__input-container">
-          <input class="modal-form__input feedback__input feedback__input-tel" id="modal-input-tel" type="tel" name="tel" data-validate-field="tel" placeholder="Ваш телефон" >
+          <input class="modal-form__input feedback__input feedback__input-tel" id="modal-input-tel" type="tel" name="tel" data-num-validate-field="tel" placeholder="Ваш телефон" >
         </fieldset>
 
         <button class="btn modal-form__btn btn-decor1">
@@ -442,7 +441,7 @@
         </button>
 
         <label class="agreement" for="agreement">
-          <input class="agreement__input" id="agreement" type="checkbox" name="agreement" data-validate-field="agreement">
+          <input class="agreement__input" id="agreement" type="checkbox" name="agreement" data-num-validate-field="agreement">
           <span class="agreement__custom-checkbox">
             <svg class="agreement__custom-mark" viewBox="0 0 11 9">
               <use xlink:href="#mark"></use>
@@ -453,10 +452,10 @@
         </label>
 
       </form>
-    </article>
+    </div>
 
-    <article class="modal modal-info modal-style">
-      <button class="btn modal-close-btn nav-link-decor">
+    <div class="modal modal-info modal-style" role="dialog" aria-modal="true" aria-label="Модальное информационно окно">
+      <button class="btn modal-close-btn nav-link-decor" aria-label="Закрыть модальное окно">
         <svg class="close-btn-icon" viewBox="0 0 16 15">
           <use xlink:href="#close"></use>
         </svg>
@@ -469,8 +468,7 @@
       <p class="modal-info__descr">
         Спасибо, мы вам перезвоним!
       </p>
-    </article>
-
+    </div>
   </main>
 
   <footer class="footer">

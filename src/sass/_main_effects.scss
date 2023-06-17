@@ -175,6 +175,25 @@ stroke: - задает цвет стрелки */
   background-color: $main-color-light;
 }
 
+.agreement__link {
+  transition: color 0.3s ease-in-out;
+}
+
+.agreement__link:focus-visible {
+  color: $main-color-light;
+  outline: none;
+}
+
+.agreement__link:hover {
+  color: $main-color-light;
+  outline: none;
+}
+
+.agreement__link:active {
+  color: $main-color-dark;
+  outline: none;
+}
+
 .js-validate-error-field+.agreement__custom-checkbox {
   outline: 1px solid $error-color;
   outline-offset: 1px;

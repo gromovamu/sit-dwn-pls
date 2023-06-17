@@ -301,7 +301,7 @@
   padding-top: $grid-gap;
 }
 
-.catalog__btn {
+.catalog-btn {
   visibility: visible;
   padding: 6px 9px;
   border-radius: 10px;
@@ -313,12 +313,12 @@
   background-color: transparent;
 }
 
-.catalog__btn--active {
+.catalog-btn--active {
   color: $text-color-light;
   background-color: $main-color;
 }
 
-.catalog__btn--hidden {
+.catalog-btn--hidden {
   position: absolute;
   visibility: hidden;
   color: $text-color-light;

@@ -68,7 +68,7 @@
   grid-row: 3/5;
 }
 
-.img-pre__swiper-container {
+.product__img__swiper-container {
   padding: 10px 25px;
   overflow: hidden;
   width: 100%;
@@ -448,6 +448,10 @@
 
 .product__btn-add:active {
   color: $main-color-dark;
+}
+
+.product__img-preview-btn:focus-visible {
+  background-color: $focus-decor-color;
 }
 
 

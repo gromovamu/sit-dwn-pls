@@ -149,6 +149,14 @@ body {
   margin-right: 5px;
 }
 
+// стили кнопок слайдера
+.swiper-btn-container {
+  position: absolute;
+  top: 0;
+  right: 0 ;
+  font-size: 0;
+}
+
 // про стили формы
 .feedback__input-container {
   position: relative;
