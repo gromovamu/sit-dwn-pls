@@ -225,12 +225,23 @@
 
   .header__top-nav {
     top: $header-row-height1-320 + $header-row-height2-320 + $header-row-height3-320;
-    padding: 16px;
+    padding: $internal-padding-mobile;
+  }
+
+  .header__top-nav-item {
+    width: 100%;
+    display: flex;
   }
 
   .header__bottom-nav {
     top: $header-row-height1-320 + $header-row-height2-320 + $header-row-height3-320;
-    padding: 16px;
+    padding: $internal-padding-mobile;
+    padding-left: calc(50% + $internal-padding-mobile);
+  }
+
+  .header__bottom-nav-item {
+    width: 100%;
+    display: flex;
   }
 
   .header__form-container {

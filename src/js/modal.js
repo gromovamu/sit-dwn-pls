@@ -5,6 +5,8 @@ function setModalMode (modalSelector) {
   document.querySelector('.body').classList.add('modal-mode');
   let modal = document.querySelector(modalSelector);
   modal.classList.add('modal--active');
+  // прокрутим окно к началу
+  scrollTo(0,0);
 
   // добавляем обработчик события для клика на самом модальном окне
   modal.addEventListener('click', clickWithinModal);
@@ -27,7 +29,9 @@ function closeModalMode () {
 }
 
 // функция закрытия модального окна
-function closeModal() {
+function closeModal(event = null) {
+  if(event !== null) event.preventDefault();
+
   // закрываем окно просмотра
   let modal =  document.querySelector('.modal--active');
   if (modal) {

@@ -156,9 +156,9 @@
     flex-basis: 35%;
   }
 
-  .img-pre__swiper-container {
+  .product__img__swiper-container {
     padding: 25px;
-    max-height: 350px;
+    max-height: $product__img-preview-container_height_768;
   }
 
   .similar__btn-container {
@@ -304,6 +304,10 @@
     .btn-decor2 {
       padding: 10px 23px;
     }
+  }
+
+  .modal__swiper-container {
+    padding: $internal-padding-mobile 0;
   }
 
   .modal__swiper-dop-container {

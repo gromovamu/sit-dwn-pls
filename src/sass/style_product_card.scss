@@ -350,11 +350,13 @@
 .modal__btn-container {
   position: absolute;
   visibility: hidden;
-  bottom: calc(50% - 16px); //67px;
+  bottom: 0; //calc(50% - 16px); //67px;
   right: $internal-padding-mobile;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: calc(100% - 32px);
+  height: 100%;
 }
 
 .modal__img-preview-btn {

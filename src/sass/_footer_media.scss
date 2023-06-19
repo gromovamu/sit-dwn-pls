@@ -50,15 +50,14 @@
     margin-bottom: 0;
   }
 
-
+  // это из-за странного макета, приходится добавить иначе перебивает
   .footer__nav-item:nth-child(2) {
-    min-width: initial;
+    min-width: calc(50% - $internal-padding-mobile / 2);
   }
 
   .footer__nav-item:nth-child(3) {
-    min-width: inherit;
+    min-width: calc(50% - $internal-padding-mobile / 2);
   }
-
 }
 //-----------------------------------------------------------------------------------------------
 @media (max-width: 520px) {

@@ -70,7 +70,7 @@ const stylesDebug = () => {
     .pipe(dest('dist/css'));
     return src('src/css/*.css')
     .pipe(dest('dist/css'))
-    //.pipe(browserSync.stream());
+    .pipe(browserSync.stream());
 }
 
 const svgSprites = () => {
@@ -92,7 +92,7 @@ const svgSprites = () => {
         }
     }))
     .pipe(dest('dist'))
-    //.pipe(browserSync.stream());
+    .pipe(browserSync.stream());
 }
 
 const scripts = () => {
@@ -104,7 +104,7 @@ const scripts = () => {
     .pipe(concat('script.min.js'))
     .pipe(sourcemaps.write())
     .pipe(dest('dist/js'))
-    //.pipe(browserSync.stream());
+    .pipe(browserSync.stream());
 }
 
 const scriptsBuild = () => {
@@ -122,10 +122,17 @@ const scriptsBuild = () => {
     .pipe(dest('dist/js'))
 }
 
+// просто переписывает скрипты
 const scriptsDebug = () => {
   return src('src/js/*.js')
   .pipe(dest('dist/js'))
-  //.pipe(browserSync.stream());
+  .pipe(browserSync.stream());
+}
+
+const scriptLib = () => {
+  return src('src/js/lib/*.js')
+  .pipe(concat('scriptLib.min.js'))
+  .pipe(dest('dist/js'))
 }
 
 const images = () => {
@@ -137,7 +144,7 @@ const images = () => {
     ])
     .pipe(image())
     .pipe(dest('dist/img'))
-    //.pipe(browserSync.stream());
+    .pipe(browserSync.stream());
 }
 
 const favicon = () => {
@@ -185,4 +192,5 @@ exports.build = series(clean, htmlSeries, stylesSassBuild, stylesBuild,  images,
 /* Сборка для dev */
 exports.default = series(clean, htmlSeries, stylesSass, stylesDebug, images, fonts, scripts, watchFiles);
 
-exports.debug = series(htmlSeries, stylesSass, stylesDebug, fonts, scriptsDebug);
+/* сборка для отладки, не переписывает картинки*/
+exports.debug = series(htmlSeries, stylesSass, stylesDebug, fonts, scriptLib, scriptsDebug, watchFiles);
