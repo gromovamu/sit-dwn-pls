@@ -58,13 +58,7 @@ const stylesSassBuild = () => {
     .pipe(dest('src/css'))
 }
 
-const stylesBuild = () => {
-    return src(['src/css/lib/normalize.min.css','src/css/lib/*.css','src/css/style.css'])
-    .pipe(concat('style.min.css'))
-    .pipe(dest('dist/css'))
-}
-
-const stylesDebug = () => {
+const styles = () => {
     src(['src/css/lib/normalize.min.css','src/css/lib/*.css'])
     .pipe(concat('style_lib.min.css'))
     .pipe(dest('dist/css'));
@@ -108,11 +102,7 @@ const scripts = () => {
 }
 
 const scriptsBuild = () => {
-    src('src/js/lib/*.js')
-    .pipe(dest('dist/js'));
-
-    return src('src/js/*.js')
-    .pipe(concat('script.min.js'))
+    return src('dist/js/*Script.min.js')
     .pipe(babel({
         presets: ['@babel/env']
     }))
@@ -123,16 +113,26 @@ const scriptsBuild = () => {
 }
 
 // просто переписывает скрипты
-const scriptsDebug = () => {
+/*const scriptsDebug = () => {
   return src('src/js/*.js')
-  .pipe(dest('dist/js'))
+  .pipe(dest('dist/js/*.min.js'))
   .pipe(browserSync.stream());
-}
+}*/ // использовалось на начальном этапе разработки
 
 const scriptLib = () => {
   return src('src/js/lib/*.js')
   .pipe(concat('scriptLib.min.js'))
   .pipe(dest('dist/js'))
+}
+
+/* подключаем только нужные для модуля скрипты в о дин файл*/
+   const scriptInclude = () => {
+    return src('src/js/script/*.js')
+    .pipe(fileInclude({
+        prefix: '@',
+        basepath: '@file'
+    }))
+    .pipe(dest('dist/js'))
 }
 
 const images = () => {
@@ -161,12 +161,14 @@ const watchFiles = () => {
 }
 
 let htmlSeries = series(favicon, svgSprites, htmlInclude);
+let scriptSeriesDebug = series(scriptLib, scriptInclude);
+let scriptSeries = series(scriptLib, scriptInclude, scriptsBuild);
 
 watch('src/sass/**/*.scss', stylesSass);
-watch('src/css/**/*.css', stylesDebug);
+watch('src/css/**/*.css', styles);
 watch('src/img/svg/**/*.svg', htmlSeries);
 
-watch('src/js/**/*.js', scriptsDebug);
+watch('src/js/**/*.js', scriptSeriesDebug);
 watch('src/*.*', series(favicon, htmlInclude));
 watch('src/**/*.html', htmlInclude);
 
@@ -186,11 +188,12 @@ exports.img = images;
 
 
 /* Сборка для build*/
-
-exports.build = series(clean, htmlSeries, stylesSassBuild, stylesBuild,  images, fonts, scriptsBuild);
+// сжимает стили и скрипты
+exports.build = series(clean, htmlSeries, stylesSassBuild, styles,  images, fonts, scriptSeries, watchFiles);
 
 /* Сборка для dev */
-exports.default = series(clean, htmlSeries, stylesSass, stylesDebug, images, fonts, scripts, watchFiles);
+//ничего не делает со скриптами, и стилями, только обьединяет
+exports.default = series(clean, htmlSeries, stylesSass, styles, images, fonts, scriptSeriesDebug, watchFiles);
 
 /* сборка для отладки, не переписывает картинки*/
-exports.debug = series(htmlSeries, stylesSass, stylesDebug, fonts, scriptLib, scriptsDebug, watchFiles);
+exports.debug = series(htmlSeries, stylesSass, styles, fonts, scriptSeriesDebug, watchFiles);
