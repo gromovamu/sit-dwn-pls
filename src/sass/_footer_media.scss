@@ -1,6 +1,6 @@
 @media (max-width: 1200px) {
   /* -- footer ---*/
-  .footer__container {
+  .footer__grid-container {
     grid-template-columns: repeat($count_grid-column-1024, 1fr);
   }
 
@@ -15,21 +15,21 @@
 //------------------------------------------------------------
 @media (max-width: 900px) {
   /* -- footer ---*/
-  .footer__container {
+  .footer__grid-container {
     grid-template-columns: repeat(1, 1fr);
-    row-gap: 0;
+    row-gap: 24px;
   }
 
   .footer__info {
     grid-column: span 1;
     flex-direction: row;
     align-items: center;
-    padding: 21px 0;
+    justify-content: space-between;
   }
 
   .footer__nav {
     grid-column: span 1;
-    padding-bottom: 24px;
+    //padding-bottom: 24px;
     align-items: center;
   }
 }
@@ -37,17 +37,8 @@
 //------------------------------------------------------------
 @media (max-width: 760px) {
   .footer__nav-list {
-    flex-wrap: wrap;
-    gap: 3px; //иначе не попадаю в pixelperfect
-  }
-
-  .footer__nav-item {
-    min-width: calc(50% - $internal-padding-mobile / 2);
-    margin-bottom: 24px;
-  }
-
-  .footer__nav-item:nth-last-child(-n+2) {
-    margin-bottom: 0;
+    grid-template-columns: repeat(2, auto);
+    justify-content: stretch;
   }
 
   // это из-за странного макета, приходится добавить иначе перебивает
@@ -64,16 +55,14 @@
   .footer__info {
     flex-direction: column;
     justify-content: center;
-    padding: 24px 0 21px 0;
-  }
-
-  .footer__logo {
-    margin-bottom: 24px;
   }
 }
 /* --------------------------------------------------------------------------------------------------*/
 @media (max-width: 410px) {
   .footer__links-title {
     margin-bottom: 9px;
+  }
+  .footer__nav-list {
+    justify-content: space-between;
   }
 }

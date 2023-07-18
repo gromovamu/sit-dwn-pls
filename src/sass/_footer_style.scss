@@ -1,18 +1,19 @@
 /* -- footer ---*/
-.footer {
+.footer__main-container {
+  padding: 24px 0;
   background-color: $background-light-color;
 }
 
-.footer__container {
+.footer__grid-container {
   @include gridTemplate(12, $grid-gap);
-  padding: 24px $container-padding;
 }
 
 .footer__info {
   grid-column: span 4;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 28px;
 }
 
 .footer__logo {
@@ -22,14 +23,8 @@
 
 .social-list {
   display: flex;
-}
-
-.social-item {
-  margin-right: 14px;
-}
-
-.social-item:last-child {
-  margin-right: 0;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .social-link {
@@ -46,7 +41,9 @@
 }
 
 .footer__nav-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 32px;
   justify-content: space-between;
   width: 100%
 }

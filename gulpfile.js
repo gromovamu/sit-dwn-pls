@@ -35,6 +35,7 @@ const htmlInclude = () => {
         basepath: '@file'
     }))
     .pipe(dest('dist'))
+    .pipe(browserSync.stream());
 }
 
 /*В данной сборке у меня уже готовые шрифты,
@@ -62,6 +63,7 @@ const styles = () => {
     src(['src/css/lib/normalize.min.css','src/css/lib/*.css'])
     .pipe(concat('style_lib.min.css'))
     .pipe(dest('dist/css'));
+
     return src('src/css/*.css')
     .pipe(dest('dist/css'))
     .pipe(browserSync.stream());

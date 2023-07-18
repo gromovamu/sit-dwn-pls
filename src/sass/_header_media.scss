@@ -7,7 +7,7 @@
   .header-row-1 {
     visibility: visible;
     position: relative;
-    padding: 17px 0;
+    padding: 16.5px 0;
     background-color: $background-main-color;
 
     .header__logo {
@@ -17,7 +17,7 @@
 
   // ------- вторая строка --------
   .header-row-2 {
-    padding: 5.5px 0;
+    padding: 6px 0;
 
     background-color: $background-secondary-color;
 
@@ -343,6 +343,10 @@
     .header__btn-container {
       grid-column: span 3;
     }
+  }
+
+  .header-row-4 {
+    margin-bottom: 0;
   }
 
   .search-form {

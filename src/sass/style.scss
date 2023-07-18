@@ -176,7 +176,6 @@
 .special__name {
   @include clean();
   margin-bottom: 23px;
-  max-width: 90%;
   font-weight: 400;
   font-size: 24px;
   line-height: 30px;
@@ -184,7 +183,7 @@
 
 .special__swiper-add-item {
   .special__name {
-    max-width: 45%;
+    max-width: 45%; //только для pixel-perfect
   }
 }
 
@@ -283,7 +282,7 @@
 }
 
 .banner__btn-container {
-  position: relative;
+  position: absolute;
   visibility: hidden;
 }
 
