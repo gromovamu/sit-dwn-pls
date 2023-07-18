@@ -4,26 +4,69 @@
   font-size: 16px;
   line-height: 22px;
   color: $text-color;
-  background: linear-gradient(to bottom, $background-secondary-color $header-row-height1, $background-main-color 0%);
 }
 
-.header__grid-container {
+// заголовок сделаем в виде таблицы из трех строк,
+// контент дублируется из одного файла (_header_elements.html),
+// так чтобы не надо было следить, чтобы везде поменялось
+// кроме кнопки бургер (она в третьей строке заголовка)
+
+// ------------------------------
+.header-row__conatiner {
   display: grid;
   grid-template-columns: repeat($count_grid-column, 1fr);
-  grid-template-rows: $header-row-height1 $header-row-height2 $header-row-height3;
-  row-gap: 0;
-  column-gap: $grid-gap;
+  gap: $grid-gap;
   align-items: center;
 }
 
-.header__form-container {
-  grid-column: 1/span 5;
-  display: flex;
+// ------- перевая строка --------
+// для десктоп версии скрыта, начинаем со второй
+.header-row-1 {
+  visibility: hidden;
+  position: absolute;
 }
 
-.region-form {
-  display:flex;
-  margin-right: 30px;
+// ------- вторая строка --------
+.header-row-2 {
+  padding: 14px 0;
+
+  background-color: $background-secondary-color;
+  // прячем лишнее
+  .header__btn-container {
+    display: none;
+  }
+}
+
+// ------- третья строка --------
+.header-row-3 {
+  padding: $internal-padding 0;
+
+  background-color: $background-main-color;
+
+  .header__btn-container {
+    display: none;
+  }
+
+  .burger__menu {
+    display: none;
+  }
+}
+
+// ------- четвертая строка --------
+.header-row-4 {
+  padding: 0;
+  background-color: $background-main-color;
+}
+
+
+//------- стили элементов
+.header__form-container {
+  grid-column: span 5;
+  align-self: start;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: $internal-padding-mobile - 2px;
 }
 
 .region-label {
@@ -39,10 +82,11 @@
 
 .region-form {
   display: flex;
-  align-items: center;
+  margin-right: 30px;
 
   /* choices кастомный селект*/
   .choices {
+    z-index: 51;
     margin-top: 2px;
     color: $main-color;
     transition: color 0.3s ease-in-out;
@@ -126,6 +170,8 @@
   .choices__list--dropdown,
   .choices__list[aria-expanded] {
     top: 100%;
+    display: flex;
+    flex-direction: column;
     margin-top: 0px;
     padding: 16px;
     min-width: 110px;
@@ -136,7 +182,7 @@
     transition: transform 0.2s ease-out, visibility 0.2s ease-out;
     //word-break: normal;
   }
-  /*пока не понимаю, что делать с шириной чтобы соответсвовала макету,
+  /*!!!!пока не понимаю, что делать с шириной чтобы соответсвовала макету,
   и при этом была адаптивной, т.е. расширялась при добавлении более длинного слова*/
 
   .is-open .choices__list--dropdown,
@@ -166,7 +212,7 @@
     color: var(--highlight-color);
   }
 
-  /*скрываем выбранный эдемент*/
+  /*скрываем выбранный элемент*/
   .choices__list--dropdown .choices__item--selectable.is-selected,
   .choices__list[aria-expanded] .choices__item--selectable.is-selected {
     visibility: hidden;
@@ -190,28 +236,39 @@
   grid-column: span 7;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
+  font-size: small; //это чтобы не мешало
+  line-height: 100%;
 }
 
 .header__top-nav-list {
-  display: flex;
+  padding: 4px 0;
+  width: 98%; //чтоб влезало в pixelperfect
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  row-gap: 8px; // на случай переполнения
+  justify-items: start;
   justify-content: space-between;
-  flex-grow: 1;
-  max-width: 710px; /*!вернуться и еще подумать*/
-  margin-left: -8px;
 }
 
 .header__logo {
   grid-column: span 3;
+  align-self: center;
 }
 
 .header__bottom-nav {
   grid-column: span 9;
+  padding: 4px 0;
 }
 
 .header__bottom-nav-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  row-gap: 8px; // на случай переполнения
+  justify-items: start;
   justify-content: space-between;
   margin-left: -7px;
+
 }
 
 .nav-link-decor2 {
@@ -241,7 +298,7 @@
 }
 
 .search__input {
-  padding: 0 74px 0 59px;
+  padding: 18px 74px 18px 59px;
   width: 100%;
   height: 100%;
   border: none;
@@ -259,7 +316,7 @@
 .category-selector {
   flex-grow: 0;
   min-width: 300px;
-  padding: 0 32px;
+  padding: 17px 32px;
   border: 2px solid $background-secondary-color;
   border-radius: 0px 10px 10px 0px;
   color: $main-color;
@@ -309,7 +366,7 @@
     content: "";
     position: absolute;
     top: calc(50% - 4px);
-    right: $internal-padding;
+    right: calc($internal-padding + 5px);
     margin-top: 0;
     @include arrow-drop-down();
   }
@@ -421,7 +478,7 @@
     content: "";
     position: absolute;
     top: calc(50% - 4px);
-    right: $internal-padding;
+    right: calc($internal-padding + 5px);
     margin-top: 0;
     width: 8px;
     height: 8px;
@@ -481,6 +538,7 @@
 .burger {
   position: absolute;
   visibility: hidden;
+  z-index: 101;
   justify-self: start;
   padding: 4px;
   margin-left: -1px;
@@ -496,6 +554,7 @@
 /* --- breadcrumbs  ---*/
 .header {
   .breadcrumbs {
+    display: flex;
     padding-top: 22px;
     font-size: 14px;
     line-height: 100%;

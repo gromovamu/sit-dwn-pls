@@ -61,7 +61,15 @@ body {
 }
 
 .section {
-  margin-bottom: $section-margin;
+  padding: 35px 0;
+}
+
+.big-padding-top {
+  padding-top: 70px
+}
+
+.big-padding-bottom {
+  padding-bottom: 70px
 }
 
 .section-title {
@@ -102,7 +110,7 @@ body {
 }
 
 .btn-decor1 {
-  padding: 22px 0;
+  padding: 22px;
   border-radius: 10px;
   font-weight: 700;
   font-size: 16px;
@@ -110,6 +118,7 @@ body {
   color: $text-color-light;
   text-align: center;
   background-color: $main-color;
+  max-width: 85%;
 }
 
 .btn-decor1--disabled {
@@ -127,9 +136,11 @@ body {
   line-height: 100%;
   color: $main-color;
   background-color: transparent;
+  max-width: 85%;
 }
 
 .nav-link-decor {
+  display:flex;
   padding: 0 8px;
   font-weight: 400;
   font-size: 14px;
@@ -147,6 +158,10 @@ body {
 .arrow-btn-text {
   position: relative;
   margin-right: 5px;
+}
+
+.arrow-icon {
+  flex-shrink: 0;
 }
 
 // стили кнопок слайдера

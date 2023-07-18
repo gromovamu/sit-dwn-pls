@@ -12,7 +12,7 @@
 //-----------------------------------------------------------------------------------------------
 @media (max-width: 520px) {
   .btn-decor1 {
-    padding: 22px 0;
+    //padding: 22px;
     font-size: 16px;
     line-height: 100%;
   }
@@ -25,5 +25,6 @@
 @media (max-width: 410px) {
   .btn-decor1 {
     width: 100%;
+    max-width: 100%;
   }
 }

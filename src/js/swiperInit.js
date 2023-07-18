@@ -29,8 +29,8 @@ const heroSwiper = new Swiper('.hero__swiper-container', {
 
   /* инициализация слайдера для секции special  */
 const specialSwiper = new Swiper('.special__swiper-container', {
-  slidesPerView: 3,
-  slidesPerGroup: 3,
+  slidesPerView: 'auto',
+ // slidesPerGroup: 3,
   loop: false,
   spaceBetween: 32,
   // навигация
@@ -42,29 +42,16 @@ const specialSwiper = new Swiper('.special__swiper-container', {
     breakpoints: {
       // when window width is >= 280px
       280: {
-        slidesPerView: 1,
         slidesPerGroup: 1,
-        spaceBetween: 0
       },
       // when window width is >= 520px
      520: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 0
-      },
-
-      // when window width is >= 760px
-      760: {
-        slidesPerView: 2,
         slidesPerGroup: 2,
-        spaceBetween: 32
       },
 
       // when window width is >= 900px
       900: {
-        slidesPerView: 3,
         slidesPerGroup: 3,
-        spaceBetween: 32
       },
     }
 
@@ -109,25 +96,3 @@ const usefulSwiper = new Swiper('.useful__swiper-container', {
     },
   });
 
-
-  /* инициализация слайдера
-const heroSwiper = new Swiper('.hero__swiper-container', {
-  slidesPerView: countSlides,
-  loop: false,
-  spaceBetween: spaceBetweenSlides,
-
-  // навигация
-  navigation: {
-  nextEl: '.swiper-button-next',
-  prevEl: '.swiper-button-prev',
-  },
-  });
-
-  window.addEventListener('resize', function() {
-    let current_clientWidth = document.documentElement.clientWidth;
-
-    swiper.params.slidesPerView = calcCountSlides(current_clientWidth);
-
-    swiper.params.spaceBetween = calcSpaceBetweenSlides(current_clientWidth);
-
-  });*/

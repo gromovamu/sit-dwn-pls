@@ -14,7 +14,7 @@
 
 .hero__swiper-slide {
   position: relative;
-  min-height: $hero-height;
+  padding: 80px 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,8 +37,9 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 100%;
-  max-width: 1280px
+
+  //min-height: $hero-height;
+  max-width: 1280px;
 }
 
 .hero__title {
@@ -53,7 +54,10 @@
 }
 
 .hero__btn {
-  width: $hero-btn-width;
+  padding-right: 22px;
+  padding-left: 22px;
+  min-width: $hero-btn-width - 44px;
+  max-width: 70%;
 }
 
 .hero__swiper-img3  {
@@ -66,6 +70,7 @@
   position: absolute;
   display: flex;
   justify-content: center;
+  gap: 16px;
 }
 
 .hero {
@@ -79,7 +84,7 @@
     .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
     .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
       margin: 0;
-      margin-right: 16px;
+      //margin-right: 16px;
     }
 
     .swiper-horizontal>.swiper-pagination-bullets,
@@ -109,7 +114,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: $internal-padding 0;
-  max-width: $special-card-width;
+  width: $special-card-width;
   @include background-decor();
 }
 
@@ -118,10 +123,8 @@
 }
 
 .special__swiper-add-item {
-  //min-width: calc((100% - (($special-card-width + $grid-gap) * 2)) - $internal-padding * 2);
-  min-width: calc(100% - (($special-card-width + $grid-gap) * 2));
+  width: calc(100% - (($special-card-width + $grid-gap) * 2));
   position: relative;
-  flex-grow: 1;
 }
 
 .sale {
@@ -173,10 +176,16 @@
 .special__name {
   @include clean();
   margin-bottom: 23px;
-  max-width: 225px;
+  max-width: 90%;
   font-weight: 400;
   font-size: 24px;
   line-height: 30px;
+}
+
+.special__swiper-add-item {
+  .special__name {
+    max-width: 45%;
+  }
 }
 
 .special__price {
@@ -232,8 +241,9 @@
 
 /* --- banner ---*/
 .banner {
+  padding: 150px 0;
   width: 100%;
-  height: $banner-heght;
+  min-height: $banner-heght;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -261,7 +271,7 @@
 .banner__descr {
   @include clean();
   margin-bottom: 49px;
-  width: 40%;
+  width: 45%;
   font-weight: 400;
   font-size: 48px;
   line-height: 120%;
@@ -269,7 +279,12 @@
 }
 
 .banner__btn {
-  width: $banner-btn-width;
+  min-width: $banner-btn-width;
+}
+
+.banner__btn-container {
+  position: relative;
+  visibility: hidden;
 }
 
 /* --- category ---*/
@@ -303,6 +318,7 @@
   justify-content: flex-start;
   margin-bottom: 12px;
   padding: 0 ($catalog-padding - 8px); /*8px чтобы сделать фокус эффект с фоном */
+  flex-wrap: wrap;
 }
 
 .param-item {
