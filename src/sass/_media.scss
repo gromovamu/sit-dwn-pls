@@ -409,7 +409,7 @@
 
   .param-list {
     padding: 0 ($catalog-padding-mobile - 8px);
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     width: 100%;
   }
 
@@ -467,6 +467,10 @@
 
   .feedback-btn {
     padding: 19px 35px;
+  }
+
+  .footer__info {
+    gap: 24px;
   }
 }
 /* --------------------------------------------------------------------------------------------------*/
@@ -585,7 +589,6 @@
 
    .category__item:not(:first-child) {
       .param-item {
-        margin-bottom: 0;
         .nav-link-decor {
             font-size: 10px;
             line-height: 100%;
