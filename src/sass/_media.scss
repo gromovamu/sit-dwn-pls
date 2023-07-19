@@ -590,6 +590,8 @@
   .banner__btn  {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
 
   .banner__btn-container {
