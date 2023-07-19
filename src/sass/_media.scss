@@ -128,7 +128,15 @@
   /* --- feedback ---*/
   .feedback__container {
     grid-template-columns: repeat($count_grid-column-1024, 1fr);
-    background-size: 50%;
+  }
+
+  .feedback__content {
+    grid-column: span 4;
+  }
+
+  .feedback__decor {
+    grid-column: span 5;
+    background-image: url('../img/main/1024/feedback-img-1024.png');
   }
 
   .feedback__title {
@@ -208,8 +216,10 @@
   /* --- feedback ---*/
   .feedback__container {
     grid-template-columns: repeat($count_grid-column-768, 1fr);
-    background-size: contain;
-    background-position: right 72px top 50%; /* с процентами при позиционировании изображении не все однозначно, так что пусть бкдет так*/
+  }
+
+  .feedback__decor {
+    grid-column: span 2;
     background-image: url('../img/main/768/feedback-img-768.png');
   }
 
@@ -299,17 +309,12 @@
   }
 
   /* --- feedback ---*/
-  .feedback__container {
-    grid-template-columns: repeat(1, 1fr);
-    background-image: none;
+  .feedback__content {
+    grid-column: span 5;
   }
 
-  .feedback__title {
-    grid-column: span 1;
-  }
-
-  .feedback__form {
-    grid-column: span 1;
+  .feedback__decor {
+    display: none;
   }
 }
 //-----------------------------------------------------------------------------------------------
@@ -446,6 +451,14 @@
   }
 
   /* --- feedback ---*/
+  .feedback__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .feedback__content {
+    grid-column: span 1;
+  }
+
   .feedback__title {
     font-size: 24px;
     line-height: 100%;

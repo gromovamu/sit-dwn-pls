@@ -404,14 +404,25 @@
 .feedback__container {
   @include gridTemplate($count_grid-column, $grid-gap);
   row-gap: 0;
-  background-size: 46%;
-  background-position: right $container-padding center;
+}
+
+.feedback__content {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback__decor {
+  grid-column: span 6;
+  width: 100%;
+  height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
   background-image: url('../img/main/1920/feedback-img.png');
 }
 
 .feedback__title {
-  grid-column: span $count_grid-column;
   @include clean();
   margin-bottom: 9px;
   font-weight: 400;
@@ -421,7 +432,6 @@
 }
 
 .feedback__form {
-  grid-column: span 6;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
