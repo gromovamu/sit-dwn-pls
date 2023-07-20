@@ -1,16 +1,18 @@
 @media (max-width: 1200px) {
-  .catalog-container {
-    grid-template-columns: repeat($count_grid-column-1024, 1fr);
+  .catalog-section__container {
+    grid-template-columns: repeat(1, auto);
   }
 
   .catalog-section__title {
-    grid-column: 1/ span $count_grid-column-1024;
+    grid-column: initial; //1/ span $count_grid-column-1024;
+    grid-row: initial;
     margin-bottom: $internal-padding-mobile;
   }
 
   .filter {
-    grid-column: span $count_grid-column-1024;
+    grid-column: initial; //span $count_grid-column-1024;
     grid-row: initial;
+
     display: grid;
     grid-template-columns: repeat($count_grid-column-1024, 1fr);
     column-gap: $grid-gap;
@@ -18,8 +20,8 @@
     margin-bottom: $grid-gap;
   }
 
-  .catalog {
-    grid-column: span $count_grid-column-1024;
+  .catalog-container {
+    grid-column: initial; //span $count_grid-column-1024;
     grid-row: initial;
   }
 
@@ -28,8 +30,12 @@
   }
 
   .catalog-btn-container {
-    grid-column: span $count_grid-column-1024;
+    grid-column: initial; //span $count_grid-column-1024;
     grid-row: initial;
+  }
+
+  .filter {
+    padding-bottom: 0;
   }
 
   .filter__title {
@@ -40,8 +46,10 @@
     line-height: 130%;
   }
 
-  .filter__fieldset {
-    grid-column: span 2;
+  .filter__grid-container {
+    grid-column: span 8;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $grid-gap-mobile $grid-gap;
   }
 
   .filter__title-big  {
@@ -75,7 +83,7 @@
     //box-shadow: 1px 1px 1px $focus-decor-color;
     transform: scaleY(0);
     transform-origin: top center;
-    transition: visibility 0.8s ease-out, transform 0.3s ease-out;
+   // transition: visibility 0.2s ease-out, transform 0.2s ease-out; //перенесено в filter.js
   }
 
   .filter__container--active {
@@ -99,13 +107,21 @@
   .filter__btn {
     visibility: visible;
     position: relative;
-    z-index: 48;
+    z-index: 45;
     display: flex;
     margin-bottom: 0;
     padding: 9px 16px 9px 16px;
     width: 100%;
     border-radius: 10px;
     background-color: $background-secondary-color;
+  }
+
+  .filter__container {
+    z-index: 46;
+  }
+
+  .filter__btn--active {
+    z-index: 47;
   }
 
   .filter__btn::after {
@@ -121,23 +137,12 @@
     transform: rotate(45deg);
   }
 
-  .filter__down {
-    .filter__btn {
-      z-index: 46;
-    }
-
-    .filter__container {
-      z-index: 45;
-    }
-  }
-
   .runner {
     display: none;
   }
   //------hover effect проявляются -----
-
   .filter__btn {
-    transition: background-color 0.4s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
   }
 
   .filter__btn:focus-visible {
@@ -154,29 +159,18 @@
     transform: translateY(2px) rotate(135deg);
   }
 }
-
+//---------------------------------------------------------------------
 @media (max-width: 900px) {
-  .catalog-container {
-    grid-template-columns: repeat($count_grid-column-768, 1fr);
-  }
-
   .catalog-section__title {
-    grid-column: 1/ span $count_grid-column-768;
     margin-bottom: 27px;
   }
 
   .catalog {
-    grid-column: span $count_grid-column-768; //сколько занимает столбцов во внешней таблице
     grid-template-columns: repeat($count_grid-column-768, 1fr); // кол-во столбцов во внутренней таблице
   }
 
-  .catalog-btn-container {
-    grid-column: span $count_grid-column-768;
-  }
-
   .filter {
-    grid-column: span 4;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat($count_grid-column-768, 1fr);
   }
 
   .filter__title {
@@ -186,30 +180,34 @@
     line-height: 130%;
   }
 
-  .filter__fieldset {
-    margin-bottom: $internal-padding-mobile;
-  }
-
-  .filter__fieldset:nth-last-child(-n+2) {
-    margin-bottom: 0;
+  .filter__grid-container {
+    grid-column: span 4;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
+//---------------------------------------------------------------------
 @media (max-width: 760px) {
-  .filter {
-    grid-column: span $count_grid-column-768;
-  }
-
   .catalog {
     grid-template-columns: repeat($count_grid-column-768, 1fr);
   }
-
 }
-
+//---------------------------------------------------------------------
 @media (max-width: 520px) {
   .breadcrumbs {
     visibility: hidden;
     position: absolute;
+  }
+
+  .filter {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .filter__title {
+    grid-column: initial;
+  }
+
+  .filter__grid-container {
+    grid-column: initial;
   }
 
   .filter {

@@ -4,8 +4,8 @@ let clientWidth =  window.innerWidth;
 
 let initCountCardsPage = getCountCatalogCardsPage(clientWidth);
 let currentCountCardsPage = initCountCardsPage; //изначально на странице 9 карточек
-let maxCountCard = 18; // максимальное кол-во карточек подгружаемых на страницу
-let currentCardsCountLoad = 9;
+let maxCountCard = 18; // максимальное кол-во карточек подгружаемых на страницу //должно браться из базы данных
+let currentCardsCountLoad = 9; // кол-во карточек загруженных на страницу по умоляанию
 let currentPage = 1;
 
 // количество карточек на странице

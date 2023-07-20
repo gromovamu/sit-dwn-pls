@@ -33,276 +33,262 @@
     <h1 class="disable">Магазин мебели SitDownPls - каталог</h1>
 
     <section class="section catalog-section">
-      <div class="container catalog-container">
+      <div class="container catalog-section__container">
+        <h2 class="catalog-section__title">
+          Каталог
+        </h2>
+
         <form class="filter">
           <h2 class="filter__title">
            <span class="filter__title-big">  Фильтровать по: </span>
            <span class="filter__title-adaptive"> Фильтры: </span>
           </h2>
 
-          <fieldset class="filter__fieldset">
-            <legend class="filter__subtitle">
-              Категория
-            </legend>
+          <div class="filter__grid-container">
+            <fieldset class="filter__fieldset">
+              <legend class="filter__subtitle">
+                Категория
+              </legend>
 
-            <button class="btn filter__btn">
-              Категория
-            </button>
-
-            <ul class="list filter__checkbox-list filter__container">
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="category1">
-                  <input class="filter__checkbox__input" id="category1" type="checkbox" checked>
-                  Диваны
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="category2">
-                  <input class="filter__checkbox__input" id="category2" type="checkbox">
-                  Кресла
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="category3">
-                  <input class="filter__checkbox__input" id="category3" type="checkbox">
-                  Пуфы
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="category4">
-                  <input class="filter__checkbox__input" id="category4" type="checkbox">
-                  Кровати
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="category5">
-                  <input class="filter__checkbox__input" id="category5" type="checkbox">
-                  Тумбы
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="category6">
-                  <input class="filter__checkbox__input" id="category6" type="checkbox">
-                  Комоды
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="category7">
-                  <input class="filter__checkbox__input" id="category7" type="checkbox">
-                  Стулья
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="category8">
-                  <input class="filter__checkbox__input" id="category8" type="checkbox">
-                  Столы
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="category9">
-                  <input class="filter__checkbox__input" id="category9" type="checkbox">
-                  Аксессуары
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-
-          <fieldset class="filter__fieldset">
-            <legend class="filter__subtitle">
-              Цена
-            </legend>
-
-            <button class="btn filter__btn">
-              Цена
-            </button>
-
-            <div class="filter__price-container filter__container">
-              <label class="filter__label" for="price1">
-                от
-                <input class="filter__input filter__input-from" id="price1" type="text" placeholder="2000">
-              </label>
-
-              <label class="filter__label" for="price2">
-                до
-                <input class="filter__input filter__input-before" id="price2" type="text" placeholder="150 000">
-              </label>
-            </div>
-
-            <div class="runner">
-              <button class ="btn runner__btn runner__btn-left" aria-label="Передвинуть ползунок нижней границы цены">
-                <svg class="runner-icon" viewBox="0 0 22 22">
-                  <use xlink:href="#runner"></use>
-                </svg>
+              <button class="btn filter__btn">
+                Категория
               </button>
 
-              <button class ="btn runner__btn runner__btn-right" aria-label="Передвинуть ползунок верхней границы цены">
-                <svg class="runner-icon" viewBox="0 0 22 22">
-                  <use xlink:href="#runner"></use>
-                </svg>
+              <ul class="list filter__checkbox-list filter__container">
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="category1">
+                    <input class="filter__checkbox__input" id="category1" type="checkbox" checked>
+                    Диваны
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="category2">
+                    <input class="filter__checkbox__input" id="category2" type="checkbox">
+                    Кресла
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="category3">
+                    <input class="filter__checkbox__input" id="category3" type="checkbox">
+                    Пуфы
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="category4">
+                    <input class="filter__checkbox__input" id="category4" type="checkbox">
+                    Кровати
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="category5">
+                    <input class="filter__checkbox__input" id="category5" type="checkbox">
+                    Тумбы
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="category6">
+                    <input class="filter__checkbox__input" id="category6" type="checkbox">
+                    Комоды
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="category7">
+                    <input class="filter__checkbox__input" id="category7" type="checkbox">
+                    Стулья
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="category8">
+                    <input class="filter__checkbox__input" id="category8" type="checkbox">
+                    Столы
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="category9">
+                    <input class="filter__checkbox__input" id="category9" type="checkbox">
+                    Аксессуары
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+
+            <fieldset class="filter__fieldset">
+              <legend class="filter__subtitle">
+                Цена
+              </legend>
+
+              <button class="btn filter__btn">
+                Цена
               </button>
 
-              <div class="runner__line-base"></div>
-              <div class="runner__line"></div>
-            </div>
-          </fieldset>
-
-          <fieldset class="filter__fieldset filter__down">
-            <legend class="filter__subtitle">
-              Скидка
-            </legend>
-
-            <button class="btn filter__btn">
-              Скидка
-            </button>
-
-            <ul class="list filter__checkbox-list filter__container">
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="sale1">
-                  <input class="filter__checkbox__input" id="sale1" type="checkbox">
-                  Более 5&nbsp;000
-                  <span class="filter__checkbox-check"></span>
+              <div class="filter__price-container filter__container">
+                <label class="filter__label" for="price1">
+                  от
+                  <input class="filter__input filter__input-from" id="price1" type="text" placeholder="2000">
                 </label>
-              </li>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="sale2">
-                  <input class="filter__checkbox__input" id="sale2" type="checkbox">
-                  Менее 5&nbsp;000
-                  <span class="filter__checkbox-check"></span>
+                <label class="filter__label" for="price2">
+                  до
+                  <input class="filter__input filter__input-before" id="price2" type="text" placeholder="150 000">
                 </label>
-              </li>
+              </div>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="sale3">
-                  <input class="filter__checkbox__input" id="sale3" type="checkbox" checked>
-                  Не важно
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-            </ul>
-          </fieldset>
+              <div class="runner">
+                <button class ="btn runner__btn runner__btn-left" aria-label="Передвинуть ползунок нижней границы цены">
+                  <svg class="runner-icon" viewBox="0 0 22 22">
+                    <use xlink:href="#runner"></use>
+                  </svg>
+                </button>
 
-          <fieldset class="filter__fieldset filter__down">
-            <legend class="filter__subtitle">
-              Цвет
-            </legend>
+                <button class ="btn runner__btn runner__btn-right" aria-label="Передвинуть ползунок верхней границы цены">
+                  <svg class="runner-icon" viewBox="0 0 22 22">
+                    <use xlink:href="#runner"></use>
+                  </svg>
+                </button>
 
-            <button class="btn filter__btn">
-              Цвет
-            </button>
+                <div class="runner__line-base"></div>
+                <div class="runner__line"></div>
+              </div>
+            </fieldset>
 
-            <ul class="list filter__checkbox-list filter__container">
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="color1">
-                  <input class="filter__checkbox__input" id="color1" type="checkbox">
-                    Коричневый
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
+            <fieldset class="filter__fieldset">
+              <legend class="filter__subtitle">
+                Скидка
+              </legend>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="color2">
-                  <input class="filter__checkbox__input" id="color2" type="checkbox">
-                    Черный
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
+              <button class="btn filter__btn">
+                Скидка
+              </button>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="color3">
-                  <input class="filter__checkbox__input" id="color3" type="checkbox">
-                    Бежевый
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
+              <ul class="list filter__checkbox-list filter__container">
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="sale1">
+                    <input class="filter__checkbox__input" id="sale1" type="checkbox">
+                    Более 5&nbsp;000
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="color4">
-                  <input class="filter__checkbox__input" id="color4" type="checkbox">
-                    Серый
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="sale2">
+                    <input class="filter__checkbox__input" id="sale2" type="checkbox">
+                    Менее 5&nbsp;000
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="color5">
-                  <input class="filter__checkbox__input" id="color5" type="checkbox">
-                    Белый
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="sale3">
+                    <input class="filter__checkbox__input" id="sale3" type="checkbox" checked>
+                    Не важно
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="color6">
-                  <input class="filter__checkbox__input" id="color6" type="checkbox">
-                    Синий
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
+            <fieldset class="filter__fieldset">
+              <legend class="filter__subtitle">
+                Цвет
+              </legend>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="color7">
-                  <input class="filter__checkbox__input" id="color7" type="checkbox" checked>
-                    Оранжевый
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
+              <button class="btn filter__btn">
+                Цвет
+              </button>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="color8">
-                  <input class="filter__checkbox__input" id="color8" type="checkbox">
-                    Желтый
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
+              <ul class="list filter__checkbox-list filter__container">
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="color1">
+                    <input class="filter__checkbox__input" id="color1" type="checkbox">
+                      Коричневый
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
 
-              <li class="filter__checkbox-item">
-                <label class="filter__label filter__checkbox-label" for="color9">
-                  <input class="filter__checkbox__input" id="color9" type="checkbox">
-                    Зеленый
-                  <span class="filter__checkbox-check"></span>
-                </label>
-              </li>
-            </ul>
-          </fieldset>
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="color2">
+                    <input class="filter__checkbox__input" id="color2" type="checkbox">
+                      Черный
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="color3">
+                    <input class="filter__checkbox__input" id="color3" type="checkbox">
+                      Бежевый
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="color4">
+                    <input class="filter__checkbox__input" id="color4" type="checkbox">
+                      Серый
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="color5">
+                    <input class="filter__checkbox__input" id="color5" type="checkbox">
+                      Белый
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="color6">
+                    <input class="filter__checkbox__input" id="color6" type="checkbox">
+                      Синий
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="color7">
+                    <input class="filter__checkbox__input" id="color7" type="checkbox" checked>
+                      Оранжевый
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="color8">
+                    <input class="filter__checkbox__input" id="color8" type="checkbox">
+                      Желтый
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+
+                <li class="filter__checkbox-item">
+                  <label class="filter__label filter__checkbox-label" for="color9">
+                    <input class="filter__checkbox__input" id="color9" type="checkbox">
+                      Зеленый
+                    <span class="filter__checkbox-check"></span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
         </form>
-
-        <h2 class="catalog-section__title">
-          Каталог
-        </h2>
-
-        @include('./html/_catalog.html')
-
-        <div class="catalog-btn-container">
-          <button class="btn catalog-btn btn-decor2 catalog-btn--active" aria-label="Открыть страницу каталога 1">
-            1
-          </button>
-
-          <button class="btn catalog-btn btn-decor2" aria-label="Открыть страницу каталога 2">
-            2
-          </button>
-
-          <button class="btn catalog-btn btn-decor2" aria-label="Открыть страницу каталога 3">
-            3
-          </button>
-        </div>
 
         <div class="banner">
           <div class="banner__decor"></div>
@@ -327,6 +313,26 @@
             </a>
           </div>
         </div>
+
+        <div class="catalog-container">
+          @include('./html/_catalog.html')
+
+          <div class="catalog-btn-container">
+            <button class="btn catalog-btn btn-decor2 catalog-btn--active" aria-label="Открыть страницу каталога 1">
+              1
+            </button>
+
+            <button class="btn catalog-btn btn-decor2" aria-label="Открыть страницу каталога 2">
+              2
+            </button>
+
+            <button class="btn catalog-btn btn-decor2" aria-label="Открыть страницу каталога 3">
+              3
+            </button>
+          </div>
+        </div>
+
+
       </div>
     </section>
   </main>

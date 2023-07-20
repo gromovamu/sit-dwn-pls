@@ -24,7 +24,12 @@
   opacity: 0.3;
 }
 
-.catalog-container {
+.catalog-section {
+  padding-top: 0;
+  padding-bottom: 70px;
+}
+
+.catalog-section__container {
   @include gridTemplate($count_grid-column, $grid-gap);
   row-gap: 0;
 }
@@ -41,10 +46,16 @@
 }
 
 /* filter */
-
 .filter {
   grid-column: 1/span 3;
-  grid-row: 1/3;
+  grid-row: 1/span 2;
+  padding-bottom: $grid-gap;
+}
+
+.filter__grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  gap: 26px;
 }
 
 .filter__title {
@@ -66,7 +77,7 @@
 .filter__fieldset {
   position: relative;
   @include clean();
-  margin-bottom: 26px;
+ // margin-bottom: 26px;
   border: none;
 }
 
@@ -88,7 +99,6 @@
   line-height: 140%;
   color: $text-color-grey;
 }
-
 
 .filter__checkbox-list {
   display: flex;
@@ -216,21 +226,22 @@
   left: calc(67.56% - 7px);
 }
 
-
 /* catalog */
-
-.catalog {
+.catalog-container {
   grid-column: span 9;
-  grid-row: 2 / 4;
+  grid-row: 2/span 2;
+  display: flex;
+  flex-direction: column;
+  gap: $grid-gap;
+}
+.catalog {
   @include gridTemplate( $count_grid-column-1024, $grid-gap);
 }
 
 @import '_cards_style.scss';
 
 .catalog-btn-container {
-  grid-column: 4/span 9;
-  grid-row: 4/ span 1;
-  justify-self: center;
+  align-self: center;
 }
 
 /* banner */
@@ -239,6 +250,7 @@
   grid-row: 3/ span 1;
   display: flex;
   flex-direction: column;
+  margin-bottom: 64px;
   border-radius: 10px;
   background-color: $background-dark-color;
 }
@@ -298,7 +310,7 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  padding-top: $grid-gap;
+ // padding-top: $grid-gap;
 }
 
 .catalog-btn {

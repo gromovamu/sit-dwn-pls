@@ -1,10 +1,33 @@
 function closeActiveFilter(filterActive='') {
+ // console.log('closeActiveFilter start');
+  let filterOpen = null;
   document.querySelectorAll('.filter__container--active').forEach(function(filter) {
     if ( filterActive != filter ) {
+      filter.addEventListener('transitionend',customListenerTransionEnd);
       filter.classList.remove('filter__container--active');
-      filter.previousElementSibling.classList.remove('filter__btn--active');
+      //filter.previousElementSibling.classList.remove('filter__btn--active');
+     // console.log('Active != filter');
+     // console.log(filter);
+      filterOpen = filter;
     }
   });
+
+ // console.log('closeActiveFilter =>',filterOpen);
+  return filterOpen;
+}
+
+function customListenerTransionEnd(event) {
+    this.previousElementSibling.classList.remove('filter__btn--active');
+    this.removeAttribute('style');
+    this.removeEventListener('transitionend',customListenerTransionEnd);
+}
+
+function customListenerTransionCloseEnd(event, filterOpen) {
+ // console.log('customListenerTransionCloseEnd');
+  //console.log(this._nextActiveFilter);
+  this._nextActiveFilter.classList.add('filter__container--active');
+  this.removeEventListener('transitionend',customListenerTransionCloseEnd);
+  delete this._nextActiveFilter;
 }
 
 function customListenerForClick(event) {
@@ -26,11 +49,21 @@ document.querySelectorAll('.filter__btn').forEach(function (btn) {
 
     // проверим, если есть другие открытые фильтры закроем, а то у меня так огранизовано,
     // что если на любую кнопку жать то _isClickWhitinFilter тоже установится, и закрытие не сработает
-    closeActiveFilter(filter);
+    filterCLose = closeActiveFilter(filter);
 
     if ( !filter.classList.contains('filter__container--active') ) {
-      //console.log('filter no is active -> active');
-      filter.classList.add('filter__container--active');
+
+      // открываем скрытый фильтр
+      if (filterCLose) { // дождемся закрытя открытого фильтра
+        filterCLose._nextActiveFilter = filter;
+        filterCLose.addEventListener('transitionend',customListenerTransionCloseEnd);
+      }
+      else {
+        filter.classList.add('filter__container--active');
+      }
+
+      filter.setAttribute('style','transition: visibility 0.3s ease-in, transform 0.3s ease-in');
+
       btn.classList.add('filter__btn--active');
 
       event._isClickWhitinFilter = true; //чтоб не закрывалось вновь открытое

@@ -555,6 +555,7 @@
 .header {
   .breadcrumbs {
     display: flex;
+    flex-wrap: wrap;
     padding-top: 22px;
     font-size: 14px;
     line-height: 100%;
