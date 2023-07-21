@@ -1,6 +1,6 @@
 @media (max-width: 1200px) {
   .product {
-    margin-bottom: 70px;
+    padding-bottom: 36px;
    }
 
   .product-grid-container {
@@ -92,7 +92,7 @@
 
 @media (max-width: 900px) {
   .product {
-    margin-bottom: 32px;
+    padding-bottom: 16px;
   }
   .product-grid-container {
     grid-template-columns: repeat($count_grid-column-768, 1fr);
@@ -117,6 +117,7 @@
     grid-column: span $count_grid-column-768;
     grid-row: initial;
     order: 1;
+    padding-bottom: 0;
   }
 
   .product__img-draft {
@@ -159,6 +160,10 @@
   .product__img__swiper-container {
     padding: 25px;
     max-height: $product__img-preview-container_height_768;
+  }
+
+  .similar {
+    padding-top: 16px;
   }
 
   .similar__btn-container {
@@ -212,12 +217,12 @@
     padding: 19px 35px;
   }
 
-  .breadcrumbs {
+  .header .breadcrumbs {
     display: none;
   }
 
   .product {
-    margin-bottom: 70px;
+    padding-bottom: 35px;
   }
 
   .product-grid-container {
@@ -253,7 +258,7 @@
     min-height: 116px; // вот это только для того чтобы показать красиво картинки, которых пока нет
   }
 
-  .img-pre__swiper-container {
+  .product__img__swiper-container {
     padding: 10px;
   }
 
@@ -301,6 +306,8 @@
   }
 
   .similar {
+    padding-top: 35px;
+
     .btn-decor2 {
       padding: 10px 23px;
     }
@@ -348,6 +355,7 @@
   .product__characteristic-item {
     flex-direction: column;
     margin-bottom: 8px;
+    align-items: flex-start;
   }
 
   .product__characteristic-item:last-child {
@@ -357,6 +365,7 @@
   .product__characteristic-name {
     font-size: 10px;
     line-height: 14px;
+    max-width: 100%;
   }
 
   .points {
