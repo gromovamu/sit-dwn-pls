@@ -53,6 +53,10 @@ body {
   display: none;
 }
 
+.stop_scroll {
+  overflow: hidden;
+}
+
 /* --- general --- */
 .container {
   margin: 0 auto; //auto;

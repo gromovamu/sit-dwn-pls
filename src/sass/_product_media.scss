@@ -51,8 +51,8 @@
     flex-basis: calc(50% + 14px);
   }
 
-  .modal-img {
-    top: $modal_top_1024;
+  .modal__img {
+    margin-top: $modal_top_1024;
   }
 
   .modal__swiper-dop-container {
@@ -80,13 +80,13 @@
     padding: 50px 66px;
   }
 
-  .modal__img  {
+  .modal__img-img  {
     min-height: 322px;
     object-fit: contain ;
   }
 
   .modal-style {
-    top: $modal_info_top_1024;
+    margin-top: $modal_info_top_1024;
   }
 }
 
@@ -171,20 +171,19 @@
   }
 
   .modal-style {
-    top: $modal_info_top_768;
-    left: $container-padding-768;
+    margin-top: $modal_info_top_768;
     width: calc(100% - $container-padding-768 * 2);
   }
 
-  .modal-img {
-    top: $modal_top_768;
+  .modal__img {
+    margin-top: $modal_top_768;
   }
 
   .modal__img-main {
     padding: 50px 21px;
   }
 
-  .modal__img  {
+  .modal__img-img  {
     min-height: 228px;
   }
 
@@ -195,9 +194,8 @@
 
 @media (max-width: 760px) {
   .modal-info {
-    left: 20%;
-    width: 60%;
     height: $modal_info_height_320;
+    max-width: 60%;
   }
 
   .modal-info__img {
@@ -281,7 +279,7 @@
 
   .product__btn {
     padding: 19px 10px;
-    width: 100%;
+    min-width: 100%;
   }
 
   .product__btn-add {
@@ -336,8 +334,7 @@
   }
 
   .modal-style {
-    top: $modal_info_top_768;
-    left: $container-padding-320;
+    margin-top: $modal_info_top_320;
     width: calc(100% - $container-padding-320 * 2);
   }
 
@@ -348,6 +345,14 @@
 
   .modal-form__fieldset {
     margin-bottom: $internal-padding-mobile;
+  }
+
+  .modal__img {
+    margin-top: $modal_top_320;
+  }
+
+  .modal-info {
+    max-width: initial;
   }
 }
 
@@ -389,5 +394,9 @@
   .modal-form__title {
     font-size: 24px;
     line-height: 100%;
+  }
+
+  .modal__img-img  {
+    min-height: 104px;
   }
 }

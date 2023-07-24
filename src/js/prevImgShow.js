@@ -219,7 +219,7 @@ document.querySelectorAll('.modal__img-preview-btn').forEach(function (btn) {
 document.querySelector('.product__img-btn').addEventListener( 'click', function(event) {
   //console.log('modal mode active')
   // открываем окно просмотра в модальном окне
-  let modal = setModalMode('.modal-img');
+  let modal = setModalMode('modal-img');
 
   // если открыто не первое изображение, то загружаем аналогичное тому, которое сейчас выбрано основным
   // но из изображений для модального окна

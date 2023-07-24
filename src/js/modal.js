@@ -1,18 +1,18 @@
 //функции для работы с модальным режимом
 
 // фунция устанавливает модальный режим путем добавления класса modal-mode к body
-function setModalMode (modalSelector) {
-  document.querySelector('.body').classList.add('modal-mode');
-  let modal = document.querySelector(modalSelector);
-  modal.classList.add('modal--active');
-  // прокрутим окно к началу
-  scrollTo(0,0);
+function setModalMode (modalId) {
+  document.querySelector('.body').classList.add('stop_scroll');
+  let modal = document.getElementById(modalId);
 
+  let modalContent = modal.querySelector('.modal___content');
+
+  modal.classList.add('modal--active');
   // добавляем обработчик события для клика на самом модальном окне
-  modal.addEventListener('click', clickWithinModal);
+  modalContent.addEventListener('click', clickWithinModal);
 
   // добавляем обработчик события для клика вне модального окна
-  document.querySelector('.modal-mode').addEventListener('click', customClick);
+  modal.addEventListener('click', customClick);
 
   //добавим обработчик события для закрытия модального окна с изображениями
   let closeBtn = modal.querySelector('.modal-close-btn');
@@ -23,9 +23,9 @@ function setModalMode (modalSelector) {
   return modal;
 }
 
-// фунция убирает модальный режим путем удаления класса modal-mode из body
+// фунция убирает модальный режим путем удаления класса stop_scroll из body
 function closeModalMode () {
- document.querySelector('.body').classList.remove('modal-mode');
+ document.querySelector('.body').classList.remove('stop_scroll');
 }
 
 // функция закрытия модального окна
@@ -36,13 +36,12 @@ function closeModal(event = null) {
   let modal =  document.querySelector('.modal--active');
   if (modal) {
     modal.classList.remove('modal--active');
+    // удаляем обработчик для клика вне модального окна
+    modal.removeEventListener('click', customClick);
   }
 
-  // удаляем обработчик
-  document.querySelector('.modal-mode').removeEventListener('click', customClick);
   // убираем модальный режим
   closeModalMode();
-
 }
 
 function clickWithinModal(event) {
