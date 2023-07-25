@@ -397,7 +397,7 @@
   align-items: flex-start;
 }
 
-.modal-form__title {
+.modal__form-title {
   @include clean();
   margin-bottom: 8px;
   font-weight: 400;
@@ -405,7 +405,7 @@
   line-height: 100%;
 }
 
-.modal-form__descr {
+.modal__form-descr {
   margin-bottom: $internal-padding;
   width: 67%;
   font-weight: 400;
@@ -413,16 +413,16 @@
   line-height: 19px;
 }
 
-.modal-form__fieldset {
+.modal__form-fieldset {
   margin-bottom: $internal-padding;
   width: 100%;
 }
 
-.modal-form__btn {
+.modal__form-btn {
   margin-bottom: 8px;
 }
 
-.modal-form__input {
+.modal__form-input {
   width: 100%;
 }
 

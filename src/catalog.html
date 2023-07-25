@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,17 +16,17 @@
 
 <body>
   <div style="display: none">
-     <!-- код svg спрайта, вставит gulp при сборке-->
+    <!-- код svg спрайта, вставит gulp при сборке-->
     @include('../dist/sprite.svg')
   </div>
 
   <header class="header">
     @include('./html/_header.html')
-      <div class="container breadcrumbs">
-        <a class="link breadcrumbs__link nav-link-decor" href="index.html">Главная /</a>
-        <a class="link breadcrumbs__link nav-link-decor" href="#">Каталог /</a>
-        <a class="link breadcrumbs__link nav-link-decor" href="#">Диваны /</a>
-        <a class="link breadcrumbs__link nav-link-decor breadcrumbs__link-last" href="#">Прямые диваны</a>
+    <div class="container breadcrumbs">
+      <a class="link breadcrumbs__link nav-link-decor" href="index.html">Главная /</a>
+      <a class="link breadcrumbs__link nav-link-decor" href="#">Каталог /</a>
+      <a class="link breadcrumbs__link nav-link-decor" href="#">Диваны /</a>
+      <a class="link breadcrumbs__link nav-link-decor breadcrumbs__link-last" href="#">Прямые диваны</a>
     </div>
   </header>
 
@@ -40,8 +41,8 @@
 
         <form class="filter">
           <h2 class="filter__title">
-           <span class="filter__title-big">  Фильтровать по: </span>
-           <span class="filter__title-adaptive"> Фильтры: </span>
+            <span class="filter__title-big"> Фильтровать по: </span>
+            <span class="filter__title-adaptive"> Фильтры: </span>
           </h2>
 
           <div class="filter__grid-container">
@@ -151,13 +152,14 @@
               </div>
 
               <div class="runner">
-                <button class ="btn runner__btn runner__btn-left" aria-label="Передвинуть ползунок нижней границы цены">
+                <button class="btn runner__btn runner__btn-left" aria-label="Передвинуть ползунок нижней границы цены">
                   <svg class="runner-icon" viewBox="0 0 22 22">
                     <use xlink:href="#runner"></use>
                   </svg>
                 </button>
 
-                <button class ="btn runner__btn runner__btn-right" aria-label="Передвинуть ползунок верхней границы цены">
+                <button class="btn runner__btn runner__btn-right"
+                  aria-label="Передвинуть ползунок верхней границы цены">
                   <svg class="runner-icon" viewBox="0 0 22 22">
                     <use xlink:href="#runner"></use>
                   </svg>
@@ -217,7 +219,7 @@
                 <li class="filter__checkbox-item">
                   <label class="filter__label filter__checkbox-label" for="color1">
                     <input class="filter__checkbox__input" id="color1" type="checkbox">
-                      Коричневый
+                    Коричневый
                     <span class="filter__checkbox-check"></span>
                   </label>
                 </li>
@@ -225,7 +227,7 @@
                 <li class="filter__checkbox-item">
                   <label class="filter__label filter__checkbox-label" for="color2">
                     <input class="filter__checkbox__input" id="color2" type="checkbox">
-                      Черный
+                    Черный
                     <span class="filter__checkbox-check"></span>
                   </label>
                 </li>
@@ -233,7 +235,7 @@
                 <li class="filter__checkbox-item">
                   <label class="filter__label filter__checkbox-label" for="color3">
                     <input class="filter__checkbox__input" id="color3" type="checkbox">
-                      Бежевый
+                    Бежевый
                     <span class="filter__checkbox-check"></span>
                   </label>
                 </li>
@@ -241,7 +243,7 @@
                 <li class="filter__checkbox-item">
                   <label class="filter__label filter__checkbox-label" for="color4">
                     <input class="filter__checkbox__input" id="color4" type="checkbox">
-                      Серый
+                    Серый
                     <span class="filter__checkbox-check"></span>
                   </label>
                 </li>
@@ -249,7 +251,7 @@
                 <li class="filter__checkbox-item">
                   <label class="filter__label filter__checkbox-label" for="color5">
                     <input class="filter__checkbox__input" id="color5" type="checkbox">
-                      Белый
+                    Белый
                     <span class="filter__checkbox-check"></span>
                   </label>
                 </li>
@@ -257,7 +259,7 @@
                 <li class="filter__checkbox-item">
                   <label class="filter__label filter__checkbox-label" for="color6">
                     <input class="filter__checkbox__input" id="color6" type="checkbox">
-                      Синий
+                    Синий
                     <span class="filter__checkbox-check"></span>
                   </label>
                 </li>
@@ -265,7 +267,7 @@
                 <li class="filter__checkbox-item">
                   <label class="filter__label filter__checkbox-label" for="color7">
                     <input class="filter__checkbox__input" id="color7" type="checkbox" checked>
-                      Оранжевый
+                    Оранжевый
                     <span class="filter__checkbox-check"></span>
                   </label>
                 </li>
@@ -273,7 +275,7 @@
                 <li class="filter__checkbox-item">
                   <label class="filter__label filter__checkbox-label" for="color8">
                     <input class="filter__checkbox__input" id="color8" type="checkbox">
-                      Желтый
+                    Желтый
                     <span class="filter__checkbox-check"></span>
                   </label>
                 </li>
@@ -281,7 +283,7 @@
                 <li class="filter__checkbox-item">
                   <label class="filter__label filter__checkbox-label" for="color9">
                     <input class="filter__checkbox__input" id="color9" type="checkbox">
-                      Зеленый
+                    Зеленый
                     <span class="filter__checkbox-check"></span>
                   </label>
                 </li>
@@ -341,4 +343,5 @@
     @include('./html/_footer.html')
   </footer>
 </body>
+
 </html>

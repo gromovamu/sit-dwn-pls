@@ -1,11 +1,11 @@
 let burger = document.querySelector('.burger');
-let burgerMenu = document.querySelector('.burger__menu');
+let burgerMenu = document.querySelector('.burger-menu');
 
-//let headerNavTop = document.querySelector('.burger__menu .header__top-nav');
-//let headerNavBottom = document.querySelector('.burger__menu .header__bottom-nav');
+//let headerNavTop = document.querySelector('.burger-menu .header__top-nav');
+//let headerNavBottom = document.querySelector('.burger-menu .header__bottom-nav');
 
 function closeBurgerMenu() {
-  burgerMenu.classList.remove('burger__menu--active');
+  burgerMenu.classList.remove('burger-menu--active');
   burger.classList.remove('burger-close');
   document.removeEventListener('click',customListenerForMenuClick);
   burgerMenu.removeEventListener('click', customListenerForClickWithinMenu);
@@ -27,7 +27,7 @@ burger.addEventListener('click',
       closeBurgerMenu();
     }
     else {
-      burgerMenu.classList.add('burger__menu--active');
+      burgerMenu.classList.add('burger-menu--active');
       burger.classList.add('burger-close');
       burgerMenu.setAttribute('style','transition: visibility 0.6s ease-in, transform 0.6s ease-in');
       burgerMenu.addEventListener('click', customListenerForClickWithinMenu);
@@ -38,7 +38,7 @@ burger.addEventListener('click',
 );
 
 burgerMenu.addEventListener('transitionend', function(event) {
-  if (!burgerMenu.classList.contains('burger__menu--active') ) {
+  if (!burgerMenu.classList.contains('burger-menu--active') ) {
     burgerMenu.removeAttribute('style');
   }
 });
@@ -47,7 +47,7 @@ burgerMenu.addEventListener('transitionend', function(event) {
 document.querySelectorAll('.header__bottom-nav-item .nav-link-decor2').forEach(function (link) {
   link.addEventListener('click', function (event) {
         //закрывем бургер-меню если оно открыто
-        if( burgerMenu.classList.contains('burger__menu--active') ) {
+        if( burgerMenu.classList.contains('burger-menu--active') ) {
           closeBurgerMenu() ;
         }
   });
@@ -56,7 +56,7 @@ document.querySelectorAll('.header__bottom-nav-item .nav-link-decor2').forEach(f
 document.querySelectorAll('.header__top-nav-item .nav-link-decor').forEach(function (link) {
   link.addEventListener('click', function (event) {
         //закрывем бургер-меню если оно открыто
-        if( burgerMenu.classList.contains('burger__menu--active') ) {
+        if( burgerMenu.classList.contains('burger-menu--active') ) {
           closeBurgerMenu() ;
         }
   });

@@ -338,12 +338,12 @@
     width: calc(100% - $container-padding-320 * 2);
   }
 
-  .modal-form__descr {
+  .modal__form-descr {
     width: 100%;
     margin-bottom: $internal-padding-mobile;
   }
 
-  .modal-form__fieldset {
+  .modal__form-fieldset {
     margin-bottom: $internal-padding-mobile;
   }
 
@@ -391,7 +391,7 @@
     max-height: $modal_pre_height_mobile;
   }
 
-  .modal-form__title {
+  .modal__form-title {
     font-size: 24px;
     line-height: 100%;
   }

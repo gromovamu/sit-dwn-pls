@@ -51,7 +51,7 @@
     display: none;
   }
 
-  .burger__menu {
+  .burger-menu {
     display: none;
   }
 }
@@ -407,6 +407,10 @@
   }
 
   /* в раскрытом состоянии */
+.choices__list--dropdown .choices__placeholder {
+  display: none;
+}
+
   .is-open .choices__inner {
     border-radius: 0 10px 0 0;
     border-bottom-color: transparent;

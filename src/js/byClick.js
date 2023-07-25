@@ -4,7 +4,7 @@ document.querySelector('.product__btn').addEventListener('click', function(event
   event._isClickWhitinFilter = true; // чтоб не закрыло при всплытии
 });
 
-document.querySelector('.modal-form__btn').addEventListener('click', function(event) {
+document.querySelector('.modal__form-btn').addEventListener('click', function(event) {
   event.preventDefault();
   // чтоб не путаться предыдущее закрываем
   closeModal();

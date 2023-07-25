@@ -108,7 +108,7 @@
       display: none;
     }
 
-    .burger__menu {
+    .burger-menu {
       display: block;
 
       .header__top-nav {
@@ -136,7 +136,7 @@
     grid-column: span 2;
   }
 
-  .burger__menu {
+  .burger-menu {
     visibility: hidden;
     position: absolute;
 
@@ -174,7 +174,7 @@
     }
   }
 
-  .burger__menu--active {
+  .burger-menu--active {
     visibility: visible;
     transform: translateX(0); ;
    // transition: transform 0.6s ease-out, visibility 0.6s ease-in;
@@ -233,7 +233,7 @@
     border-top: 1px solid $background-secondary-color;
     border-bottom: 1px solid $background-secondary-color;
 
-    .burger__menu {
+    .burger-menu {
       display: flex;
       flex-direction: column;
 
@@ -244,7 +244,7 @@
   }
 
   // меню в бургере------------------
-  .burger__menu {
+  .burger-menu {
     padding: 0;
 
     .header__bottom-nav {
