@@ -30,6 +30,13 @@ let modalFormValid = new JustValidate('.modal__form', {
       required: 'Вы не ввели телефон',
       function: 'Вы ввели номер телефона не полностью'
     },
+  },
+
+  submitHandler: function(thisForm) {
+    console.log('submitHandler');
+    closeModal(); //закрываем открытое модальное окно формы
+
+    setModalMode('modal-info'); // открываем новое с сообщением
   }
 });
 
