@@ -132,11 +132,12 @@
 
  // функции простые, без проверок на форматы параметров и прочее, только чтобы показать верстку
  // функция генерит html-код карточки
+ //TODO: если будет время передеать на нормальую генерацию, сейчас не совсем корректно
  function loadCard(card) {
     let cardName = card.name.replace('-', '&#8209;');
     let cardPrice = card.price.replace(' ', '&nbsp;');
 
-    let textCard = `<li class=\"catalog__item\"> <div class=\"estimation\"> <svg class=\"star\" viewBox=\"0 0 16 15\"\> <use xlink:href=\"#star\"> </use> </svg> <span class=\"estimation-descr\"> 5,0 </span></div> <picture  class=\"catalog__picture\"> <source srcset=\" ${card.sourceUrl} \" media=\"(max-width: 520px)\"> <img class=\"catalog__img \" src=\"${card.imgUrl}\" alt=\"изображение товара\"> </picture><div class=\"catalog__descr-container\"> <h3 class=\"catalog__name\"> ${cardName} </h3> <p class=\"catalog__price\"> ${cardPrice}</p> <button class=\"btn btn-decor2\">Купить</button> </div> </li> `;
+    let textCard = `<li class=\"catalog__item\"> <div class=\"estimation\"> <svg class=\"star\" viewBox=\"0 0 16 15\"\> <use xlink:href=\"#star\"> </use> </svg> <span class=\"estimation-descr\"> 5,0 </span></div> <picture  class=\"catalog__picture\"> <source srcset=\" ${card.sourceUrl} \" media=\"(max-width: 520px)\"> <img class=\"catalog__img \" src=\"${card.imgUrl}\" alt=\"изображение товара\"> </picture><div class=\"catalog__descr-container\"> <h3 class=\"catalog__name\"> ${cardName} </h3> <p class=\"catalog__price\"> ${cardPrice}</p> <a class=\"link btn-decor2\" href=\"product.html\">Купить</a> </div> </li> `;
 
    // console.log(textCard)
     return textCard;
